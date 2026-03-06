@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【プレビュー】法人 – 各種約款 – 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <style>
+        .preview-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 32px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            background-color: #F3F6F9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .subpage__body {
+            padding: 48px 0 80px;
+        }
+
+        .subpage__sidebar {
+            display: none !important;
+        }
+
+        .subpage__content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px 56px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .subpage__content .c-heading2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #244967;
+            border-bottom: 3px solid #2B7CBC;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+
+        /* ===== ヘッダー ===== */
+        .pv-header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 32px;
+            z-index: 9999;
+        }
+
+        .pv-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+        }
+
+        .pv-header__logo {
+            height: 40px;
+        }
+
+        .pv-header__right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pv-header__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-header__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #244967;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-subnav {
+            background: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pv-subnav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            padding: 0 20px;
+        }
+
+        .pv-subnav__item {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            cursor: default;
+        }
+
+        .pv-subnav__item.is-active {
+            color: #2B7CBC;
+            font-weight: 700;
+            border-bottom-color: #2B7CBC;
+        }
+
+        .page-header--hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2B7CBC 60%, #5ba3d9 100%);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .page-header__title {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        .breadcrumb {
+            padding: 12px 0;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb__item a {
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .breadcrumb__item+.breadcrumb__item::before {
+            content: '>';
+            margin-right: 8px;
+            color: #aaa;
+        }
+
+        /* ===== 約款セクション ===== */
+        .terms-section {
+            margin-bottom: 40px;
+        }
+
+        .terms-section__title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #244967;
+            border-left: 4px solid #2B7CBC;
+            padding-left: 16px;
+            margin-bottom: 8px;
+        }
+
+        .terms-section__sub {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e67e22;
+            margin-bottom: 8px;
+        }
+
+        .terms-subsection {
+            margin-left: 24px;
+            margin-bottom: 32px;
+            padding-left: 20px;
+            border-left: 2px solid #e0e8ef;
+        }
+
+        .terms-subsection__title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e67e22;
+            margin-bottom: 8px;
+        }
+
+        .terms-section__desc {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .terms-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .terms-list__item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .terms-list__link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 16px;
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 6px;
+        }
+
+        .terms-list__link:hover {
+            background: #f0f7fc;
+            color: #2B7CBC;
+        }
+
+        .terms-list__icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 900;
+            border-radius: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        .terms-list__name {
+            flex: 1;
+        }
+
+        .terms-list__arrow {
+            flex-shrink: 0;
+            color: #aaa;
+        }
+
+        /* ===== お問い合わせ・フッター ===== */
+        .pv-contact-section {
+            background: #EDF4F7;
+            padding: 48px 20px;
+            margin-top: 40px;
+        }
+
+        .pv-contact-section__inner {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+            flex: 1;
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            color: #244967;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 900;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pv-contact-section__note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: #244967;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0;
+        }
+
+        .pv-contact-section__character img {
+            width: 120px;
+            height: auto;
+        }
+
+        .pv-footer {
+            color: #fff;
+        }
+
+        .pv-footer__cta {
+            background: #2B7CBC;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-footer__main {
+            background: #244967;
+            padding: 32px 20px;
+        }
+
+        .pv-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .pv-footer__character img {
+            width: 80px;
+        }
+
+        .pv-footer__logo {
+            height: 32px;
+        }
+
+        .pv-footer__address {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .pv-footer__actions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .pv-footer__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .pv-footer__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .pv-footer__bottom {
+            background: #1a3a5c;
+            text-align: center;
+            padding: 16px;
+            font-size: 12px;
+        }
+
+        .pv-footer__bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .pv-footer__copy {
+            margin-top: 8px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preview-badge">🖊 改修プレビュー — 法人 – 各種約款</div>
+
+    <header class="pv-header">
+        <div class="pv-header__inner">
+            <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg" alt="房州ガス株式会社"
+                class="pv-header__logo">
+            <div class="pv-header__right">
+                <a href="tel:0470-22-2251" class="pv-header__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-header__contact-btn">お問い合わせ</a>
+            </div>
+        </div>
+        <div class="pv-subnav">
+            <div class="pv-subnav__inner">
+                <span class="pv-subnav__item">個人のお客様へ</span>
+                <span class="pv-subnav__item is-active">法人のお客様へ</span>
+                <span class="pv-subnav__item">お困りの時は</span>
+                <span class="pv-subnav__item">ガス機器について</span>
+                <span class="pv-subnav__item">安全・工事関連</span>
+                <a href="https://boushugas.co.jp/wp2026/environment" class="pv-subnav__item">環境・地域の取り組み</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main subpage">
+
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
+                    <li class="breadcrumb__item"><a href="#">法人のお客様</a></li>
+                    <li class="breadcrumb__item">各種約款</li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="page-header page-header--hero">
+            <div class="container">
+                <h1 class="page-header__title">各種約款（法人）</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="subpage__body">
+                <div class="subpage__content">
+
+                    <h2 class="c-heading2">各種約款（法人）</h2>
+
+                    <!-- ===== 都市ガス約款 ===== -->
+                    <div class="terms-section">
+                        <h3 class="terms-section__title">都市ガス約款</h3>
+
+                        <!-- 小売約款 -->
+                        <div class="terms-subsection">
+                            <h4 class="terms-subsection__title">小売約款</h4>
+                            <p class="terms-section__desc">ガス小売の料金その他の供給条件について定めた約款です。</p>
+                            <ul class="terms-list">
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/170214_01.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">一般ガス小売約款</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/211014_01.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">ガス温水暖房契約</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/211014_01.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">ガス暖房契約</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/210701_03.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">小型空調専用契約</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/200626_01.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">都市ガス導入応援割引約款</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 工事約款 -->
+                        <div class="terms-subsection">
+                            <h4 class="terms-subsection__title">工事約款</h4>
+                            <p class="terms-section__desc">ガス内管工事（お客さま敷地内のガス工事）についての契約条件および本支管敷設工事における負担条件について定めた約款です。
+                            </p>
+                            <ul class="terms-list">
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/170214_03.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">工事約款</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/191029_01.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">内管工事単価表</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/191029_02.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">都市ガスをご利用になるために必要なお客さま敷地内のガス工事費の参考お見積額について</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 最終保障供給約款 -->
+                        <div class="terms-subsection">
+                            <h4 class="terms-subsection__title">最終保障供給約款</h4>
+                            <p class="terms-section__desc">
+                                お客さまが誰からもガスの供給を受けられなくなることのないよう、不測の事態の最終保障としてのガス供給条件について定めた約款です。</p>
+                            <ul class="terms-list">
+                                <li class="terms-list__item">
+                                    <a href="https://boushugas.co.jp/pdf/170214_04.pdf" target="_blank"
+                                        class="terms-list__link">
+                                        <span class="terms-list__icon">PDF</span>
+                                        <span class="terms-list__name">最終保障供給約款</span>
+                                        <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ===== 簡易ガス約款 ===== -->
+                    <div class="terms-section">
+                        <h3 class="terms-section__title">簡易ガス約款</h3>
+                        <ul class="terms-list">
+                            <li class="terms-list__item">
+                                <a href="https://boushugas.co.jp/pdf/191006_04.pdf" target="_blank"
+                                    class="terms-list__link">
+                                    <span class="terms-list__icon">PDF</span>
+                                    <span class="terms-list__name">長須賀団地</span>
+                                    <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" width="16" height="16">
+                                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="terms-list__item">
+                                <a href="https://boushugas.co.jp/pdf/191006_05.pdf" target="_blank"
+                                    class="terms-list__link">
+                                    <span class="terms-list__icon">PDF</span>
+                                    <span class="terms-list__name">ライフピアロイヤルリゾートマンション</span>
+                                    <svg class="terms-list__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" width="16" height="16">
+                                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- お問い合わせ -->
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p>
+                <a href="tel:0470-22-2251" class="pv-contact-section__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    お問い合わせはこちら
+                </a>
+            </div>
+            <div class="pv-contact-section__character">
+                <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター">
+            </div>
+        </div>
+    </section>
+
+    <footer class="pv-footer">
+        <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
+        <div class="pv-footer__main">
+            <div class="pv-footer__inner">
+                <div class="pv-footer__character">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                        alt="房州ガスキャラクター">
+                </div>
+                <div class="pv-footer__info">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo-white.svg"
+                        alt="房州ガス株式会社" class="pv-footer__logo">
+                    <p class="pv-footer__address">千葉県館山市北条1014番地</p>
+                </div>
+                <div class="pv-footer__actions">
+                    <a href="tel:0470-22-2251" class="pv-footer__phone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        0470-22-2251
+                    </a>
+                    <a href="https://boushugas.co.jp/wp2026/contact" class="pv-footer__contact-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pv-footer__bottom">
+            <a href="https://boushugas.co.jp/wp2026/privacy">個人情報の取り扱いについて</a>
+            <a href="https://boushugas.co.jp/wp2026/company">会社案内</a>
+            <p class="pv-footer__copy">&copy; BoshuGas.inc</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
