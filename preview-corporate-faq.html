@@ -186,66 +186,59 @@
             color: #244967;
         }
 
-        /* ===== FAQ アコーディオン ===== */
-        .faq-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
+        /* ===== Q&A アコーディオン ===== */
         .faq-item {
-            border: 1px solid #e0e8ef;
-            border-radius: 10px;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            margin-bottom: 8px;
             overflow: hidden;
-            transition: box-shadow 0.2s;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 2px 12px rgba(43, 124, 188, 0.08);
         }
 
         .faq-item__question {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 18px 24px;
-            background: #f8fbfd;
+            gap: 12px;
+            padding: 16px 20px;
             cursor: pointer;
-            user-select: none;
+            background: #fff;
             border: none;
             width: 100%;
             text-align: left;
-            font-family: inherit;
             font-size: 15px;
-            font-weight: 700;
-            color: #244967;
-            line-height: 1.6;
+            font-weight: 500;
+            color: #333;
             transition: background 0.2s;
         }
 
         .faq-item__question:hover {
-            background: #eef5fb;
+            background: #f8f9fa;
         }
 
-        .faq-item__q-badge {
+        .faq-item__q-icon {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 32px;
             height: 32px;
-            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            background: #2B7CBC;
             color: #fff;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 900;
-            border-radius: 8px;
+            border-radius: 50%;
             flex-shrink: 0;
         }
 
+        .faq-item__q-text {
+            flex: 1;
+            line-height: 1.6;
+        }
+
         .faq-item__arrow {
-            margin-left: auto;
             flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            color: #aaa;
             transition: transform 0.3s;
-            color: #2B7CBC;
         }
 
         .faq-item.is-open .faq-item__arrow {
@@ -253,46 +246,46 @@
         }
 
         .faq-item__answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
+            display: none;
+            padding: 12px 20px 20px 64px;
+            background: #fff;
+            border-top: 1px solid #f0f0f0;
         }
 
         .faq-item.is-open .faq-item__answer {
-            max-height: 500px;
+            display: block;
         }
 
-        .faq-item__answer-inner {
+        .faq-item__a-inner {
             display: flex;
-            gap: 14px;
-            padding: 0 24px 20px;
+            align-items: flex-start;
+            gap: 12px;
         }
 
-        .faq-item__a-badge {
+        .faq-item__a-icon {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #27ae60, #6fcf97);
+            width: 28px;
+            height: 28px;
+            background: #e67e22;
             color: #fff;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 900;
-            border-radius: 8px;
+            border-radius: 50%;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
-        .faq-item__answer-text {
+        .faq-item__a-text {
             font-size: 15px;
-            line-height: 1.9;
-            color: #444;
-            flex: 1;
+            line-height: 1.8;
+            color: #555;
         }
 
-        .faq-item__answer-text strong {
-            font-weight: 700;
-            color: #222;
+        .faq-item__a-text a {
+            color: #2B7CBC;
+            text-decoration: underline;
         }
 
         /* ===== CTA ===== */
@@ -555,156 +548,152 @@
                         ガス導入をご検討中の<strong>法人・事業者さま</strong>から、よくいただくご質問をまとめました。
                     </p>
 
-                    <div class="faq-list">
-
-                        <!-- Q1 -->
-                        <div class="faq-item is-open">
-                            <button class="faq-item__question" onclick="this.parentElement.classList.toggle('is-open')">
-                                <span class="faq-item__q-badge">Q</span>
-                                都市ガスとLPガス、どちらを使えるか分かりません。
-                                <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" width="20" height="20">
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div class="faq-item__answer">
-                                <div class="faq-item__answer-inner">
-                                    <span class="faq-item__a-badge">A</span>
-                                    <p class="faq-item__answer-text">
-                                        ご住所・建物の場所をお知らせいただければ、<strong>供給エリアを無料で調査</strong>いたします。<br>
-                                        都市ガス導管が敷設されていない場合でも、<strong>LPガスでの供給が可能</strong>です。<br>
-                                        供給方法・コスト・設置条件に応じて最適なプランをご案内いたします。
-                                    </p>
+                    <!-- Q1 -->
+                    <div class="faq-item">
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">都市ガスとLPガス、どちらを使えるか分かりません。</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">
+                                    ご住所・建物の場所をお知らせいただければ、<strong>供給エリアを無料で調査</strong>いたします。<br>
+                                    都市ガス導管が敷設されていない場合でも、<strong>LPガスでの供給が可能</strong>です。<br>
+                                    供給方法・コスト・設置条件に応じて最適なプランをご案内いたします。
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Q2 -->
-                        <div class="faq-item">
-                            <button class="faq-item__question" onclick="this.parentElement.classList.toggle('is-open')">
-                                <span class="faq-item__q-badge">Q</span>
-                                見積や相談だけでも対応してもらえますか？
-                                <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" width="20" height="20">
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div class="faq-item__answer">
-                                <div class="faq-item__answer-inner">
-                                    <span class="faq-item__a-badge">A</span>
-                                    <p class="faq-item__answer-text">
-                                        はい。<strong>ご相談・お見積り・現地調査はすべて無料</strong>で承っております。<br>
-                                        初期費用やランニングコストの比較提案も可能です。お気軽にご相談ください。
-                                    </p>
+                    <!-- Q2 -->
+                    <div class="faq-item">
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">見積や相談だけでも対応してもらえますか？</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">
+                                    はい。<strong>ご相談・お見積り・現地調査はすべて無料</strong>で承っております。<br>
+                                    初期費用やランニングコストの比較提案も可能です。お気軽にご相談ください。
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Q3 -->
-                        <div class="faq-item">
-                            <button class="faq-item__question" onclick="this.parentElement.classList.toggle('is-open')">
-                                <span class="faq-item__q-badge">Q</span>
-                                店舗の新築・移転時にガスを引き込みたいのですが？
-                                <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" width="20" height="20">
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div class="faq-item__answer">
-                                <div class="faq-item__answer-inner">
-                                    <span class="faq-item__a-badge">A</span>
-                                    <p class="faq-item__answer-text">
-                                        新築・移転時の<strong>導管引込工事や設備導入</strong>も対応可能です。<br>
-                                        建築図面（平面・立面）や使用予定のガス機器情報をもとに、<strong>配管ルートやメーター位置</strong>を含めた最適な工事計画をご提案します。
-                                    </p>
+                    <!-- Q3 -->
+                    <div class="faq-item">
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">店舗の新築・移転時にガスを引き込みたいのですが？</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">
+                                    新築・移転時の<strong>導管引込工事や設備導入</strong>も対応可能です。<br>
+                                    建築図面（平面・立面）や使用予定のガス機器情報をもとに、<strong>配管ルートやメーター位置</strong>を含めた最適な工事計画をご提案します。
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Q4 -->
-                        <div class="faq-item">
-                            <button class="faq-item__question" onclick="this.parentElement.classList.toggle('is-open')">
-                                <span class="faq-item__q-badge">Q</span>
-                                どのような業務用ガス機器を扱っていますか？
-                                <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" width="20" height="20">
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div class="faq-item__answer">
-                                <div class="faq-item__answer-inner">
-                                    <span class="faq-item__a-badge">A</span>
-                                    <p class="faq-item__answer-text">
-                                        <strong>厨房機器</strong>（業務用コンロ・スチコン）、<strong>ガス給湯器</strong>、乾燥機、暖房設備など、用途に応じた機器をご提案可能です。<br>
-                                        必要に応じて<strong>「設置・試運転・修理」まで対応</strong>いたします。
-                                    </p>
+                    <!-- Q4 -->
+                    <div class="faq-item">
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">どのような業務用ガス機器を扱っていますか？</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">
+                                    <strong>厨房機器</strong>（業務用コンロ・スチコン）、<strong>ガス給湯器</strong>、乾燥機、暖房設備など、用途に応じた機器をご提案可能です。<br>
+                                    必要に応じて<strong>「設置・試運転・修理」まで対応</strong>いたします。
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Q5 -->
-                        <div class="faq-item">
-                            <button class="faq-item__question" onclick="this.parentElement.classList.toggle('is-open')">
-                                <span class="faq-item__q-badge">Q</span>
-                                LPガスから都市ガスに切り替える場合の流れは？
-                                <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" width="20" height="20">
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div class="faq-item__answer">
-                                <div class="faq-item__answer-inner">
-                                    <span class="faq-item__a-badge">A</span>
-                                    <p class="faq-item__answer-text">
-                                        まずは<strong>供給エリア内かどうかの確認</strong>後、切替に伴う配管・機器の見直しをご提案します。<br>
-                                        既存機器が都市ガス非対応の場合は交換が必要ですが、<strong>費用や施工期間</strong>についても合わせてご案内します。
-                                    </p>
+                    <!-- Q5 -->
+                    <div class="faq-item">
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">LPガスから都市ガスに切り替える場合の流れは？</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">
+                                    まずは<strong>供給エリア内かどうかの確認</strong>後、切替に伴う配管・機器の見直しをご提案します。<br>
+                                    既存機器が都市ガス非対応の場合は交換が必要ですが、<strong>費用や施工期間</strong>についても合わせてご案内します。
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Q6 -->
-                        <div class="faq-item">
-                            <button class="faq-item__question" onclick="this.parentElement.classList.toggle('is-open')">
-                                <span class="faq-item__q-badge">Q</span>
-                                複数拠点を一括管理できますか？
-                                <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" width="20" height="20">
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div class="faq-item__answer">
-                                <div class="faq-item__answer-inner">
-                                    <span class="faq-item__a-badge">A</span>
-                                    <p class="faq-item__answer-text">
-                                        はい。店舗・施設が複数ある場合も<strong>契約・請求の一元化</strong>や料金相談が可能です。<br>
-                                        拠点ごとの供給形態や導入状況に応じて<strong>最適化をご提案</strong>いたします。
-                                    </p>
+                    <!-- Q6 -->
+                    <div class="faq-item">
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">複数拠点を一括管理できますか？</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">
+                                    はい。店舗・施設が複数ある場合も<strong>契約・請求の一元化</strong>や料金相談が可能です。<br>
+                                    拠点ごとの供給形態や導入状況に応じて<strong>最適化をご提案</strong>いたします。
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Q7 -->
-                        <div class="faq-item">
-                            <button class="faq-item__question" onclick="this.parentElement.classList.toggle('is-open')">
-                                <span class="faq-item__q-badge">Q</span>
-                                補助金や助成金を使った導入は可能ですか？
-                                <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" width="20" height="20">
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div class="faq-item__answer">
-                                <div class="faq-item__answer-inner">
-                                    <span class="faq-item__a-badge">A</span>
-                                    <p class="faq-item__answer-text">
-                                        対象となる機器や工事については、<strong>国・自治体の補助金制度の活用が可能</strong>な場合があります。<br>
-                                        <strong>申請サポート</strong>や、導入時期の調整についてもご案内いたします（年度や自治体により異なります）。
-                                    </p>
+                    <!-- Q7 -->
+                    <div class="faq-item">
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">補助金や助成金を使った導入は可能ですか？</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">
+                                    対象となる機器や工事については、<strong>国・自治体の補助金制度の活用が可能</strong>な場合があります。<br>
+                                    <strong>申請サポート</strong>や、導入時期の調整についてもご案内いたします（年度や自治体により異なります）。
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="page-cta">
@@ -796,6 +785,13 @@
             <p class="pv-footer__copy">&copy; BoshuGas.inc</p>
         </div>
     </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            item.classList.toggle('is-open');
+        }
+    </script>
 
 </body>
 
