@@ -833,6 +833,111 @@
                 height: 120px;
             }
         }
+
+        /* ===== 本文リスト強化 ===== */
+        .c-info-block__list--strong {
+            padding: 20px 24px 20px 28px !important;
+            background: #FFFBF0;
+        }
+
+        .c-info-block__list--strong li {
+            font-size: 16px !important;
+            font-weight: 600;
+            color: #333;
+            line-height: 2.0;
+            padding: 4px 0;
+            list-style: none;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .c-info-block__list--strong li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2B7CBC;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* ===== FAQアコーディオン ===== */
+        .faq-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            cursor: pointer;
+            background: #fff;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #0068b7;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .faq-question__arrow {
+            margin-left: auto;
+            transition: transform 0.3s;
+            fill: #999;
+        }
+
+        .faq-item.is-open .faq-question__arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px 60px;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .faq-item.is-open .faq-answer {
+            display: block;
+        }
+
+        .faq-answer__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #f39c12;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-right: 8px;
+        }
     </style>
 </head>
 
@@ -965,7 +1070,7 @@
 
                     <div class="c-info-block">
                         <p class="c-info-block__label">【このような場合にご相談ください】</p>
-                        <ul class="c-info-block__list">
+                        <ul class="c-info-block__list c-info-block__list--strong">
                             <li>新しく家を建てる（戸建・集合住宅）</li>
                             <li>リフォームでガス設備を変更・追加したい</li>
                             <li>建て替えに伴うガス配管の移設</li>
@@ -1065,19 +1170,46 @@
                     <h3 class="c-heading3">よくあるご質問</h3>
                     <p class="c-sub-catch">新築・リフォーム時のガスに関するご質問</p>
 
-                    <div class="c-info-block">
-                        <p class="c-info-block__label">【Q. どのタイミングで相談すればいいですか？】</p>
-                        <p class="c-info-block__text">建築設計が固まる前（図面ができる頃）のご相談をおすすめします。</p>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-question__icon">Q</span>
+                            <span>どのタイミングで相談すればいいですか？</span>
+                            <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <span class="faq-answer__icon">A</span>
+                            建築設計が固まる前（図面ができる頃）のご相談をおすすめします。早めにご連絡いただければ、配管ルートの最適化や機器選定もスムーズに進められます。
+                        </div>
                     </div>
 
-                    <div class="c-info-block">
-                        <p class="c-info-block__label">【Q. 建設会社や工務店とのやりとりは代行してくれますか？】</p>
-                        <p class="c-info-block__text">必要に応じて弊社から直接連絡・調整も可能です。</p>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-question__icon">Q</span>
+                            <span>建設会社や工務店とのやりとりは代行してくれますか？</span>
+                            <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <span class="faq-answer__icon">A</span>
+                            必要に応じて弊社から直接連絡・調整も可能です。建設会社様との打ち合わせへの同席もご相談ください。
+                        </div>
                     </div>
 
-                    <div class="c-info-block">
-                        <p class="c-info-block__label">【Q. LPガスから都市ガスへ切替えはできますか？】</p>
-                        <p class="c-info-block__text">対象エリアであれば可能です。切替にかかる工事・費用もご説明します。</p>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span class="faq-question__icon">Q</span>
+                            <span>LPガスから都市ガスへ切替えはできますか？</span>
+                            <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <span class="faq-answer__icon">A</span>
+                            対象エリアであれば可能です。切替にかかる工事・費用もご説明します。まずはお気軽にお問い合わせください。
+                        </div>
                     </div>
 
 
@@ -1159,6 +1291,13 @@
             <p class="pv-footer__copy">&copy; BoshuGas.inc</p>
         </div>
     </footer>
+
+    <script>
+        function toggleFAQ(btn) {
+            const item = btn.closest('.faq-item');
+            item.classList.toggle('is-open');
+        }
+    </script>
 
 </body>
 
