@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【プレビュー】法人 – ガス料金 – 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- 本番テーマCSS -->
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <style>
+        .preview-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 32px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            background-color: #F3F6F9;
+        }
+
+        .subpage__content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px 56px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+            max-width: 900px;
+            margin: 40px auto 60px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .c-text {
+            font-size: 16px;
+            line-height: 2.0;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .c-heading2 {
+            margin-top: 64px;
+        }
+
+        .c-heading2:first-child {
+            margin-top: 0;
+        }
+
+        .c-heading3 {
+            margin-top: 64px;
+        }
+
+        .c-heading3:first-child {
+            margin-top: 0;
+        }
+
+        .subpage__body {
+            padding: 48px 0 80px;
+        }
+
+        /* サイドメニュー非表示・コンテンツフル幅 */
+        .subpage__sidebar {
+            display: none !important;
+        }
+
+        .subpage__content {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* Typography hierarchy */
+        .subpage__content .c-heading2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #244967;
+            border-bottom: 3px solid #2B7CBC;
+            padding-bottom: 12px;
+        }
+
+        .subpage__content .c-heading3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, #244967 0%, #2B7CBC 100%);
+            padding: 14px 24px;
+            border-radius: 6px;
+            border-left: none;
+            margin-left: -48px;
+            margin-right: -48px;
+            padding-left: 48px;
+        }
+
+        .c-lead {
+            font-size: 20px;
+            font-weight: 500;
+            color: #444;
+            text-align: center;
+            line-height: 1.8;
+            margin: 24px 0 8px;
+        }
+
+        .c-lead__em {
+            color: #2B7CBC;
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .c-text-accent {
+            color: #2B7CBC;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        .c-text-em {
+            color: #244967;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        /* ===== 計算式ビジュアル（本番風カラフル） ===== */
+        .price-formula-v2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 32px 0 16px;
+            flex-wrap: wrap;
+        }
+
+        .price-formula-v2__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px;
+            height: 80px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .price-formula-v2__box--result {
+            background: linear-gradient(135deg, #2e8b57, #3cb371);
+            color: #fff;
+        }
+
+        .price-formula-v2__box--base {
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            color: #fff;
+        }
+
+        .price-formula-v2__box--unit {
+            background: linear-gradient(135deg, #00a99d, #5bc5bb);
+            color: #fff;
+        }
+
+        .price-formula-v2__box--usage {
+            background: linear-gradient(135deg, #00a99d, #5bc5bb);
+            color: #fff;
+        }
+
+        .price-formula-v2__main {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .price-formula-v2__sub {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .price-formula-v2__op {
+            font-size: 32px;
+            font-weight: 900;
+            color: #333;
+        }
+
+        .price-formula-v2__note {
+            font-size: 13px;
+            color: #e67e22;
+            font-weight: 600;
+            text-align: center;
+            margin: 8px 0 32px;
+        }
+
+        /* ===== 料金テーブル ===== */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .price-table thead th {
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .price-table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .price-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .price-table tbody tr:hover {
+            background: #e8f4fd;
+            transition: background 0.2s;
+        }
+
+        .price-table .price-highlight {
+            font-weight: 700;
+            color: #0068b7;
+        }
+
+        /* ===== 料金種別タブ（都市ガス内の01-04） ===== */
+        .rate-tabs {
+            display: flex;
+            gap: 0;
+            margin: 24px 0 0;
+            border-bottom: 2px solid #0068b7;
+        }
+
+        .rate-tabs__btn {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-right: 4px;
+        }
+
+        .rate-tabs__btn:hover {
+            background: #e8f4fd;
+            color: #0068b7;
+        }
+
+        .rate-tabs__btn.is-active {
+            background: #0068b7;
+            color: #fff;
+            border-color: #0068b7;
+        }
+
+        .rate-panel {
+            display: none;
+            padding: 24px 0;
+        }
+
+        .rate-panel.is-active {
+            display: block;
+        }
+
+        .rate-panel__title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0068b7;
+            margin: 0 0 16px;
+        }
+
+        /* ===== アコーディオン ===== */
+        .gp-accordion {
+            border: 1px solid #e0e0e0;
+            border-radius: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .gp-accordion:first-of-type {
+            border-radius: 4px 4px 0 0;
+        }
+
+        .gp-accordion:last-of-type {
+            border-radius: 0 0 4px 4px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .gp-accordion__trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            cursor: pointer;
+            background: #fff;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            transition: background 0.2s;
+        }
+
+        .gp-accordion__trigger:hover {
+            background: #f8f9fa;
+        }
+
+        .gp-accordion__trigger--blue {
+            background: #e8f4fd;
+        }
+
+        .gp-accordion__trigger--blue:hover {
+            background: #d4ecfa;
+        }
+
+        .gp-accordion__arrow {
+            transition: transform 0.3s;
+            fill: #999;
+            flex-shrink: 0;
+        }
+
+        .gp-accordion.is-open .gp-accordion__arrow {
+            transform: rotate(180deg);
+        }
+
+        .gp-accordion__body {
+            display: none;
+            padding: 24px;
+            border-top: 1px solid #eee;
+        }
+
+        .gp-accordion.is-open .gp-accordion__body {
+            display: block;
+        }
+
+        /* ===== 原料価格算出期間チャート ===== */
+        .timeline-chart {
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .timeline-chart__title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 24px;
+        }
+
+        .timeline-chart__row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .timeline-chart__label {
+            width: 140px;
+            text-align: right;
+            padding-right: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            flex-shrink: 0;
+        }
+
+        .timeline-chart__months {
+            display: flex;
+            flex: 1;
+            gap: 2px;
+        }
+
+        .timeline-chart__month {
+            flex: 1;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            background: #f0f0f0;
+            border-radius: 2px;
+        }
+
+        .timeline-chart__month--active {
+            background: #0068b7;
+            color: #fff;
+        }
+
+        .timeline-chart__month--light {
+            background: #8ec4e8;
+            color: #fff;
+        }
+
+        .timeline-chart__legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .timeline-chart__legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .timeline-chart__legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+
+        .timeline-chart__legend-color--dark {
+            background: #0068b7;
+        }
+
+        .timeline-chart__legend-color--light {
+            background: #8ec4e8;
+        }
+
+        /* ===== info-block ===== */
+        .c-info-block:not(.c-info-block--highlight) {
+            background: #fff;
+            border: 1px solid #E0E5EC;
+            border-left: 4px solid #2B7CBC;
+            border-radius: 0 8px 8px 0;
+            padding: 0;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .c-info-block:not(.c-info-block--highlight) .c-info-block__label {
+            background: linear-gradient(135deg, #244967, #2B7CBC);
+            color: #fff !important;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 10px 20px;
+            margin: 0;
+        }
+
+        .c-info-block__text,
+        .c-info-block__list {
+            padding: 16px 24px;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333;
+            background: #FFFBF0;
+        }
+
+        /* ===== ページヘッダー写真背景 ===== */
+        .page-header--hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url('images/hero_banner.png') center/cover no-repeat;
+            padding: 60px 0;
+        }
+
+        .page-header--hero .page-header__title {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header--hero .page-header__title::after {
+            background: #fff;
+        }
+
+        /* ===== pv-ヘッダー（本番風） ===== */
+        .pv-header {
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 100;
+        }
+
+        .pv-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            gap: 16px;
+        }
+
+        .pv-header__logo {
+            flex-shrink: 0;
+        }
+
+        .pv-header__logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .pv-header__nav {
+            display: flex;
+            gap: 24px;
+            margin-left: auto;
+        }
+
+        .pv-header__nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .pv-header__nav a:hover {
+            color: #0068b7;
+        }
+
+        .pv-header__contact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: 24px;
+        }
+
+        .pv-header__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #0068b7;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .pv-header__contact-btn {
+            background: #0068b7;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* サブナビ */
+        .pv-subnav {
+            background: #0068b7;
+        }
+
+        .pv-subnav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 20px;
+        }
+
+        .pv-subnav__item {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 12px 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .pv-subnav__item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .pv-subnav__item.is-active {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: 700;
+        }
+
+        /* ===== pv-フッター（本番風） ===== */
+        .pv-footer {
+            margin-top: 60px;
+        }
+
+        .pv-footer__cta {
+            background: #0068b7;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .pv-footer__main {
+            background: #244967;
+        }
+
+        .pv-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 40px 20px;
+        }
+
+        .pv-footer__character {
+            flex-shrink: 0;
+        }
+
+        .pv-footer__character img {
+            width: 100px;
+            height: auto;
+        }
+
+        .pv-footer__info {
+            flex: 1;
+        }
+
+        .pv-footer__logo {
+            height: 32px;
+            width: auto;
+            margin-bottom: 8px;
+        }
+
+        .pv-footer__address {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .pv-footer__actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .pv-footer__phone {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        .pv-footer__contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            color: #0068b7;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .pv-footer__bottom {
+            background: #1a3548;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .pv-footer__bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .pv-footer__copy {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* ===== お問い合わせセクション（本番デザイン） ===== */
+        .pv-contact-section {
+            background: #e8f2f8;
+            padding: 60px 20px;
+        }
+
+        .pv-contact-section__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+            margin: 0 0 16px;
+            letter-spacing: 0.1em;
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 700;
+            color: #0068b7;
+            text-decoration: none;
+            margin-bottom: 8px;
+        }
+
+        .pv-contact-section__phone:hover {
+            opacity: 0.8;
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 4px;
+        }
+
+        .pv-contact-section__note {
+            font-size: 12px;
+            color: #888;
+            margin: 0 0 20px;
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .pv-contact-section__btn:hover {
+            background: #005a9e;
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0;
+        }
+
+        .pv-contact-section__character img {
+            height: 160px;
+            width: auto;
+        }
+
+        /* ===== レスポンシブ ===== */
+        @media (max-width: 768px) {
+            .price-formula-v2 {
+                gap: 6px;
+            }
+
+            .price-formula-v2__box {
+                min-width: 80px;
+                height: 60px;
+                padding: 8px 12px;
+            }
+
+            .price-formula-v2__main {
+                font-size: 16px;
+            }
+
+            .price-formula-v2__op {
+                font-size: 22px;
+            }
+
+            .pv-contact-section__inner {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .pv-contact-section__phone {
+                font-size: 28px;
+            }
+
+            .pv-contact-section__character img {
+                height: 120px;
+            }
+
+            .timeline-chart__label {
+                width: 100px;
+                font-size: 11px;
+            }
+
+            .timeline-chart__month {
+                font-size: 10px;
+                padding: 6px 0;
+            }
+
+            .subpage__content {
+                padding: 24px 16px 40px;
+            }
+
+            .subpage__content .c-heading3 {
+                margin-left: -16px;
+                margin-right: -16px;
+                padding-left: 16px;
+            }
+
+            .rate-tabs {
+                flex-wrap: wrap;
+            }
+
+            .rate-tabs__btn {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+
+        /* ===== 注意テキスト ===== */
+        .price-note {
+            font-size: 13px;
+            color: #888;
+            margin: 8px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preview-badge">🔖 改修プレビュー — 法人 – ガス料金</div>
+
+    <header class="pv-header">
+        <div class="pv-header__inner">
+            <div class="pv-header__logo">
+                <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg"
+                    alt="房州ガス株式会社">
+            </div>
+            <nav class="pv-header__nav">
+                <a href="https://boushugas.co.jp/wp2026/personal/">個人のお客様へ</a>
+                <a href="https://boushugas.co.jp/wp2026/corporate/">法人のお客様へ</a>
+                <a href="https://boushugas.co.jp/wp2026/trouble/">お困りの時は</a>
+                <a href="https://boushugas.co.jp/wp2026/gas-appliances/">ガス機器</a>
+                <a href="https://boushugas.co.jp/wp2026/safety/">安全・工事</a>
+                <a href="https://boushugas.co.jp/wp2026/environment/">その他</a>
+            </nav>
+            <div class="pv-header__contact">
+                <a href="tel:0470-22-2251" class="pv-header__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-header__contact-btn">お問い合わせ</a>
+            </div>
+        </div>
+        <div class="pv-subnav">
+            <div class="pv-subnav__inner">
+                <span class="pv-subnav__item">個人のお客様へ</span>
+                <span class="pv-subnav__item is-active">法人のお客様へ</span>
+                <span class="pv-subnav__item">お困りの時は</span>
+                <span class="pv-subnav__item">ガス機器について</span>
+                <span class="pv-subnav__item">安全・工事関連</span>
+                <a href="https://boushugas.co.jp/wp2026/environment" class="pv-subnav__item">環境・地域の取り組み</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main subpage">
+
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
+                    <li class="breadcrumb__item"><a href="#">法人のお客様へ</a></li>
+                    <li class="breadcrumb__item">ガス料金</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- ① ヘッダー画像（gas-applicationと同様） -->
+        <div class="page-header page-header--hero">
+            <div class="container">
+                <h1 class="page-header__title">ガス料金</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="subpage__body">
+
+                <aside class="subpage__sidebar">
+                    <nav class="side-nav">
+                        <div class="side-nav__item">
+                            <a href="preview-gas-application.html" class="side-nav__link">ガス使用のお申込み・解約</a>
+                        </div>
+                        <div class="side-nav__item">
+                            <a href="preview-construction-guide.html" class="side-nav__link">新築・リフォーム時のご案内</a>
+                        </div>
+                        <div class="side-nav__item is-active">
+                            <a href="#" class="side-nav__link">ガス料金</a>
+                        </div>
+                    </nav>
+                </aside>
+
+                <!-- ⑤ ページタブ削除（サブサブメニューなし） -->
+                <div class="subpage__content">
+
+                    <h2 class="c-heading2" style="text-align: center;">ガス料金</h2>
+
+                    <p class="c-lead">
+                        ガス料金は、<strong class="c-lead__em">基本料金</strong>と<strong
+                            class="c-lead__em">従量料金</strong>の合計で算定しています。
+                    </p>
+                    <p class="c-text" style="text-align: center;">
+                        「基本料金」はガスメーターや供給設備などの固定的な費用で、ガスのご使用の有無にかかわらず毎月一定額をお支払いいただきます。<br>
+                        「従量料金」はガスのご使用量に応じてお支払いいただく料金です。
+                    </p>
+
+                    <!-- ===== ④ 計算式ビジュアル（本番風カラフル版） ===== -->
+                    <h3 class="c-heading3">ガス料金の計算方法</h3>
+
+                    <div class="price-formula-v2">
+                        <div class="price-formula-v2__box price-formula-v2__box--result">
+                            <div class="price-formula-v2__main">ガス料金</div>
+                        </div>
+                        <div class="price-formula-v2__op">=</div>
+                        <div class="price-formula-v2__box price-formula-v2__box--base">
+                            <div class="price-formula-v2__main">基本料金</div>
+                            <div class="price-formula-v2__sub">（税込）</div>
+                        </div>
+                        <div class="price-formula-v2__op">＋</div>
+                        <div class="price-formula-v2__box price-formula-v2__box--unit">
+                            <div class="price-formula-v2__main">調整単位料金</div>
+                            <div class="price-formula-v2__sub">（税込）</div>
+                        </div>
+                        <div class="price-formula-v2__op">×</div>
+                        <div class="price-formula-v2__box price-formula-v2__box--usage">
+                            <div class="price-formula-v2__main">ガス使用量</div>
+                        </div>
+                    </div>
+                    <p class="price-formula-v2__note">※調整単位料金は、「原料費調整制度」により毎月変動します。</p>
+
+
+                    <!-- ===== 料金表（アコーディオン＝本番サイト構成） ===== -->
+                    <h3 class="c-heading3">料金表</h3>
+
+                    <!-- 都市ガス（アコーディオン・初期展開） -->
+                    <div class="gp-accordion is-open">
+                        <button class="gp-accordion__trigger" onclick="toggleAccordion(this)">
+                            <span>都市ガス</span>
+                            <svg class="gp-accordion__arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </button>
+                        <div class="gp-accordion__body">
+
+                            <p class="c-text" style="margin-bottom:8px;">
+                                都市ガス料金については、ガスのご利用状況に応じて、下記の種類があります。<br>なお、検針日の翌日から起算して20日を過ぎて料金をお支払いいただいた場合、3%の遅収料金を申し受けます。<br>（翌日のガス料金と合算請求となります）
+                            </p>
+
+                            <div class="rate-tabs">
+                                <button class="rate-tabs__btn is-active" onclick="switchRate(this, 'rate-general')">①
+                                    一般料金</button>
+                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-hotwater')">②
+                                    ガス温水暖房</button>
+                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-heating')">③
+                                    ガス暖房</button>
+                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-aircon')">④
+                                    小型空調専用</button>
+                            </div>
+
+                            <!-- ① 一般料金 -->
+                            <div id="rate-general" class="rate-panel is-active">
+                                <h4 class="rate-panel__title">① 一般料金（一般ガス小売約款）</h4>
+                                <p class="c-text" style="margin-bottom:16px;">一般のお客さまにガスを供給する場合の契約です。</p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
+                                <table class="price-table">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">使用量区分</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0-20m³</td>
+                                            <td class="price-highlight">774.40円</td>
+                                            <td class="price-highlight">290.40円</td>
+                                            <td rowspan="3">16.65円</td>
+                                            <td rowspan="3">32.11円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-200m³</td>
+                                            <td class="price-highlight">1,309.00円</td>
+                                            <td class="price-highlight">263.67円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>201m³-</td>
+                                            <td class="price-highlight">5,329.29円</td>
+                                            <td class="price-highlight">243.57円</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
+                                <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
+                            </div>
+
+                            <!-- ② ガス温水暖房契約 -->
+                            <div id="rate-hotwater" class="rate-panel">
+                                <h4 class="rate-panel__title">② ガス温水暖房契約</h4>
+                                <p class="c-text" style="margin-bottom:4px;">ガスを熱源とした温水暖房をお使いのお客さまを対象としたお得なガス料金プランです。
+                                </p>
+                                <p class="price-note" style="margin-bottom:16px;">※ガス温水暖房契約の適用には条件があります。詳しくはお問い合わせください。
+                                </p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
+                                <table class="price-table">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">時期区分</th>
+                                            <th rowspan="2">使用量区分</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">冬期</td>
+                                            <td>0-20m³</td>
+                                            <td class="price-highlight">774.40円</td>
+                                            <td class="price-highlight">290.40円</td>
+                                            <td rowspan="6">16.65円</td>
+                                            <td rowspan="6">32.11円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-100m³</td>
+                                            <td class="price-highlight">2,642.00円</td>
+                                            <td class="price-highlight">197.00円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>101m³-</td>
+                                            <td class="price-highlight">5,592.00円</td>
+                                            <td class="price-highlight">167.50円</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3">冬期以外</td>
+                                            <td>0-20m³</td>
+                                            <td class="price-highlight">774.40円</td>
+                                            <td class="price-highlight">290.40円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-200m³</td>
+                                            <td class="price-highlight">1,309.00円</td>
+                                            <td class="price-highlight">263.67円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>201m³-</td>
+                                            <td class="price-highlight">5,329.29円</td>
+                                            <td class="price-highlight">243.57円</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
+                                <p class="price-note">※冬期とは12月〜3月までを言います。</p>
+                                <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
+                            </div>
+
+                            <!-- ③ ガス暖房契約 -->
+                            <div id="rate-heating" class="rate-panel">
+                                <h4 class="rate-panel__title">③ ガス暖房契約</h4>
+                                <p class="c-text" style="margin-bottom:4px;">
+                                    ガスを熱源とした暖房機器（ファンヒーター・ストーブ）をご使用されているお客さまを対象としたお得なガス料金プランです。</p>
+                                <p class="price-note" style="margin-bottom:16px;">※ガス暖房契約の適用には条件があります。詳しくはお問い合わせください。
+                                </p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
+                                <table class="price-table">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">時期区分</th>
+                                            <th rowspan="2">使用量区分</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="3">冬期</td>
+                                            <td>0-20m³</td>
+                                            <td class="price-highlight">774.40円</td>
+                                            <td class="price-highlight">290.40円</td>
+                                            <td rowspan="6">16.65円</td>
+                                            <td rowspan="6">32.11円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-80m³</td>
+                                            <td class="price-highlight">2,450.00円</td>
+                                            <td class="price-highlight">206.58円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>81m³-</td>
+                                            <td class="price-highlight">3,300.00円</td>
+                                            <td class="price-highlight">195.95円</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3">冬期以外</td>
+                                            <td>0-20m³</td>
+                                            <td class="price-highlight">774.40円</td>
+                                            <td class="price-highlight">290.40円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-200m³</td>
+                                            <td class="price-highlight">1,309.00円</td>
+                                            <td class="price-highlight">263.67円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>201m³-</td>
+                                            <td class="price-highlight">5,329.29円</td>
+                                            <td class="price-highlight">243.57円</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
+                                <p class="price-note">※冬期とは12月〜3月までを言います。</p>
+                                <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
+                            </div>
+
+                            <!-- ④ 小型空調専用契約 -->
+                            <div id="rate-aircon" class="rate-panel">
+                                <h4 class="rate-panel__title">④ 小型空調専用契約</h4>
+                                <p class="c-text" style="margin-bottom:4px;">ガス空調をお使いのお客さまを対象としたお得なガス料金プランです。</p>
+                                <p class="price-note" style="margin-bottom:16px;">※小型空調専用契約の適用には条件があります。詳しくはお問い合わせください。
+                                </p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
+                                <table class="price-table">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">時期区分</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>冬期</td>
+                                            <td class="price-highlight">2,530.00円</td>
+                                            <td class="price-highlight">148.73円</td>
+                                            <td rowspan="2">16.65円</td>
+                                            <td rowspan="2">32.11円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>冬期以外</td>
+                                            <td class="price-highlight">2,530.00円</td>
+                                            <td class="price-highlight">126.72円</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
+                                <p class="price-note">※冬期とは12月〜3月までを言います。</p>
+                                <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- プロパンガス -->
+                    <div class="gp-accordion">
+                        <button class="gp-accordion__trigger" onclick="toggleAccordion(this)">
+                            <span>プロパンガス</span>
+                            <svg class="gp-accordion__arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </button>
+                        <div class="gp-accordion__body">
+                            <p class="c-text" style="font-size:14px;margin-bottom:8px;">
+                                プロパンガス料金は、ガスの使用に関係なくかかる基本料金と、使用量に応じてお支払いいただく従量料金から構成されています。
+                            </p>
+                            <div class="price-formula-v2" style="margin:16px 0 24px;">
+                                <div class="price-formula-v2__box price-formula-v2__box--result"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">ガス料金</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">=</div>
+                                <div class="price-formula-v2__box price-formula-v2__box--base"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">基本料金</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">＋</div>
+                                <div class="price-formula-v2__box price-formula-v2__box--unit"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">従量料金</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">×</div>
+                                <div class="price-formula-v2__box price-formula-v2__box--usage"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">使用量</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">＋</div>
+                                <div class="price-formula-v2__box"
+                                    style="min-width:100px;height:60px;background:linear-gradient(135deg,#e67e22,#f39c12);color:#fff;border-radius:10px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">消費税</div>
+                                </div>
+                            </div>
+                            <p class="price-note" style="text-align:center;margin-bottom:24px;">※「従量料金×使用量」は使用量区分ごとの合計
+                            </p>
+
+                            <h4 class="rate-panel__title">ガス料金表（税抜　令和8年3月現在）</h4>
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>使用量区分</th>
+                                        <th>基本料金</th>
+                                        <th>従量料金</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0.0〜20.0m³</td>
+                                        <td rowspan="4" class="price-highlight">1,700円</td>
+                                        <td class="price-highlight">660円</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20.1〜25.0m³</td>
+                                        <td class="price-highlight">650円</td>
+                                    </tr>
+                                    <tr>
+                                        <td>25.1〜30.0m³</td>
+                                        <td class="price-highlight">630円</td>
+                                    </tr>
+                                    <tr>
+                                        <td>30.1m³〜</td>
+                                        <td class="price-highlight">540円</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="price-note">※プロパンガス1m³当たりの熱量は100MJ（24,000kcal）です。</p>
+                            <p class="price-note">※従量料金は使用量区分ごとに計算した値の合計となります。</p>
+                            <p class="price-note">※例えば、23m³ご使用の場合には次のような計算になります。</p>
+                            <p class="price-note" style="padding-left:16px;">
+                                基本料金＋使用量区分0-20m³の従量料金×20m³＋使用量区分21-25m³の従量料金×3m³＋消費税</p>
+                            <p class="price-note">
+                                ※2026年4月検針分のガス料金につきましては、「千葉県LPガス料金負担軽減支援事業」により、ご契約件数1件につき、上記料金表にて算定されるご請求額から1ヶ月あたり1,500円（税別）を上限として値引きさせていただきます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 原料費調整制度について -->
+                    <div class="gp-accordion">
+                        <button class="gp-accordion__trigger gp-accordion__trigger--blue"
+                            onclick="toggleAccordion(this)">
+                            <span>原料費調整制度について</span>
+                            <svg class="gp-accordion__arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                        </button>
+                        <div class="gp-accordion__body">
+                            <p class="c-text">
+                                都市ガスの原料となる液化天然ガス（LNG）の価格変動に応じて、毎月自動的にガス料金を調整する制度です。
+                            </p>
+
+                            <div class="c-info-block" style="margin-top:20px;">
+                                <p class="c-info-block__label">原料費調整額の計算</p>
+                                <p class="c-info-block__text">
+                                    📊 原料費調整額 ＝ 原料費調整単価 × ご使用量<br>
+                                    原料費調整単価は、3ヵ月間の平均原料価格をもとに毎月算出されます。
+                                </p>
+                            </div>
+
+                            <!-- 原料価格の算出期間チャート -->
+                            <div class="timeline-chart">
+                                <h4 class="timeline-chart__title">原料価格の算出期間</h4>
+                                <div class="timeline-chart__row">
+                                    <div class="timeline-chart__label">原料価格の平均</div>
+                                    <div class="timeline-chart__months">
+                                        <div class="timeline-chart__month">1月</div>
+                                        <div class="timeline-chart__month">2月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--active">3月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--active">4月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--active">5月</div>
+                                        <div class="timeline-chart__month">6月</div>
+                                        <div class="timeline-chart__month">7月</div>
+                                        <div class="timeline-chart__month">8月</div>
+                                        <div class="timeline-chart__month">9月</div>
+                                        <div class="timeline-chart__month">10月</div>
+                                        <div class="timeline-chart__month">11月</div>
+                                        <div class="timeline-chart__month">12月</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-chart__row">
+                                    <div class="timeline-chart__label">ガス料金への適用</div>
+                                    <div class="timeline-chart__months">
+                                        <div class="timeline-chart__month">1月</div>
+                                        <div class="timeline-chart__month">2月</div>
+                                        <div class="timeline-chart__month">3月</div>
+                                        <div class="timeline-chart__month">4月</div>
+                                        <div class="timeline-chart__month">5月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--light">6月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--active">7月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--active">8月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--active">9月</div>
+                                        <div class="timeline-chart__month timeline-chart__month--light">10月</div>
+                                        <div class="timeline-chart__month">11月</div>
+                                        <div class="timeline-chart__month">12月</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-chart__legend">
+                                    <div class="timeline-chart__legend-item">
+                                        <div class="timeline-chart__legend-color timeline-chart__legend-color--dark">
+                                        </div>
+                                        原料価格の平均
+                                    </div>
+                                    <div class="timeline-chart__legend-item">
+                                        <div class="timeline-chart__legend-color timeline-chart__legend-color--light">
+                                        </div>
+                                        翌月価格の平均
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== お問い合わせセクション（本番デザイン） ===== -->
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p>
+                <a href="tel:0470-22-2251" class="pv-contact-section__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                        </path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    お問い合わせはこちら
+                </a>
+            </div>
+            <div class="pv-contact-section__character">
+                <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター">
+            </div>
+        </div>
+    </section>
+
+    <footer class="pv-footer">
+        <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
+        <div class="pv-footer__main">
+            <div class="pv-footer__inner">
+                <div class="pv-footer__character">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                        alt="房州ガスキャラクター">
+                </div>
+                <div class="pv-footer__info">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo-white.svg"
+                        alt="房州ガス株式会社" class="pv-footer__logo">
+                    <p class="pv-footer__address">千葉県館山市北条1014番地</p>
+                </div>
+                <div class="pv-footer__actions">
+                    <a href="tel:0470-22-2251" class="pv-footer__phone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        0470-22-2251
+                    </a>
+                    <a href="https://boushugas.co.jp/wp2026/contact" class="pv-footer__contact-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pv-footer__bottom">
+            <a href="https://boushugas.co.jp/wp2026/privacy">個人情報の取り扱いについて</a>
+            <a href="https://boushugas.co.jp/wp2026/company">会社案内</a>
+            <p class="pv-footer__copy">&copy; BoshuGas.inc</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(btn) {
+            const item = btn.closest('.gp-accordion');
+            item.classList.toggle('is-open');
+        }
+
+        function switchRate(btn, panelId) {
+            // タブ切替
+            document.querySelectorAll('.rate-tabs__btn').forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            // パネル切替
+            document.querySelectorAll('.rate-panel').forEach(p => p.classList.remove('is-active'));
+            document.getElementById(panelId).classList.add('is-active');
+        }
+    </script>
+
+</body>
+
+</html>
