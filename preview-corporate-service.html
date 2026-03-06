@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【プレビュー】法人 – サービスのご案内 – 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <style>
+        .preview-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 32px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            background-color: #F3F6F9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .subpage__body {
+            padding: 48px 0 80px;
+        }
+
+        .subpage__content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px 56px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .subpage__content .c-heading2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #244967;
+            border-bottom: 3px solid #2B7CBC;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+
+        /* ===== ヘッダー ===== */
+        .pv-header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 32px;
+            z-index: 9999;
+        }
+
+        .pv-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+        }
+
+        .pv-header__logo {
+            height: 40px;
+        }
+
+        .pv-header__right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pv-header__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-header__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #244967;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-subnav {
+            background: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pv-subnav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            padding: 0 20px;
+        }
+
+        .pv-subnav__item {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            cursor: default;
+        }
+
+        .pv-subnav__item.is-active {
+            color: #2B7CBC;
+            font-weight: 700;
+            border-bottom-color: #2B7CBC;
+        }
+
+        .page-header--hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2B7CBC 60%, #5ba3d9 100%);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .page-header__title {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        .breadcrumb {
+            padding: 12px 0;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb__item a {
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .breadcrumb__item+.breadcrumb__item::before {
+            content: '>';
+            margin-right: 8px;
+            color: #aaa;
+        }
+
+        /* ===== 導入文 ===== */
+        .intro-text {
+            font-size: 15px;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* ===== サービスセクション ===== */
+        .service-section {
+            margin-bottom: 48px;
+        }
+
+        .service-section__num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: #2B7CBC;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 900;
+            border-radius: 50%;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        .service-section__title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #244967;
+            border-left: 4px solid #2B7CBC;
+            padding-left: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-section__lead {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: #f7f9fb;
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+        }
+
+        .info-box__title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box__title-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: #2B7CBC;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .info-box__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-box__list li {
+            padding: 6px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .info-box__list li::before {
+            content: '・';
+            position: absolute;
+            left: 0;
+            color: #2B7CBC;
+        }
+
+        .info-box--case {
+            background: #fdf8f0;
+            border-left: 4px solid #e67e22;
+        }
+
+        .info-box--case .info-box__title {
+            color: #e67e22;
+        }
+
+        .info-box--case .info-box__title-icon {
+            background: #e67e22;
+        }
+
+        .info-box--result {
+            background: #f0f7f0;
+            border-left: 4px solid #27ae60;
+        }
+
+        .info-box--result .info-box__title {
+            color: #27ae60;
+        }
+
+        .info-box--result .info-box__title-icon {
+            background: #27ae60;
+        }
+
+        /* ===== お問い合わせ・フッター ===== */
+        .pv-contact-section {
+            background: #EDF4F7;
+            padding: 48px 20px;
+            margin-top: 40px;
+        }
+
+        .pv-contact-section__inner {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+            flex: 1;
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            color: #244967;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 900;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pv-contact-section__note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: #244967;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0;
+        }
+
+        .pv-contact-section__character img {
+            width: 120px;
+            height: auto;
+        }
+
+        .pv-footer {
+            color: #fff;
+        }
+
+        .pv-footer__cta {
+            background: #2B7CBC;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-footer__main {
+            background: #244967;
+            padding: 32px 20px;
+        }
+
+        .pv-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .pv-footer__character img {
+            width: 80px;
+        }
+
+        .pv-footer__logo {
+            height: 32px;
+        }
+
+        .pv-footer__address {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .pv-footer__actions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .pv-footer__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .pv-footer__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .pv-footer__bottom {
+            background: #1a3a5c;
+            text-align: center;
+            padding: 16px;
+            font-size: 12px;
+        }
+
+        .pv-footer__bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .pv-footer__copy {
+            margin-top: 8px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preview-badge">🖊 改修プレビュー — 法人 – サービスのご案内</div>
+
+    <header class="pv-header">
+        <div class="pv-header__inner">
+            <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg" alt="房州ガス株式会社"
+                class="pv-header__logo">
+            <div class="pv-header__right">
+                <a href="tel:0470-22-2251" class="pv-header__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-header__contact-btn">お問い合わせ</a>
+            </div>
+        </div>
+        <div class="pv-subnav">
+            <div class="pv-subnav__inner">
+                <span class="pv-subnav__item">個人のお客様へ</span>
+                <span class="pv-subnav__item is-active">法人のお客様へ</span>
+                <span class="pv-subnav__item">お困りの時は</span>
+                <span class="pv-subnav__item">ガス機器について</span>
+                <span class="pv-subnav__item">安全・工事関連</span>
+                <a href="https://boushugas.co.jp/wp2026/environment" class="pv-subnav__item">環境・地域の取り組み</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main subpage">
+
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
+                    <li class="breadcrumb__item"><a href="#">法人のお客様</a></li>
+                    <li class="breadcrumb__item">サービスのご案内</li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="page-header page-header--hero">
+            <div class="container">
+                <h1 class="page-header__title">サービスのご案内</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="subpage__body">
+                <div class="subpage__content">
+
+                    <h2 class="c-heading2">サービスのご案内</h2>
+
+                    <p class="intro-text">
+                        房州ガスでは、地域の事業者さまに対し、安心・安全で効率的なガス供給とエネルギー活用のご提案を行っています。<br>
+                        飲食店、宿泊施設、医療・福祉施設、工場・倉庫など、業種に応じた最適なガス設備・機器導入をサポートいたします。
+                    </p>
+
+                    <!-- ===== 1. 都市ガス／LPガスの供給 ===== -->
+                    <div class="service-section">
+                        <h3 class="service-section__title">
+                            <span class="service-section__num">1</span>
+                            都市ガス／LPガスの供給
+                        </h3>
+                        <p class="service-section__lead">お客様の所在地や設備条件に応じて、都市ガスまたはLPガス（プロパンガス）いずれかを最適な形で供給いたします。</p>
+
+                        <div class="info-box">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 16v-4M12 8h.01" />
+                                    </svg>
+                                </span>
+                                都市ガスの特徴
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>地中配管による安定供給（供給区域あり）</li>
+                                <li>LPガスと比較してランニングコストが低い場合が多い</li>
+                                <li>大規模施設や工場におすすめ</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 16v-4M12 8h.01" />
+                                    </svg>
+                                </span>
+                                LPガスの特徴
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>配管不要・どの地域でも対応可能</li>
+                                <li>個別供給のため導入しやすい</li>
+                                <li>小規模店舗や郊外部エリアに最適</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </svg>
+                                </span>
+                                導入までのサポート
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>供給方式の無料相談</li>
+                                <li>導入プラン・初期工事費のご相談</li>
+                                <li>使用量に応じた料金プラン設計</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ===== 2. 業務用ガス機器のご提案 ===== -->
+                    <div class="service-section">
+                        <h3 class="service-section__title">
+                            <span class="service-section__num">2</span>
+                            業務用ガス機器のご提案
+                        </h3>
+
+                        <div class="info-box">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                                    </svg>
+                                </span>
+                                取り扱い機器例
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>ガスコンロ・オーブン・スチームコンベクション</li>
+                                <li>業務用給湯器・ガスボイラー</li>
+                                <li>ガス式乾燥機（コインランドリー・福祉施設向け）</li>
+                                <li>暖房・床暖房設備（ロビー・待合室向け）</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <polyline points="1 4 1 10 7 10" />
+                                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                                    </svg>
+                                </span>
+                                導入までの流れ
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>現地調査・ヒアリング</li>
+                                <li>用途・予算に応じた機器選定</li>
+                                <li>機器手配・設置・初期試運転</li>
+                                <li>取扱説明・アフター対応</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info-box--case">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                    </svg>
+                                </span>
+                                導入事例
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>【飲食店】旧型コンロ→高効率ガス機器に交換し、調理効率アップ</li>
+                                <li>【福祉施設】大型給湯器＋乾燥機を更新し、CO2対策と時短を両立</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ===== 3. エネルギー最適化 ===== -->
+                    <div class="service-section">
+                        <h3 class="service-section__title">
+                            <span class="service-section__num">3</span>
+                            エネルギー最適化（省エネ・補助金活用）
+                        </h3>
+                        <p class="service-section__lead">ガスの使い方や設備を見直すことで、光熱費の削減・環境負荷の軽減・安全性の向上が期待できます。</p>
+
+                        <div class="info-box">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg>
+                                </span>
+                                ご提案内容
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>使用量分析による最適なガス種・料金プランのご提案</li>
+                                <li>機器導入による高効率化・長寿命化（例：エコジョーズ・低NOxボイラー）</li>
+                                <li>給湯・空調の連携による無駄のないエネルギー活用</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    </svg>
+                                </span>
+                                補助金・助成制度へのサポート
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>導入機器が補助金対象となる場合はご案内</li>
+                                <li>申請手続きのサポートも行います（書類記入支援など）</li>
+                                <li>対象制度：省エネ設備導入支援／中小企業向け補助金など（※年度により異なります）</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info-box--result">
+                            <h4 class="info-box__title">
+                                <span class="info-box__title-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <line x1="12" y1="20" x2="12" y2="10" />
+                                        <line x1="18" y1="20" x2="18" y2="4" />
+                                        <line x1="6" y1="20" x2="6" y2="16" />
+                                    </svg>
+                                </span>
+                                導入効果の例
+                            </h4>
+                            <ul class="info-box__list">
+                                <li>ガスボイラー更新 → 年間光熱費 ▲15%</li>
+                                <li>LP→都市ガス切替＋機器更新 → CO2排出量 ▲20%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- お問い合わせ -->
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p>
+                <a href="tel:0470-22-2251" class="pv-contact-section__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    お問い合わせはこちら
+                </a>
+            </div>
+            <div class="pv-contact-section__character">
+                <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター">
+            </div>
+        </div>
+    </section>
+
+    <footer class="pv-footer">
+        <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
+        <div class="pv-footer__main">
+            <div class="pv-footer__inner">
+                <div class="pv-footer__character">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                        alt="房州ガスキャラクター">
+                </div>
+                <div class="pv-footer__info">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo-white.svg"
+                        alt="房州ガス株式会社" class="pv-footer__logo">
+                    <p class="pv-footer__address">千葉県館山市北条1014番地</p>
+                </div>
+                <div class="pv-footer__actions">
+                    <a href="tel:0470-22-2251" class="pv-footer__phone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        0470-22-2251
+                    </a>
+                    <a href="https://boushugas.co.jp/wp2026/contact" class="pv-footer__contact-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pv-footer__bottom">
+            <a href="https://boushugas.co.jp/wp2026/privacy">個人情報の取り扱いについて</a>
+            <a href="https://boushugas.co.jp/wp2026/company">会社案内</a>
+            <p class="pv-footer__copy">&copy; BoshuGas.inc</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
