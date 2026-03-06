@@ -736,6 +736,103 @@
                 width: 120px;
             }
         }
+
+        /* ===== お問い合わせセクション（本番デザイン） ===== */
+        .pv-contact-section {
+            background: #e8f2f8;
+            padding: 60px 20px;
+        }
+
+        .pv-contact-section__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+            margin: 0 0 16px;
+            letter-spacing: 0.1em;
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 700;
+            color: #0068b7;
+            text-decoration: none;
+            margin-bottom: 8px;
+        }
+
+        .pv-contact-section__phone:hover {
+            opacity: 0.8;
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 4px;
+        }
+
+        .pv-contact-section__note {
+            font-size: 12px;
+            color: #888;
+            margin: 0 0 20px;
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .pv-contact-section__btn:hover {
+            background: #005a9e;
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0;
+        }
+
+        .pv-contact-section__character img {
+            height: 160px;
+            width: auto;
+        }
+
+        @media (max-width: 768px) {
+            .pv-contact-section__inner {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .pv-contact-section__phone {
+                font-size: 28px;
+            }
+
+            .pv-contact-section__character img {
+                height: 120px;
+            }
+        }
     </style>
 </head>
 
@@ -984,42 +1081,42 @@
                     </div>
 
 
-                    <!-- ===== お問い合わせ ===== -->
-                    <div class="c-contact-box" style="margin-top: 40px;">
-                        <div class="c-contact-box__header">お問い合わせ</div>
-                        <div class="c-contact-box__body" style="text-align: center;">
-                            <p class="c-contact-box__time-line">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#2B7CBC" stroke-width="2" width="20"
-                                    height="20" style="vertical-align: middle;">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                    </path>
-                                </svg>
-                                <strong class="c-contact-box__time" style="font-size: 28px;">0470-22-2251</strong>
-                            </p>
-                            <p class="c-contact-box__note">平日・土曜 8:00 〜 17:00</p>
-                            <p class="c-contact-box__note">※ 天災有事の緊急のご用件は24時間365日対応</p>
-                            <p style="margin-top: 16px;">
-                                <a href="https://boushugas.co.jp/wp2026/contact"
-                                    style="display: inline-flex; align-items: center; gap: 8px; background: #0068b7; color: #fff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600;">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="18" height="18">
-                                        <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                        </path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
-                                    お問い合わせはこちら
-                                </a>
-                            </p>
-                        </div>
-                    </div>
 
                 </div>
             </div>
         </div>
 
     </main>
+
+    <!-- ===== お問い合わせセクション（本番デザイン） ===== -->
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p>
+                <a href="tel:0470-22-2251" class="pv-contact-section__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    お問い合わせはこちら
+                </a>
+            </div>
+            <div class="pv-contact-section__character">
+                <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター">
+            </div>
+        </div>
+    </section>
 
     <footer class="pv-footer">
         <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
