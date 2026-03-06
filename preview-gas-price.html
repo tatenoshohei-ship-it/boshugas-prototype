@@ -965,7 +965,7 @@
                     <p class="price-formula-v2__note">※調整単位料金は、「原料費調整制度」により毎月変動します。</p>
 
 
-                    <!-- ===== ② 料金表（アコーディオン＝本番サイト構成） ===== -->
+                    <!-- ===== 料金表（アコーディオン＝本番サイト構成） ===== -->
                     <h3 class="c-heading3">料金表</h3>
 
                     <!-- 都市ガス（アコーディオン・初期展開） -->
@@ -977,31 +977,31 @@
                             </svg>
                         </button>
                         <div class="gp-accordion__body">
-                            <!-- タブ切替で都市ガス内の料金プランを表示 -->
                             <div class="rate-tabs">
-                                <button class="rate-tabs__btn is-active"
-                                    onclick="switchRate(this, 'rate-general')">①一般料金</button>
-                                <button class="rate-tabs__btn"
-                                    onclick="switchRate(this, 'rate-hotwater')">②温水暖房</button>
-                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-heating')">③暖房</button>
-                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-aircon')">④小型空調</button>
+                                <button class="rate-tabs__btn is-active" onclick="switchRate(this, 'rate-general')">①
+                                    一般料金</button>
+                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-hotwater')">②
+                                    ガス温水暖房</button>
+                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-heating')">③
+                                    ガス暖房</button>
+                                <button class="rate-tabs__btn" onclick="switchRate(this, 'rate-aircon')">④
+                                    小型空調専用</button>
                             </div>
 
                             <!-- ① 一般料金 -->
                             <div id="rate-general" class="rate-panel is-active">
-                                <h4 class="rate-panel__title">①一般料金（一般ガス小売約款）</h4>
-                                <p class="c-text" style="margin-bottom:12px;">一般のお客さまにガスを供給する場合の契約です。</p>
+                                <h4 class="rate-panel__title">① 一般料金　ガス料金表（税込）</h4>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
-                                            <th rowspan="2">使用量区分（1ヶ月）</th>
-                                            <th rowspan="2">基本料金（税込）</th>
-                                            <th rowspan="2">基準単位料金（税込/m³）</th>
-                                            <th colspan="2" style="background:#00589b;">原料費調整額</th>
+                                            <th rowspan="2">使用量区分</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
                                         </tr>
                                         <tr>
-                                            <th style="background:#0070b8;">令和8年3月</th>
-                                            <th style="background:#0070b8;">令和8年4月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1009,8 +1009,8 @@
                                             <td>0m³〜20m³</td>
                                             <td class="price-highlight">774.40円</td>
                                             <td class="price-highlight">290.40円</td>
-                                            <td rowspan="3" class="price-highlight">16.65円</td>
-                                            <td rowspan="3" class="price-highlight">32.11円</td>
+                                            <td rowspan="3">16.65円</td>
+                                            <td rowspan="3">32.11円</td>
                                         </tr>
                                         <tr>
                                             <td>21m³〜200m³</td>
@@ -1024,22 +1024,27 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ（15,000kcal）です。</p>
+                                <p class="price-note">※都市ガス1m³当たりの熱量は62.79075MJ（15,000kcal）です。</p>
                                 <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※令和8年3月分には政府支援（-18.0円/m³）、4月分には（-6.0円/m³）を含みます。</p>
                             </div>
 
                             <!-- ② ガス温水暖房契約 -->
                             <div id="rate-hotwater" class="rate-panel">
-                                <h4 class="rate-panel__title">②ガス温水暖房契約</h4>
-                                <p class="c-text" style="margin-bottom:12px;">ガスを熱源とした温水暖房をお使いのお客さまを対象としたお得な料金プランです。</p>
-                                <p style="font-size:14px;font-weight:700;color:#0068b7;margin:16px 0 8px;">【冬期（12月〜3月）】
-                                </p>
+                                <h4 class="rate-panel__title">② ガス温水暖房契約　ガス料金表（税込）</h4>
+                                <p class="c-text" style="font-size:14px;margin-bottom:16px;"><strong>▼
+                                        冬期（12月〜4月検針分）</strong></p>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
-                                            <th>使用量区分</th>
-                                            <th>基本料金（税込）</th>
-                                            <th>基準単位料金（税込/m³）</th>
+                                            <th rowspan="2">使用量区分</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1047,62 +1052,43 @@
                                             <td>0m³〜20m³</td>
                                             <td class="price-highlight">774.40円</td>
                                             <td class="price-highlight">290.40円</td>
+                                            <td rowspan="3">16.65円</td>
+                                            <td rowspan="3">32.11円</td>
                                         </tr>
                                         <tr>
-                                            <td>21m³〜116m³</td>
-                                            <td class="price-highlight">2,450.00円</td>
-                                            <td class="price-highlight">206.58円</td>
+                                            <td>21m³〜100m³</td>
+                                            <td class="price-highlight">2,642.00円</td>
+                                            <td class="price-highlight">197.00円</td>
                                         </tr>
                                         <tr>
-                                            <td>117m³〜</td>
-                                            <td class="price-highlight">4,200.00円</td>
-                                            <td class="price-highlight">191.62円</td>
+                                            <td>101m³〜</td>
+                                            <td class="price-highlight">5,592.00円</td>
+                                            <td class="price-highlight">167.50円</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p style="font-size:14px;font-weight:700;color:#0068b7;margin:16px 0 8px;">【冬期以外】</p>
-                                <table class="price-table">
-                                    <thead>
-                                        <tr>
-                                            <th>使用量区分</th>
-                                            <th>基本料金（税込）</th>
-                                            <th>基準単位料金（税込/m³）</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>0m³〜20m³</td>
-                                            <td class="price-highlight">774.40円</td>
-                                            <td class="price-highlight">290.40円</td>
-                                        </tr>
-                                        <tr>
-                                            <td>21m³〜200m³</td>
-                                            <td class="price-highlight">1,309.00円</td>
-                                            <td class="price-highlight">263.67円</td>
-                                        </tr>
-                                        <tr>
-                                            <td>201m³〜</td>
-                                            <td class="price-highlight">5,329.29円</td>
-                                            <td class="price-highlight">243.57円</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p class="price-note">※ガス温水暖房契約の適用には条件があります。詳しくはお問い合わせください。</p>
+                                <p class="c-text" style="font-size:14px;margin:24px 0 16px;"><strong>▼
+                                        冬期以外（5月〜11月検針分）</strong></p>
+                                <p class="c-text" style="font-size:14px;">一般料金と同じ料金が適用されます。</p>
+                                <p class="price-note">※冬期：12月検針分〜4月検針分</p>
                             </div>
 
                             <!-- ③ ガス暖房契約 -->
                             <div id="rate-heating" class="rate-panel">
-                                <h4 class="rate-panel__title">③ガス暖房契約</h4>
-                                <p class="c-text" style="margin-bottom:12px;">
-                                    ガスを熱源とした暖房機器（ファンヒーター・ストーブ）をご使用されているお客さま対象のプランです。</p>
-                                <p style="font-size:14px;font-weight:700;color:#0068b7;margin:16px 0 8px;">【冬期（12月〜3月）】
-                                </p>
+                                <h4 class="rate-panel__title">③ ガス暖房契約　ガス料金表（税込）</h4>
+                                <p class="c-text" style="font-size:14px;margin-bottom:16px;"><strong>▼
+                                        冬期（12月〜3月検針分）</strong></p>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
-                                            <th>使用量区分</th>
-                                            <th>基本料金（税込）</th>
-                                            <th>基準単位料金（税込/m³）</th>
+                                            <th rowspan="2">使用量区分</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1110,6 +1096,8 @@
                                             <td>0m³〜20m³</td>
                                             <td class="price-highlight">774.40円</td>
                                             <td class="price-highlight">290.40円</td>
+                                            <td rowspan="3">16.65円</td>
+                                            <td rowspan="3">32.11円</td>
                                         </tr>
                                         <tr>
                                             <td>21m³〜80m³</td>
@@ -1123,46 +1111,26 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p style="font-size:14px;font-weight:700;color:#0068b7;margin:16px 0 8px;">【冬期以外】</p>
-                                <table class="price-table">
-                                    <thead>
-                                        <tr>
-                                            <th>使用量区分</th>
-                                            <th>基本料金（税込）</th>
-                                            <th>基準単位料金（税込/m³）</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>0m³〜20m³</td>
-                                            <td class="price-highlight">774.40円</td>
-                                            <td class="price-highlight">290.40円</td>
-                                        </tr>
-                                        <tr>
-                                            <td>21m³〜200m³</td>
-                                            <td class="price-highlight">1,309.00円</td>
-                                            <td class="price-highlight">263.67円</td>
-                                        </tr>
-                                        <tr>
-                                            <td>201m³〜</td>
-                                            <td class="price-highlight">5,329.29円</td>
-                                            <td class="price-highlight">243.57円</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p class="price-note">※ガス暖房契約の適用には条件があります。詳しくはお問い合わせください。</p>
+                                <p class="c-text" style="font-size:14px;margin:24px 0 16px;"><strong>▼
+                                        冬期以外（4月〜11月検針分）</strong></p>
+                                <p class="c-text" style="font-size:14px;">一般料金と同じ料金が適用されます。</p>
+                                <p class="price-note">※冬期：12月検針分〜3月検針分</p>
                             </div>
 
                             <!-- ④ 小型空調専用契約 -->
                             <div id="rate-aircon" class="rate-panel">
-                                <h4 class="rate-panel__title">④小型空調専用契約</h4>
-                                <p class="c-text" style="margin-bottom:12px;">ガス空調をお使いのお客さまを対象としたお得な料金プランです。</p>
+                                <h4 class="rate-panel__title">④ 小型空調専用契約　ガス料金表（税込）</h4>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
-                                            <th>時期区分</th>
-                                            <th>基本料金（税込）</th>
-                                            <th>基準単位料金（税込/m³）</th>
+                                            <th rowspan="2">適用期間</th>
+                                            <th rowspan="2">基本料金</th>
+                                            <th rowspan="2">基準単位料金</th>
+                                            <th colspan="2" style="background:#00796b;">原料費調整額</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                            <th style="background:#00897b;font-size:12px;">令和8年4月</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1170,15 +1138,17 @@
                                             <td>冬期（12月〜3月）</td>
                                             <td class="price-highlight">2,530.00円</td>
                                             <td class="price-highlight">148.73円</td>
+                                            <td rowspan="2">16.65円</td>
+                                            <td rowspan="2">32.11円</td>
                                         </tr>
                                         <tr>
-                                            <td>冬期以外</td>
+                                            <td>冬期以外（4月〜11月）</td>
                                             <td class="price-highlight">2,530.00円</td>
                                             <td class="price-highlight">126.72円</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p class="price-note">※小型空調専用契約の適用には条件があります。詳しくはお問い合わせください。</p>
+                                <p class="price-note">※冬期：12月検針分〜3月検針分</p>
                             </div>
                         </div>
                     </div>
@@ -1192,19 +1162,18 @@
                             </svg>
                         </button>
                         <div class="gp-accordion__body">
-                            <p class="c-text" style="margin-bottom:12px;">長須賀団地にお住まいのお客さまに適用される簡易ガスの料金メニューです。</p>
-                            <p style="font-size:13px;color:#555;margin-bottom:8px;">ガス料金表（税込）</p>
+                            <h4 class="rate-panel__title">ガス料金表（税込）</h4>
                             <table class="price-table">
                                 <thead>
                                     <tr>
                                         <th rowspan="2">使用量区分</th>
                                         <th rowspan="2">基本料金</th>
                                         <th rowspan="2">基準単位料金</th>
-                                        <th colspan="2" style="background:#00589b;">原料費調整額</th>
+                                        <th colspan="2" style="background:#00796b;">原料費調整額</th>
                                     </tr>
                                     <tr>
-                                        <th style="background:#0070b8;">令和8年3月</th>
-                                        <th style="background:#0070b8;">令和8年4月</th>
+                                        <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                        <th style="background:#00897b;font-size:12px;">令和8年4月</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1212,8 +1181,8 @@
                                         <td>0.0〜8.0m³</td>
                                         <td class="price-highlight">741.40円</td>
                                         <td class="price-highlight">344.30円</td>
-                                        <td rowspan="2" class="price-highlight">33.26円</td>
-                                        <td rowspan="2" class="price-highlight">33.26円</td>
+                                        <td rowspan="2">33.26円</td>
+                                        <td rowspan="2">33.26円</td>
                                     </tr>
                                     <tr>
                                         <td>8.1m³〜</td>
@@ -1236,20 +1205,18 @@
                             </svg>
                         </button>
                         <div class="gp-accordion__body">
-                            <p class="c-text" style="margin-bottom:12px;">
-                                ライフピアロイヤルリゾートマンションにお住まいのお客さまに適用される簡易ガスの料金メニューです。</p>
-                            <p style="font-size:13px;color:#555;margin-bottom:8px;">ガス料金表（税込）</p>
+                            <h4 class="rate-panel__title">ガス料金表（税込）</h4>
                             <table class="price-table">
                                 <thead>
                                     <tr>
                                         <th rowspan="2">使用量区分</th>
                                         <th rowspan="2">基本料金</th>
                                         <th rowspan="2">基準単位料金</th>
-                                        <th colspan="2" style="background:#00589b;">原料費調整額</th>
+                                        <th colspan="2" style="background:#00796b;">原料費調整額</th>
                                     </tr>
                                     <tr>
-                                        <th style="background:#0070b8;">令和8年3月</th>
-                                        <th style="background:#0070b8;">令和8年4月</th>
+                                        <th style="background:#00897b;font-size:12px;">令和8年3月</th>
+                                        <th style="background:#00897b;font-size:12px;">令和8年4月</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1257,8 +1224,8 @@
                                         <td>0.0〜8.0m³</td>
                                         <td class="price-highlight">943.10円</td>
                                         <td class="price-highlight">266.20円</td>
-                                        <td rowspan="3" class="price-highlight">59.13円</td>
-                                        <td rowspan="3" class="price-highlight">59.13円</td>
+                                        <td rowspan="3">59.13円</td>
+                                        <td rowspan="3">59.13円</td>
                                     </tr>
                                     <tr>
                                         <td>8.1〜30.0m³</td>
@@ -1286,9 +1253,39 @@
                             </svg>
                         </button>
                         <div class="gp-accordion__body">
-                            <p class="c-text" style="margin-bottom:12px;">
-                                プロパンガス料金は、ガスの使用に関係なくかかる基本料金と、使用量に応じてお支払いいただく従量料金から構成されています。</p>
-                            <p style="font-size:13px;color:#555;margin-bottom:8px;">ガス料金表（税抜　令和8年3月現在）</p>
+                            <p class="c-text" style="font-size:14px;margin-bottom:8px;">
+                                プロパンガス料金は、ガスの使用に関係なくかかる基本料金と、使用量に応じてお支払いいただく従量料金から構成されています。
+                            </p>
+                            <div class="price-formula-v2" style="margin:16px 0 24px;">
+                                <div class="price-formula-v2__box price-formula-v2__box--result"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">ガス料金</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">=</div>
+                                <div class="price-formula-v2__box price-formula-v2__box--base"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">基本料金</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">＋</div>
+                                <div class="price-formula-v2__box price-formula-v2__box--unit"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">従量料金</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">×</div>
+                                <div class="price-formula-v2__box price-formula-v2__box--usage"
+                                    style="min-width:100px;height:60px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">使用量</div>
+                                </div>
+                                <div class="price-formula-v2__op" style="font-size:24px;">＋</div>
+                                <div class="price-formula-v2__box"
+                                    style="min-width:100px;height:60px;background:linear-gradient(135deg,#e67e22,#f39c12);color:#fff;border-radius:10px;">
+                                    <div class="price-formula-v2__main" style="font-size:16px;">消費税</div>
+                                </div>
+                            </div>
+                            <p class="price-note" style="text-align:center;margin-bottom:24px;">※「従量料金×使用量」は使用量区分ごとの合計
+                            </p>
+
+                            <h4 class="rate-panel__title">ガス料金表（税抜　令和8年3月現在）</h4>
                             <table class="price-table">
                                 <thead>
                                     <tr>
@@ -1319,6 +1316,12 @@
                             </table>
                             <p class="price-note">※プロパンガス1m³当たりの熱量は100MJ（24,000kcal）です。</p>
                             <p class="price-note">※従量料金は使用量区分ごとに計算した値の合計となります。</p>
+                            <p class="price-note">※例えば、23m³ご使用の場合には次のような計算になります。</p>
+                            <p class="price-note" style="padding-left:16px;">
+                                基本料金＋使用量区分0-20m³の従量料金×20m³＋使用量区分21-25m³の従量料金×3m³＋消費税</p>
+                            <p class="price-note">
+                                ※2026年4月検針分のガス料金につきましては、「千葉県LPガス料金負担軽減支援事業」により、ご契約件数1件につき、上記料金表にて算定されるご請求額から1ヶ月あたり1,500円（税別）を上限として値引きさせていただきます。
+                            </p>
                         </div>
                     </div>
 
