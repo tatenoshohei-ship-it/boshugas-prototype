@@ -1,0 +1,182 @@
+/* ===================================================
+   ステップフロー コンポーネント CSS
+   =================================================== */
+
+.step-flow-section {
+    max-width: 960px;
+    margin: 0 auto 80px;
+}
+
+.step-flow-section__title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0068b7;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+.step-flow-section__subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.step-flow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.step-card {
+    flex: 1;
+    max-width: 280px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 32px 20px 28px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.step-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 104, 183, 0.15);
+    transform: translateY(-2px);
+}
+
+.step-card__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: #0068b7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-card__icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+}
+
+.step-card__label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0068b7;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+
+.step-card__title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.step-card__desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.step-card__phone {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0068b7;
+    letter-spacing: 0.05em;
+    margin-top: 6px;
+}
+
+.step-card__phone::before {
+    content: "\260E\FE0F ";
+    font-size: 16px;
+}
+
+.step-card__badge {
+    display: inline-block;
+    background: #f39c12;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+.step-card__badge--green {
+    background: #27ae60;
+}
+
+.step-card__badge--blue {
+    background: #3498db;
+}
+
+.step-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    margin-top: 48px;
+}
+
+.step-arrow svg {
+    width: 32px;
+    height: 32px;
+    fill: #0068b7;
+    opacity: 0.6;
+}
+
+.step-flow-note {
+    max-width: 960px;
+    margin: -40px auto 80px;
+    background: #e8f4fd;
+    border-radius: 8px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.step-flow-note__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    fill: #0068b7;
+}
+
+.step-flow-divider {
+    max-width: 960px;
+    margin: 0 auto 60px;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .step-flow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: -4px 0;
+        padding: 0;
+    }
+
+    .step-flow-section__title {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくあるご質問（プロトタイプ）- 房州ガス株式会社</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0;
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none;
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0068b7;
+            display: inline-block;
+        }
+
+        .sub-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .sub-layout__side {
+            flex: 0 0 220px;
+        }
+
+        .sub-layout__main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .side-nav-proto {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .side-nav-proto__title {
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .side-nav-proto a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .side-nav-proto a:hover,
+        .side-nav-proto a.is-active {
+            background: #0068b7;
+            color: #fff;
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            padding-left: 16px;
+            border-left: 4px solid #0068b7;
+            margin-bottom: 24px;
+            margin-top: 48px;
+        }
+
+        .section-heading:first-child {
+            margin-top: 0;
+        }
+
+        /* カテゴリフィルター */
+        .faq-category-nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .faq-category-btn {
+            padding: 8px 20px;
+            border: 1px solid #0068b7;
+            border-radius: 20px;
+            background: #fff;
+            color: #0068b7;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .faq-category-btn:hover,
+        .faq-category-btn.is-active {
+            background: #0068b7;
+            color: #fff;
+        }
+
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px;
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .sub-layout {
+                flex-direction: column;
+            }
+
+            .sub-layout__side {
+                flex: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="prototype-badge">⚠ デザインプロトタイプ（本番環境ではありません）</div>
+
+    <header class="proto-header">
+        <div class="proto-header__inner">
+            <a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav">
+                <a href="index.html">トップ</a>
+                <a href="gas-application.html">ガスのご利用</a>
+                <a href="gas-price.html">ガス料金</a>
+                <a href="safety.html">安全</a>
+                <a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">房州ガス(株)</a> &gt; <a href="#">個人のお客様へ</a> &gt; <strong>よくあるご質問</strong>
+    </div>
+
+    <div class="page-title-area">
+        <h1>よくあるご質問</h1>
+    </div>
+
+    <div class="sub-layout">
+        <aside class="sub-layout__side">
+            <div class="side-nav-proto">
+                <div class="side-nav-proto__title">個人のお客様へ</div>
+                <a href="gas-application.html">ガスのご利用</a>
+                <a href="gas-price.html">ガス料金</a>
+                <a href="payment.html">お支払方法</a>
+                <a href="safety.html">安全にお使いいただくために</a>
+                <a href="faq.html" class="is-active">よくあるご質問</a>
+                <a href="#">各種約款</a>
+            </div>
+        </aside>
+
+        <div class="sub-layout__main">
+
+            <!-- 【改善】カテゴリフィルター -->
+            <div class="faq-category-nav">
+                <button class="faq-category-btn is-active" onclick="filterFAQ('all')">すべて</button>
+                <button class="faq-category-btn" onclick="filterFAQ('contract')">ご契約</button>
+                <button class="faq-category-btn" onclick="filterFAQ('price')">料金</button>
+                <button class="faq-category-btn" onclick="filterFAQ('safety')">安全</button>
+                <button class="faq-category-btn" onclick="filterFAQ('appliance')">ガス機器</button>
+            </div>
+
+            <!-- 【改善】アコーディオンFAQ -->
+            <h2 class="section-heading">ご契約について</h2>
+
+            <div class="faq-item" data-category="contract">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question__icon">Q</span>
+                    <span>引越しの際、ガスの使用開始にはどのような手続きが必要ですか？</span>
+                    <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <span class="faq-answer__icon">A</span>
+                    ご使用開始希望日の3〜5営業日前までに、お電話（0470-22-2251）にてお申込みください。開栓作業の際はお立ち会いが必要となります。詳しくは<a
+                        href="gas-application.html">ガスのご利用</a>ページをご覧ください。
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="contract">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question__icon">Q</span>
+                    <span>ガスの使用を中止するにはどうすればいいですか？</span>
+                    <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <span class="faq-answer__icon">A</span>
+                    ご使用中止日の前日までにお電話でお申込みください。閉栓作業と最終月の料金精算を行います。オートロック物件の場合は立ち会いが必要です。
+                </div>
+            </div>
+
+            <h2 class="section-heading">料金について</h2>
+
+            <div class="faq-item" data-category="price">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question__icon">Q</span>
+                    <span>ガス料金はどのように計算されますか？</span>
+                    <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <span class="faq-answer__icon">A</span>
+                    ガス料金は「基本料金 ＋ 従量料金（単位料金 × ご使用量）」で計算されます。詳しい料金表は<a href="gas-price.html">ガス料金</a>ページでご確認いただけます。
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="price">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question__icon">Q</span>
+                    <span>支払い方法にはどのようなものがありますか？</span>
+                    <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <span class="faq-answer__icon">A</span>
+                    口座振替、クレジットカード払い、払込票によるお支払いがご利用いただけます。詳しくは<a href="payment.html">お支払方法</a>ページをご覧ください。
+                </div>
+            </div>
+
+            <h2 class="section-heading">安全について</h2>
+
+            <div class="faq-item" data-category="safety">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question__icon">Q</span>
+                    <span>ガスくさいと感じたらどうすればいいですか？</span>
+                    <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <span class="faq-answer__icon">A</span>
+                    ただちに火気の使用を中止し、窓を開けて換気してください。スイッチ類の操作は絶対にしないでください。換気をしたら、すぐに当社（0470-22-2251）までご連絡ください。
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="safety">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question__icon">Q</span>
+                    <span>地震でガスが止まった場合、自分で復帰できますか？</span>
+                    <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <span class="faq-answer__icon">A</span>
+                    はい。ガスメーターの復帰操作で復帰できます。①全てのガス栓を閉め、②メーターの復帰ボタンを押し、③約3分お待ちください。詳しい手順は<a
+                        href="safety.html">安全にお使いいただくために</a>ページをご覧ください。
+                </div>
+            </div>
+
+            <h2 class="section-heading">ガス機器について</h2>
+
+            <div class="faq-item" data-category="appliance">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question__icon">Q</span>
+                    <span>ガス機器が故障したら、修理を依頼できますか？</span>
+                    <svg class="faq-question__arrow" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <span class="faq-answer__icon">A</span>
+                    はい。お電話（0470-22-2251）にてご連絡いただければ、修理またはお取り替えの手配をいたします。メーカー保証期間内であれば無償修理が可能な場合があります。
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="color:#666;font-size:14px;margin-bottom:16px;">お気軽にお問い合わせください</p>
+            <p style="font-size:24px;font-weight:700;color:#0068b7;margin-bottom:8px;">📞 0470-22-2251</p>
+            <p style="font-size:13px;color:#888;margin-bottom:16px;">平日・土曜 8:00〜17:00</p>
+            <a href="#"
+                style="display:inline-block;background:#0068b7;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:14px;">✉
+                お問い合わせはこちら</a>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+
+    <script>
+        // FAQアコーディオン
+        function toggleFAQ(btn) {
+            const item = btn.closest('.faq-item');
+            item.classList.toggle('is-open');
+        }
+
+        // カテゴリフィルター
+        function filterFAQ(category) {
+            document.querySelectorAll('.faq-category-btn').forEach(b => b.classList.remove('is-active'));
+            event.target.classList.add('is-active');
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+<script src="js/nav.js"></script></body>
+
+</html>

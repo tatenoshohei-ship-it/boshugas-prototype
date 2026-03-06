@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガスのご利用（プロトタイプ）- 房州ガス株式会社</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <link rel="stylesheet" href="components/step-flow.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        /* サブページ共通レイアウト */
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0;
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .proto-header__nav a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none;
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0068b7;
+            display: inline-block;
+        }
+
+        .sub-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .sub-layout__side {
+            flex: 0 0 220px;
+        }
+
+        .sub-layout__main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* サイドナビ */
+        .side-nav-proto {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .side-nav-proto__title {
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .side-nav-proto a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .side-nav-proto a:hover,
+        .side-nav-proto a.is-active {
+            background: #0068b7;
+            color: #fff;
+        }
+
+        /* 個人セクション見出し */
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            padding-left: 16px;
+            border-left: 4px solid #0068b7;
+            margin-bottom: 24px;
+            margin-top: 48px;
+        }
+
+        .section-heading:first-child {
+            margin-top: 0;
+        }
+
+        /* カード2カラム */
+        .card-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .card-row__item {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-row__item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 104, 183, 0.12);
+        }
+
+        .card-row__icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 12px;
+            background: #0068b7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-row__icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+
+        .card-row__title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0068b7;
+            margin-bottom: 8px;
+        }
+
+        .card-row__desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* 情報ボックス */
+        .info-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+
+        .info-box__title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .info-box__list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box__list li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .info-box__list li::before {
+            content: "✓ ";
+            color: #0068b7;
+            font-weight: 700;
+        }
+
+        /* フッター */
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px;
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .sub-layout {
+                flex-direction: column;
+            }
+
+            .sub-layout__side {
+                flex: none;
+                width: 100%;
+            }
+
+            .card-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="prototype-badge">⚠ デザインプロトタイプ（本番環境ではありません）</div>
+
+    <!-- ヘッダー -->
+    <header class="proto-header">
+        <div class="proto-header__inner">
+            <a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav">
+                <a href="index.html">トップ</a>
+                <a href="gas-application.html">ガスのご利用</a>
+                <a href="gas-price.html">ガス料金</a>
+                <a href="safety.html">安全</a>
+                <a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- パンくず -->
+    <div class="breadcrumb">
+        <a href="index.html">房州ガス(株)</a> &gt; <a href="#">個人のお客様へ</a> &gt; <strong>ガスのご利用</strong>
+    </div>
+
+    <!-- ページタイトル -->
+    <div class="page-title-area">
+        <h1>ガスのご利用</h1>
+    </div>
+
+    <!-- 2カラムレイアウト -->
+    <div class="sub-layout">
+
+        <!-- サイドナビ -->
+        <aside class="sub-layout__side">
+            <div class="side-nav-proto">
+                <div class="side-nav-proto__title">個人のお客様へ</div>
+                <a href="gas-application.html" class="is-active">ガスのご利用</a>
+                <a href="gas-price.html">ガス料金</a>
+                <a href="payment.html">お支払方法</a>
+                <a href="safety.html">安全にお使いいただくために</a>
+                <a href="faq.html">よくあるご質問</a>
+                <a href="#">各種約款</a>
+            </div>
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <div class="sub-layout__main">
+
+            <!-- 【改善】開栓・閉栓を2つの大きなカードで -->
+            <h2 class="section-heading">お申込み種別をお選びください</h2>
+            <div class="card-row">
+                <div class="card-row__item">
+                    <div class="card-row__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" />
+                        </svg>
+                    </div>
+                    <div class="card-row__title">開栓（ご使用開始）</div>
+                    <div class="card-row__desc">お引越し等でガスの<br>ご使用を開始する場合</div>
+                </div>
+                <div class="card-row__item">
+                    <div class="card-row__icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                            <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="card-row__title">閉栓（ご使用中止）</div>
+                    <div class="card-row__desc">お引越し等でガスの<br>ご使用を中止する場合</div>
+                </div>
+            </div>
+
+            <!-- 【改善】ステップフロー図解（開栓） -->
+            <section class="step-flow-section">
+                <h2 class="step-flow-section__title">ガス使用開始までの流れ</h2>
+                <p class="step-flow-section__subtitle">お引越し等でガスのご使用を開始される場合</p>
+                <div class="step-flow">
+                    <div class="step-card">
+                        <div class="step-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                        </div>
+                        <div class="step-card__label">STEP 1</div>
+                        <div class="step-card__title">お電話でお申込み</div>
+                        <div class="step-card__desc">ご使用希望日の<br><strong>3〜5営業日前</strong>までに<br>ご連絡ください</div>
+                        <div class="step-card__phone">0470-22-2251</div>
+                        <div class="step-card__desc" style="margin-top:6px">平日・土曜 8:00〜17:00</div>
+                    </div>
+                    <div class="step-arrow"><svg viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                        </svg></div>
+                    <div class="step-card">
+                        <div class="step-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.84L18 12v7h-2v-6H8v6H6v-7l6-6.16z" />
+                                <circle cx="12" cy="13" r="1.5" />
+                            </svg>
+                        </div>
+                        <div class="step-card__label">STEP 2</div>
+                        <div class="step-card__title">開栓作業・お立ち会い</div>
+                        <div class="step-card__desc">当社社員がお伺いし<br>メーター開栓・点検・<br>点火確認を行います</div>
+                        <span class="step-card__badge">お立ち会い必須</span>
+                    </div>
+                    <div class="step-arrow"><svg viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                        </svg></div>
+                    <div class="step-card">
+                        <div class="step-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm2 13h-4v-1h4v1zm0-2h-4v-1h4v1z" />
+                            </svg>
+                        </div>
+                        <div class="step-card__label">STEP 3</div>
+                        <div class="step-card__title">ご使用開始</div>
+                        <div class="step-card__desc">ガスがご利用<br>いただけるように<br>なります</div>
+                        <span class="step-card__badge step-card__badge--green">利用開始！</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="step-flow-note">
+                <svg class="step-flow-note__icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                </svg>
+                <span>※ お申込み前に、<strong>水道・電気の開通</strong>をお済ませください。点火確認の際に必要となります。</span>
+            </div>
+
+            <!-- お立ち会い時の必要なもの -->
+            <h2 class="section-heading">お立ち会い当日にご用意いただくもの</h2>
+            <div class="info-box">
+                <ul class="info-box__list">
+                    <li>印鑑（口座振替をご希望の場合）</li>
+                    <li>水道・電気が開通していること（点火確認に必要です）</li>
+                    <li>ご本人またはご家族等の代理人がお立ち会いください</li>
+                </ul>
+            </div>
+
+            <!-- お申込み時にお伝えいただく情報 -->
+            <h2 class="section-heading">お電話でお伝えいただく内容</h2>
+            <div class="info-box">
+                <ul class="info-box__list">
+                    <li>ご契約者名（お名前）</li>
+                    <li>ご使用場所の住所</li>
+                    <li>ご連絡先電話番号</li>
+                    <li>ご使用開始希望日</li>
+                    <li>お支払方法のご希望</li>
+                </ul>
+            </div>
+
+            <hr class="step-flow-divider">
+
+            <!-- 閉栓フロー -->
+            <section class="step-flow-section">
+                <h2 class="step-flow-section__title">ガス使用中止の流れ</h2>
+                <p class="step-flow-section__subtitle">お引越し等でガスのご使用を中止される場合</p>
+                <div class="step-flow">
+                    <div class="step-card">
+                        <div class="step-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                        </div>
+                        <div class="step-card__label">STEP 1</div>
+                        <div class="step-card__title">お電話でお申込み</div>
+                        <div class="step-card__desc">ご使用中止日の<br><strong>前日まで</strong>に<br>ご連絡ください</div>
+                        <div class="step-card__phone">0470-22-2251</div>
+                        <div class="step-card__desc" style="margin-top:6px">平日・土曜 8:00〜17:00</div>
+                    </div>
+                    <div class="step-arrow"><svg viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                        </svg></div>
+                    <div class="step-card">
+                        <div class="step-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H8v-2h4v2zm4-4H8v-2h8v2zm0-4H8V7h8v2z" />
+                            </svg>
+                        </div>
+                        <div class="step-card__label">STEP 2</div>
+                        <div class="step-card__title">閉栓作業・料金精算</div>
+                        <div class="step-card__desc">メーターの閉栓と<br>最終月のガス料金を<br>精算いたします</div>
+                        <span class="step-card__badge step-card__badge--blue">オートロック物件はお立ち会い</span>
+                    </div>
+                    <div class="step-arrow"><svg viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                        </svg></div>
+                    <div class="step-card">
+                        <div class="step-card__icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
+                            </svg>
+                        </div>
+                        <div class="step-card__label">STEP 3</div>
+                        <div class="step-card__title">お手続き完了</div>
+                        <div class="step-card__desc">ガスのご使用が<br>終了となります</div>
+                        <span class="step-card__badge step-card__badge--green">手続き完了</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="step-flow-note">
+                <svg class="step-flow-note__icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                </svg>
+                <span>※ お電話の際に、<strong>住所・氏名・お客様番号・使用中止日・転居先住所</strong>をお伝えください。</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="color:#666;font-size:14px;margin-bottom:16px;">お気軽にお問い合わせください</p>
+            <p style="font-size:24px;font-weight:700;color:#0068b7;margin-bottom:8px;">📞 0470-22-2251</p>
+            <p style="font-size:13px;color:#888;margin-bottom:16px;">平日・土曜 8:00〜17:00</p>
+            <a href="#"
+                style="display:inline-block;background:#0068b7;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:14px;">✉
+                お問い合わせはこちら</a>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+
+<script src="js/nav.js"></script></body>
+
+</html>

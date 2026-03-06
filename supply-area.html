@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>供給エリア（プロトタイプ）- 房州ガス株式会社</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0;
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none;
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0068b7;
+            display: inline-block;
+        }
+
+        .content-area {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            padding-left: 16px;
+            border-left: 4px solid #0068b7;
+            margin-bottom: 24px;
+            margin-top: 48px;
+        }
+
+        .section-heading:first-child {
+            margin-top: 0;
+        }
+
+        /* マップエリア */
+        .map-area {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 12px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-direction: column;
+            gap: 12px;
+            color: #999;
+            padding: 40px;
+        }
+
+        .map-area__icon {
+            font-size: 48px;
+        }
+
+        .map-area__text {
+            font-size: 16px;
+        }
+
+        .map-area__label {
+            font-size: 12px;
+            color: #bbb;
+        }
+
+        /* エリア情報カード */
+        .area-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .area-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .area-card__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .area-card__icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .area-card__icon--city {
+            background: #0068b7;
+        }
+
+        .area-card__icon--lp {
+            background: #f39c12;
+        }
+
+        .area-card__icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+
+        .area-card__title {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .area-card__list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .area-card__list li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #555;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .area-card__list li::before {
+            content: "•";
+            color: #0068b7;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 会社情報 */
+        .company-info {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 40px;
+        }
+
+        .company-info__row {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 0;
+        }
+
+        .company-info__row:last-child {
+            border-bottom: none;
+        }
+
+        .company-info__label {
+            flex: 0 0 120px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0068b7;
+        }
+
+        .company-info__value {
+            flex: 1;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px;
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media(max-width:768px) {
+            .area-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .company-info__row {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prototype-badge">⚠ デザインプロトタイプ（本番環境ではありません）</div>
+    <header class="proto-header">
+        <div class="proto-header__inner"><a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav"><a href="index.html">トップ</a><a href="gas-application.html">ガスのご利用</a><a
+                    href="gas-price.html">ガス料金</a><a href="safety.html">安全</a><a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html">房州ガス(株)</a> &gt; <strong>供給エリア</strong></div>
+    <div class="page-title-area">
+        <h1>供給エリア</h1>
+    </div>
+
+    <div class="content-area">
+
+        <!-- 【改善】マップエリア → Googleマップ埋め込み予定 -->
+        <h2 class="section-heading">供給エリアマップ</h2>
+        <div class="map-area">
+            <div class="map-area__icon">🗺️</div>
+            <div class="map-area__text">供給エリアマップ</div>
+            <div class="map-area__label">※ 本番ではGoogleマップ埋め込みまたはエリアマップ画像を配置</div>
+        </div>
+
+        <!-- 【改善】エリア情報をカードで表示 -->
+        <h2 class="section-heading">供給エリア詳細</h2>
+        <div class="area-cards">
+            <div class="area-card">
+                <div class="area-card__header">
+                    <div class="area-card__icon area-card__icon--city">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" />
+                        </svg>
+                    </div>
+                    <div class="area-card__title">都市ガス供給エリア</div>
+                </div>
+                <ul class="area-card__list">
+                    <li>館山市（一部地域）</li>
+                    <li>南房総市（一部地域）</li>
+                    <li>鴨川市（一部地域）</li>
+                </ul>
+                <p style="font-size:13px;color:#888;margin-top:12px;">※ 詳細な供給可否はお問い合わせください</p>
+            </div>
+            <div class="area-card">
+                <div class="area-card__header">
+                    <div class="area-card__icon area-card__icon--lp">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                        </svg>
+                    </div>
+                    <div class="area-card__title">LPガス供給エリア</div>
+                </div>
+                <ul class="area-card__list">
+                    <li>館山市全域</li>
+                    <li>南房総市全域</li>
+                    <li>鴨川市全域</li>
+                    <li>鋸南町全域</li>
+                </ul>
+                <p style="font-size:13px;color:#888;margin-top:12px;">※ 配送エリアの詳細はお問い合わせください</p>
+            </div>
+        </div>
+
+        <!-- 会社基本情報 -->
+        <h2 class="section-heading">会社情報</h2>
+        <div class="company-info">
+            <div class="company-info__row">
+                <div class="company-info__label">社名</div>
+                <div class="company-info__value">房州ガス株式会社</div>
+            </div>
+            <div class="company-info__row">
+                <div class="company-info__label">所在地</div>
+                <div class="company-info__value">〒294-0045 千葉県館山市北条2169</div>
+            </div>
+            <div class="company-info__row">
+                <div class="company-info__label">電話番号</div>
+                <div class="company-info__value">0470-22-2251</div>
+            </div>
+            <div class="company-info__row">
+                <div class="company-info__label">営業時間</div>
+                <div class="company-info__value">8:00〜17:00（月〜土）</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="color:#666;font-size:14px;margin-bottom:16px;">お気軽にお問い合わせください</p>
+            <p style="font-size:24px;font-weight:700;color:#0068b7;margin-bottom:8px;">📞 0470-22-2251</p><a href="#"
+                style="display:inline-block;background:#0068b7;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:14px;">✉
+                お問い合わせはこちら</a>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+<script src="js/nav.js"></script></body>
+
+</html>

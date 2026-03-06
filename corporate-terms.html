@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各種約款 法人（プロトタイプ）- 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8
+        }
+
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0068b7;
+            display: inline-block
+        }
+
+        .sub-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px
+        }
+
+        .sub-layout__side {
+            flex: 0 0 220px
+        }
+
+        .sub-layout__main {
+            flex: 1
+        }
+
+        .side-nav-proto {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .side-nav-proto__title {
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .side-nav-proto a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background .2s
+        }
+
+        .side-nav-proto a:hover,
+        .side-nav-proto a.is-active {
+            background: #0068b7;
+            color: #fff
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            padding-left: 16px;
+            border-left: 4px solid #0068b7;
+            margin-bottom: 24px;
+            margin-top: 48px
+        }
+
+        .section-heading:first-child {
+            margin-top: 0
+        }
+
+        .doc-list {
+            list-style: none;
+            padding: 0
+        }
+
+        .doc-list__item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            transition: transform .2s
+        }
+
+        .doc-list__item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .08)
+        }
+
+        .doc-icon {
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999
+        }
+
+        @media(max-width:768px) {
+            .sub-layout {
+                flex-direction: column
+            }
+
+            .sub-layout__side {
+                flex: none;
+                width: 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prototype-badge">⚠ デザインプロトタイプ</div>
+    <header class="proto-header">
+        <div class="proto-header__inner"><a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav"><a href="index.html">トップ</a><a href="gas-application.html">ガスのご利用</a><a
+                    href="gas-price.html">ガス料金</a><a href="safety.html">安全</a><a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html">房州ガス(株)</a> &gt; <a href="corporate-service.html">法人のお客様へ</a> &gt;
+        <strong>各種約款</strong></div>
+    <div class="page-title-area">
+        <h1>各種約款（法人）</h1>
+    </div>
+    <div class="sub-layout">
+        <aside class="sub-layout__side">
+            <div class="side-nav-proto">
+                <div class="side-nav-proto__title">法人のお客様へ</div><a href="corporate-service.html">サービスのご案内</a><a
+                    href="corporate-flow.html">導入までの流れ</a><a href="corporate-price.html">ガス料金</a><a
+                    href="corporate-case.html">活用事例</a><a href="corporate-construction.html">新築・導管引き込み</a><a
+                    href="corporate-faq.html">よくあるご質問</a><a href="corporate-terms.html" class="is-active">各種約款</a>
+            </div>
+        </aside>
+        <div class="sub-layout__main">
+            <h2 class="section-heading">法人向け供給約款</h2>
+            <ul class="doc-list">
+                <li class="doc-list__item">
+                    <div class="doc-icon">PDF</div>
+                    <div style="flex:1;font-size:15px;font-weight:600">大口供給約款</div>
+                    <div style="font-size:12px;color:#888">PDF / 約1.0MB</div>
+                </li>
+                <li class="doc-list__item">
+                    <div class="doc-icon">PDF</div>
+                    <div style="flex:1;font-size:15px;font-weight:600">託送供給約款</div>
+                    <div style="font-size:12px;color:#888">PDF / 約1.5MB</div>
+                </li>
+                <li class="doc-list__item">
+                    <div class="doc-icon">PDF</div>
+                    <div style="flex:1;font-size:15px;font-weight:600">空調用契約約款</div>
+                    <div style="font-size:12px;color:#888">PDF / 約400KB</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="font-size:24px;font-weight:700;color:#0068b7;">📞 0470-22-2251</p>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+<script src="js/nav.js"></script></body>
+
+</html>

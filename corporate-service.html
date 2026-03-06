@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービスのご案内（プロトタイプ）- 房州ガス株式会社</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0;
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none;
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0068b7;
+            display: inline-block;
+        }
+
+        .sub-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .sub-layout__side {
+            flex: 0 0 220px;
+        }
+
+        .sub-layout__main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .side-nav-proto {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .side-nav-proto__title {
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .side-nav-proto a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .side-nav-proto a:hover,
+        .side-nav-proto a.is-active {
+            background: #0068b7;
+            color: #fff;
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            padding-left: 16px;
+            border-left: 4px solid #0068b7;
+            margin-bottom: 24px;
+            margin-top: 48px;
+        }
+
+        .section-heading:first-child {
+            margin-top: 0;
+        }
+
+        /* ガス種別カード */
+        .gas-type-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .gas-type-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 28px 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .gas-type-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 104, 183, 0.12);
+        }
+
+        .gas-type-card__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .gas-type-card__icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gas-type-card__icon--city {
+            background: #0068b7;
+        }
+
+        .gas-type-card__icon--lp {
+            background: #f39c12;
+        }
+
+        .gas-type-card__icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+        }
+
+        .gas-type-card__title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .gas-type-card__list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .gas-type-card__list li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .gas-type-card__list li::before {
+            content: "✓ ";
+            color: #0068b7;
+            font-weight: 700;
+        }
+
+        /* 導入効果カード */
+        .effect-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .effect-card {
+            background: linear-gradient(135deg, #0068b7, #004a82);
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .effect-card__number {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .effect-card__unit {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .effect-card__desc {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        /* 中間CTA */
+        .mid-cta {
+            background: #e8f4fd;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .mid-cta__title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0068b7;
+            margin-bottom: 12px;
+        }
+
+        .mid-cta__desc {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .mid-cta__btn {
+            display: inline-block;
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .mid-cta__btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 104, 183, 0.3);
+        }
+
+        .img-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            min-height: 180px;
+            text-align: center;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .img-placeholder__label {
+            font-size: 12px;
+            color: #bbb;
+            margin-top: 8px;
+        }
+
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px;
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media(max-width:768px) {
+            .sub-layout {
+                flex-direction: column;
+            }
+
+            .sub-layout__side {
+                flex: none;
+                width: 100%;
+            }
+
+            .gas-type-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .effect-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prototype-badge">⚠ デザインプロトタイプ（本番環境ではありません）</div>
+    <header class="proto-header">
+        <div class="proto-header__inner"><a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav"><a href="index.html">トップ</a><a href="gas-application.html">ガスのご利用</a><a
+                    href="gas-price.html">ガス料金</a><a href="safety.html">安全</a><a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html">房州ガス(株)</a> &gt; <a href="#">法人のお客様へ</a> &gt; <strong>サービスのご案内</strong>
+    </div>
+    <div class="page-title-area">
+        <h1>サービスのご案内</h1>
+    </div>
+
+    <div class="sub-layout">
+        <aside class="sub-layout__side">
+            <div class="side-nav-proto">
+                <div class="side-nav-proto__title">法人のお客様へ</div>
+                <a href="corporate-service.html" class="is-active">サービスのご案内</a>
+                <a href="#">ご契約から導入までの流れ</a>
+                <a href="#">ガス料金</a>
+                <a href="#">活用事例</a>
+                <a href="#">新築・導管引き込み相談</a>
+                <a href="#">よくあるご質問</a>
+                <a href="#">各種約款</a>
+            </div>
+        </aside>
+
+        <div class="sub-layout__main">
+
+            <div class="img-placeholder" style="min-height:160px;">
+                📷 法人向けガス利用シーン（工場・ホテル・飲食店等）<br>
+                <span class="img-placeholder__label">※ 本番では実際の導入先写真を配置</span>
+            </div>
+
+            <!-- 【改善】ガス種別を横並びカードに -->
+            <h2 class="section-heading">都市ガス／LPガスの供給</h2>
+            <div class="gas-type-cards">
+                <div class="gas-type-card">
+                    <div class="gas-type-card__header">
+                        <div class="gas-type-card__icon gas-type-card__icon--city">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" />
+                            </svg>
+                        </div>
+                        <div class="gas-type-card__title">都市ガス（13A）</div>
+                    </div>
+                    <ul class="gas-type-card__list">
+                        <li>配管供給で安定的</li>
+                        <li>ボンベ交換不要</li>
+                        <li>クリーンなエネルギー</li>
+                        <li>大量使用に最適</li>
+                    </ul>
+                </div>
+                <div class="gas-type-card">
+                    <div class="gas-type-card__header">
+                        <div class="gas-type-card__icon gas-type-card__icon--lp">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H7V4h10v16zm-5-3c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1z" />
+                            </svg>
+                        </div>
+                        <div class="gas-type-card__title">LPガス</div>
+                    </div>
+                    <ul class="gas-type-card__list">
+                        <li>都市ガス供給エリア外でも利用可能</li>
+                        <li>災害時の復旧が早い</li>
+                        <li>高火力</li>
+                        <li>個別配送で柔軟対応</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 【改善】導入効果を数値で目立たせる -->
+            <h2 class="section-heading">導入効果</h2>
+            <div class="effect-cards">
+                <div class="effect-card">
+                    <div class="effect-card__number">▲15<span style="font-size:20px">%</span></div>
+                    <div class="effect-card__unit">年間光熱費削減</div>
+                    <div class="effect-card__desc">ガスボイラー更新</div>
+                </div>
+                <div class="effect-card">
+                    <div class="effect-card__number">▲20<span style="font-size:20px">%</span></div>
+                    <div class="effect-card__unit">CO₂排出量削減</div>
+                    <div class="effect-card__desc">LP→都市ガス切替</div>
+                </div>
+                <div class="effect-card">
+                    <div class="effect-card__number">24<span style="font-size:20px">h</span></div>
+                    <div class="effect-card__unit">緊急対応</div>
+                    <div class="effect-card__desc">365日サポート</div>
+                </div>
+            </div>
+
+            <!-- 【改善】中間CTA -->
+            <div class="mid-cta">
+                <div class="mid-cta__title">まずはお気軽にご相談ください</div>
+                <div class="mid-cta__desc">お客様の施設・用途に応じた最適なプランをご提案いたします。</div>
+                <a href="#" class="mid-cta__btn">✉ お問い合わせ・資料請求</a>
+            </div>
+
+            <h2 class="section-heading">ガス設備のメンテナンス</h2>
+            <div style="background:#f8f9fa;border-radius:8px;padding:24px;margin-bottom:24px;">
+                <p>ガス機器の定期点検、配管の安全調査を計画的に実施し、安全で安定したガス供給を維持します。緊急時には24時間体制で対応いたします。</p>
+            </div>
+
+            <h2 class="section-heading">導入までのサポート</h2>
+            <div style="background:#f8f9fa;border-radius:8px;padding:24px;margin-bottom:24px;">
+                <p>現地調査から工事、アフターサポートまで、ワンストップで対応いたします。お見積もりは無料です。</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="color:#666;font-size:14px;margin-bottom:16px;">法人のお客様向け お問い合わせ</p>
+            <p style="font-size:24px;font-weight:700;color:#0068b7;margin-bottom:8px;">📞 0470-22-2251</p><a href="#"
+                style="display:inline-block;background:#0068b7;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:14px;">✉
+                お問い合わせはこちら</a>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+<script src="js/nav.js"></script></body>
+
+</html>

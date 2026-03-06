@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房州ガス株式会社 - トップページ（プロトタイプ）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        /* プロトタイプ用の追加注釈スタイル */
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999;
+            letter-spacing: 0.1em;
+        }
+
+        body {
+            padding-top: 28px;
+        }
+
+        /* トップページ用の改善スタイル */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0068b7 0%, #004a82 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .hero-slider__content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-slider__title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-slider__subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero-slider__bg {
+            position: absolute;
+            inset: 0;
+            background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+            opacity: 0.4;
+        }
+
+        /* お知らせセクション改善 */
+        .news-section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .news-section__title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: #0068b7;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .news-section__title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #0068b7;
+            margin: 12px auto 0;
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-item__date {
+            font-size: 14px;
+            color: #888;
+            flex-shrink: 0;
+            width: 120px;
+        }
+
+        .news-item__tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .news-item__tag--emergency {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .news-item__tag--info {
+            background: #0068b7;
+            color: #fff;
+        }
+
+        .news-item__tag--important {
+            background: #f39c12;
+            color: #fff;
+        }
+
+        .news-item__title {
+            font-size: 15px;
+            color: #333;
+        }
+
+        /* バナーエリア改善（小型化） */
+        .banner-area {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .banner-area__item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .banner-area__item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .banner-area__item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .banner-placeholder {
+            background: #f0f0f0;
+            padding: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero-slider {
+                height: 300px;
+            }
+
+            .hero-slider__title {
+                font-size: 24px;
+            }
+
+            .news-item {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .news-item__date {
+                width: auto;
+            }
+
+            .banner-area {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- プロトタイプ表示バッジ -->
+    <div class="prototype-badge">⚠ デザインプロトタイプ（本番環境ではありません）</div>
+
+    <!-- ===== ヘッダー ===== -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <span style="font-size:24px;font-weight:700;color:#333;">☆ 房州ガス株式会社</span>
+            </a>
+            <div class="header__right" style="display:flex;align-items:center;gap:12px;">
+                <a href="#" class="header__nav-item"
+                    style="background:#0068b7;color:#fff;padding:6px 16px;border-radius:20px;text-decoration:none;font-size:13px;">◎
+                    供給エリア</a>
+                <a href="#" class="header__nav-item"
+                    style="background:#0068b7;color:#fff;padding:6px 16px;border-radius:20px;text-decoration:none;font-size:13px;">📢
+                    お知らせ</a>
+                <a href="#" class="header__nav-item"
+                    style="background:#0068b7;color:#fff;padding:6px 16px;border-radius:20px;text-decoration:none;font-size:13px;">👤
+                    採用情報</a>
+                <span style="font-size:16px;font-weight:700;color:#333;margin-left:16px;">📞 0470-22-2251</span>
+                <a href="#"
+                    style="background:#0068b7;color:#fff;padding:8px 20px;border-radius:4px;text-decoration:none;font-size:14px;">✉
+                    お問い合わせ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- サブナビ -->
+    <nav class="subnav" style="background:#0068b7;padding:12px 0;">
+        <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:32px;">
+            <a href="gas-application.html" style="color:#fff;text-decoration:none;font-size:14px;">個人のお客様へ ▾</a>
+            <a href="corporate-service.html" style="color:#fff;text-decoration:none;font-size:14px;">法人のお客様へ ▾</a>
+            <a href="trouble-gas-smell.html" style="color:#fff;text-decoration:none;font-size:14px;">お困りの時は ▾</a>
+            <a href="#" style="color:#fff;text-decoration:none;font-size:14px;">ガス機器について ▾</a>
+            <a href="safety.html" style="color:#fff;text-decoration:none;font-size:14px;">安全・工事関連 ▾</a>
+            <a href="#" style="color:#fff;text-decoration:none;font-size:14px;">環境・地域の取り組み</a>
+        </div>
+    </nav>
+
+    <!-- ===== ヒーローエリア ===== -->
+    <div class="hero-slider">
+        <div class="hero-slider__bg"></div>
+        <div class="hero-slider__content">
+            <div class="hero-slider__title">房州ガス株式会社</div>
+            <div class="hero-slider__subtitle">安心と快適をお届けします</div>
+        </div>
+    </div>
+
+    <!-- ===== 【改善】アイコン付きクイックナビ ===== -->
+    <div class="icon-nav">
+        <a href="gas-application.html" class="icon-nav__item">
+            <svg class="icon-nav__icon" viewBox="0 0 24 24">
+                <path
+                    d="M18 18.5c-1.67 0-3.33-.34-5-.99-1.67.65-3.33.99-5 .99C4.33 18.5 2 16.17 2 13V4h4v9c0 1.1.9 2 2 2s2-.9 2-2V4h4v9c0 1.1.9 2 2 2s2-.9 2-2V4h4v9c0 3.17-2.33 5.5-6 5.5z" />
+                <path d="M2 20h20v2H2z" />
+            </svg>
+            お引越し
+        </a>
+        <a href="gas-price.html" class="icon-nav__item">
+            <svg class="icon-nav__icon" viewBox="0 0 24 24">
+                <path
+                    d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
+            </svg>
+            ガス料金
+        </a>
+        <a href="payment.html" class="icon-nav__item">
+            <svg class="icon-nav__icon" viewBox="0 0 24 24">
+                <path
+                    d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
+            </svg>
+            お支払方法
+        </a>
+        <a href="#" class="icon-nav__item">
+            <svg class="icon-nav__icon" viewBox="0 0 24 24">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm2 13h-4v-1h4v1zm0-2h-4v-1h4v1zm-1-2.67V13h-2v-2.67A4.98 4.98 0 017 6c0-2.76 2.24-5 5-5s5 2.24 5 5a4.98 4.98 0 01-4 4.33z" />
+            </svg>
+            房州ガスの電気
+        </a>
+        <a href="#" class="icon-nav__item">
+            <svg class="icon-nav__icon" viewBox="0 0 24 24">
+                <path
+                    d="M19.48 13.03A4 4 0 0116 11c-1.2 0-2.27.53-3 1.36V5h8v8.03zM7 5h6v2H7V5zm0 4h6v2H7V9zm0 4h4v2H7v-2zm13 6H4c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h18c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zM4 3v14h16V3H4z" />
+            </svg>
+            ガス機器
+        </a>
+        <a href="trouble-gas-smell.html" class="icon-nav__item">
+            <svg class="icon-nav__icon" viewBox="0 0 24 24">
+                <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+            </svg>
+            お困りの時は
+        </a>
+        <a href="#" class="icon-nav__item">
+            <svg class="icon-nav__icon" viewBox="0 0 24 24">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+            andline光
+        </a>
+    </div>
+
+    <!-- ===== お知らせセクション（改善版） ===== -->
+    <section class="news-section">
+        <h2 class="news-section__title">お知らせ</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <span class="news-item__date">2026年02月17日</span>
+                <span class="news-item__tag news-item__tag--emergency">緊急のお知らせ</span>
+                <span class="news-item__title">石川県能登における地震発生に伴う対応について</span>
+            </li>
+            <li class="news-item">
+                <span class="news-item__date">2026年03月01日</span>
+                <span class="news-item__tag news-item__tag--info">お知らせ</span>
+                <span class="news-item__title">2026年4月検針分の都市ガス料金(家庭用)について</span>
+            </li>
+            <li class="news-item">
+                <span class="news-item__date">2026年02月15日</span>
+                <span class="news-item__tag news-item__tag--info">お知らせ</span>
+                <span class="news-item__title">ショールーム営業時間変更のお知らせ</span>
+            </li>
+            <li class="news-item">
+                <span class="news-item__date">2025年12月24日</span>
+                <span class="news-item__tag news-item__tag--important">重要</span>
+                <span class="news-item__title">令和7年度「電気・ガス料金負担軽減支援」による電気・ガス料金の軽減措置について</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ===== バナーエリア（改善：3列グリッド、小型化） ===== -->
+    <div class="banner-area">
+        <div class="banner-area__item">
+            <div class="banner-placeholder">
+                <strong>房州ガス with andline光</strong><br>バナー画像
+            </div>
+        </div>
+        <div class="banner-area__item">
+            <div class="banner-placeholder">
+                <strong>求人募集中</strong><br>バナー画像
+            </div>
+        </div>
+        <div class="banner-area__item">
+            <div class="banner-placeholder">
+                <strong>房州ガスの電気</strong><br>バナー画像
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== フッター ===== -->
+    <footer style="background:#f5f5f5;margin-top:80px;">
+        <div style="max-width:1100px;margin:0 auto;padding:40px 20px;text-align:center;">
+            <p style="color:#666;font-size:14px;margin-bottom:16px;">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</p>
+            <p style="font-size:24px;font-weight:700;color:#0068b7;margin-bottom:8px;">📞 0470-22-2251</p>
+            <p style="font-size:13px;color:#888;margin-bottom:16px;">平日・土曜 8:00〜17:00</p>
+            <a href="#"
+                style="display:inline-block;background:#0068b7;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:14px;">✉
+                お問い合わせはこちら</a>
+        </div>
+        <div style="background:#333;padding:16px;text-align:center;">
+            <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+                <span style="color:#fff;font-size:16px;font-weight:700;">☆ 房州ガス株式会社</span>
+                <span style="color:#999;font-size:12px;">© BoushuGas.co.jp</span>
+            </div>
+        </div>
+    </footer>
+
+<script src="js/nav.js"></script></body>
+
+</html>

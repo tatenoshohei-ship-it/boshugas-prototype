@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくあるご質問 法人（プロトタイプ）- 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8
+        }
+
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0068b7;
+            display: inline-block
+        }
+
+        .sub-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px
+        }
+
+        .sub-layout__side {
+            flex: 0 0 220px
+        }
+
+        .sub-layout__main {
+            flex: 1
+        }
+
+        .side-nav-proto {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .side-nav-proto__title {
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .side-nav-proto a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background .2s
+        }
+
+        .side-nav-proto a:hover,
+        .side-nav-proto a.is-active {
+            background: #0068b7;
+            color: #fff
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            padding-left: 16px;
+            border-left: 4px solid #0068b7;
+            margin-bottom: 24px;
+            margin-top: 48px
+        }
+
+        .section-heading:first-child {
+            margin-top: 0
+        }
+
+        .faq-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden
+        }
+
+        .faq-q {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            cursor: pointer;
+            background: #fff;
+            transition: background .2s
+        }
+
+        .faq-q:hover {
+            background: #f8f9fa
+        }
+
+        .faq-q__icon {
+            width: 28px;
+            height: 28px;
+            background: #0068b7;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        .faq-q__text {
+            flex: 1;
+            font-size: 15px;
+            font-weight: 600
+        }
+
+        .faq-q__arrow {
+            font-size: 18px;
+            color: #999;
+            transition: transform .3s
+        }
+
+        .faq-a {
+            display: none;
+            padding: 16px 20px 16px 60px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee
+        }
+
+        .faq-a__icon {
+            display: inline-flex;
+            width: 28px;
+            height: 28px;
+            background: #e67e22;
+            color: #fff;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 8px;
+            vertical-align: middle
+        }
+
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999
+        }
+
+        @media(max-width:768px) {
+            .sub-layout {
+                flex-direction: column
+            }
+
+            .sub-layout__side {
+                flex: none;
+                width: 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prototype-badge">⚠ デザインプロトタイプ</div>
+    <header class="proto-header">
+        <div class="proto-header__inner"><a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav"><a href="index.html">トップ</a><a href="gas-application.html">ガスのご利用</a><a
+                    href="gas-price.html">ガス料金</a><a href="safety.html">安全</a><a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html">房州ガス(株)</a> &gt; <a href="corporate-service.html">法人のお客様へ</a> &gt;
+        <strong>よくあるご質問</strong></div>
+    <div class="page-title-area">
+        <h1>よくあるご質問（法人）</h1>
+    </div>
+    <div class="sub-layout">
+        <aside class="sub-layout__side">
+            <div class="side-nav-proto">
+                <div class="side-nav-proto__title">法人のお客様へ</div><a href="corporate-service.html">サービスのご案内</a><a
+                    href="corporate-flow.html">導入までの流れ</a><a href="corporate-price.html">ガス料金</a><a
+                    href="corporate-case.html">活用事例</a><a href="corporate-construction.html">新築・導管引き込み</a><a
+                    href="corporate-faq.html" class="is-active">よくあるご質問</a><a href="corporate-terms.html">各種約款</a>
+            </div>
+        </aside>
+        <div class="sub-layout__main">
+            <h2 class="section-heading">ご契約について</h2>
+            <div class="faq-item">
+                <div class="faq-q"
+                    onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+                    <span class="faq-q__icon">Q</span><span class="faq-q__text">法人契約に必要な書類は何ですか？</span><span
+                        class="faq-q__arrow">▼</span></div>
+                <div class="faq-a"><span class="faq-a__icon">A</span> 法人登記簿謄本、印鑑証明書、お申込書が必要です。詳しくは担当までお問い合わせください。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q"
+                    onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+                    <span class="faq-q__icon">Q</span><span class="faq-q__text">複数の拠点を一括契約できますか？</span><span
+                        class="faq-q__arrow">▼</span></div>
+                <div class="faq-a"><span class="faq-a__icon">A</span> はい、複数拠点の一括契約が可能です。まとめてご契約いただくことで、事務手続きの簡素化が可能です。
+                </div>
+            </div>
+            <h2 class="section-heading">料金について</h2>
+            <div class="faq-item">
+                <div class="faq-q"
+                    onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+                    <span class="faq-q__icon">Q</span><span class="faq-q__text">大口契約の条件は？</span><span
+                        class="faq-q__arrow">▼</span></div>
+                <div class="faq-a"><span class="faq-a__icon">A</span> 月間使用量が一定量以上のお客様が対象です。詳細な条件はお見積り時にご案内いたします。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q"
+                    onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+                    <span class="faq-q__icon">Q</span><span class="faq-q__text">見積りは無料ですか？</span><span
+                        class="faq-q__arrow">▼</span></div>
+                <div class="faq-a"><span class="faq-a__icon">A</span> はい、現地調査・お見積りは無料です。お気軽にご依頼ください。</div>
+            </div>
+        </div>
+    </div>
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="font-size:24px;font-weight:700;color:#0068b7;">📞 0470-22-2251</p>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+<script src="js/nav.js"></script></body>
+
+</html>

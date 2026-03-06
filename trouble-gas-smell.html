@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お困りの時は（プロトタイプ）- 房州ガス株式会社</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0;
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none;
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e74c3c;
+            display: inline-block;
+        }
+
+        .sub-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .sub-layout__side {
+            flex: 0 0 220px;
+        }
+
+        .sub-layout__main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .side-nav-proto {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .side-nav-proto__title {
+            background: #e74c3c;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .side-nav-proto a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .side-nav-proto a:hover,
+        .side-nav-proto a.is-active {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            padding-left: 16px;
+            border-left: 4px solid #e74c3c;
+            margin-bottom: 24px;
+            margin-top: 48px;
+        }
+
+        .section-heading:first-child {
+            margin-top: 0;
+        }
+
+        /* 緊急連絡 */
+        .emergency-hero {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .emergency-hero__title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .emergency-hero__phone {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .emergency-hero__desc {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        /* トラブル選択グリッド */
+        .trouble-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .trouble-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .trouble-card:hover {
+            border-color: #e74c3c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(231, 76, 60, 0.15);
+        }
+
+        .trouble-card__icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trouble-card__icon--smell {
+            background: #e74c3c;
+        }
+
+        .trouble-card__icon--outage {
+            background: #f39c12;
+        }
+
+        .trouble-card__icon--earthquake {
+            background: #3498db;
+        }
+
+        .trouble-card__icon--meter {
+            background: #27ae60;
+        }
+
+        .trouble-card__icon--repair {
+            background: #9b59b6;
+        }
+
+        .trouble-card__icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+
+        .trouble-card__title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* ステップ対処法 */
+        .action-steps {
+            counter-reset: step;
+        }
+
+        .action-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .action-step__num {
+            counter-increment: step;
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .action-step__content {
+            flex: 1;
+        }
+
+        .action-step__title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .action-step__desc {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* 禁止事項 */
+        .danger-box {
+            background: #fde8e8;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .danger-box__title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 8px;
+        }
+
+        .danger-box__list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .danger-box__list li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .danger-box__list li::before {
+            content: "🚫 ";
+        }
+
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px;
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media(max-width:768px) {
+            .sub-layout {
+                flex-direction: column;
+            }
+
+            .sub-layout__side {
+                flex: none;
+                width: 100%;
+            }
+
+            .trouble-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prototype-badge">⚠ デザインプロトタイプ（本番環境ではありません）</div>
+    <header class="proto-header">
+        <div class="proto-header__inner"><a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav"><a href="index.html">トップ</a><a href="gas-application.html">ガスのご利用</a><a
+                    href="gas-price.html">ガス料金</a><a href="safety.html">安全</a><a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html">房州ガス(株)</a> &gt; <strong>お困りの時は</strong></div>
+    <div class="page-title-area">
+        <h1>お困りの時は</h1>
+    </div>
+
+    <div class="sub-layout">
+        <aside class="sub-layout__side">
+            <div class="side-nav-proto">
+                <div class="side-nav-proto__title">お困りの時は</div>
+                <a href="trouble-gas-smell.html" class="is-active">ガスくさいとき</a>
+                <a href="#">ガスが出ないとき</a>
+                <a href="#">地震のときは</a>
+                <a href="#">ガスメーター復帰操作</a>
+                <a href="#">ガス機器が故障したら</a>
+            </div>
+        </aside>
+
+        <div class="sub-layout__main">
+
+            <!-- 緊急連絡ヒーロー -->
+            <div class="emergency-hero">
+                <div class="emergency-hero__title">ガスの臭いがしたら今すぐお電話ください</div>
+                <div class="emergency-hero__phone">📞 0470-22-2251</div>
+                <div class="emergency-hero__desc">24時間・365日対応</div>
+            </div>
+
+            <!-- トラブル選択グリッド -->
+            <h2 class="section-heading">症状から選ぶ</h2>
+            <div class="trouble-grid">
+                <div class="trouble-card">
+                    <div class="trouble-card__icon trouble-card__icon--smell">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                        </svg>
+                    </div>
+                    <div class="trouble-card__title">ガスくさい</div>
+                </div>
+                <div class="trouble-card">
+                    <div class="trouble-card__icon trouble-card__icon--outage">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" />
+                            <line x1="7" y1="7" x2="17" y2="17" stroke="#fff" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="trouble-card__title">ガスが出ない</div>
+                </div>
+                <div class="trouble-card">
+                    <div class="trouble-card__icon trouble-card__icon--earthquake">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z" />
+                        </svg>
+                    </div>
+                    <div class="trouble-card__title">地震のとき</div>
+                </div>
+                <div class="trouble-card">
+                    <div class="trouble-card__icon trouble-card__icon--meter">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19.48 13.03A4 4 0 0116 11c-1.2 0-2.27.53-3 1.36V5h8v8.03z" />
+                        </svg>
+                    </div>
+                    <div class="trouble-card__title">メーター復帰</div>
+                </div>
+                <div class="trouble-card">
+                    <div class="trouble-card__icon trouble-card__icon--repair">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+                        </svg>
+                    </div>
+                    <div class="trouble-card__title">機器の故障</div>
+                </div>
+            </div>
+
+            <!-- ガスくさいとき詳細 -->
+            <h2 class="section-heading">ガスくさいときの対処法</h2>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="action-step__num">1</div>
+                    <div class="action-step__content">
+                        <div class="action-step__title">火気の使用を中止</div>
+                        <div class="action-step__desc">コンロや暖房器具など、すべてのガス機器の火を消してください。</div>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="action-step__num">2</div>
+                    <div class="action-step__content">
+                        <div class="action-step__title">窓を開けて換気</div>
+                        <div class="action-step__desc">窓や扉を大きく開けて、室内の空気を入れ替えてください。</div>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="action-step__num">3</div>
+                    <div class="action-step__content">
+                        <div class="action-step__title">ガス栓を閉める</div>
+                        <div class="action-step__desc">ガスメーターのそばにある元栓を閉めてください。</div>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="action-step__num">4</div>
+                    <div class="action-step__content">
+                        <div class="action-step__title">房州ガスへ連絡</div>
+                        <div class="action-step__desc">屋外に出てから <strong>0470-22-2251</strong> にお電話ください。24時間対応です。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 禁止事項 -->
+            <div class="danger-box">
+                <div class="danger-box__title">⚠ 絶対にしないでください</div>
+                <ul class="danger-box__list">
+                    <li>火をつけない（マッチ・ライター含む）</li>
+                    <li>電気のスイッチを操作しない（換気扇も含む）</li>
+                    <li>コンセントの抜き差しをしない</li>
+                    <li>インターホンを押さない</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="font-size:24px;font-weight:700;color:#e74c3c;margin-bottom:8px;">🚨 緊急時 24時間対応：0470-22-2251</p><a
+                href="#"
+                style="display:inline-block;background:#0068b7;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:14px;">✉
+                お問い合わせはこちら</a>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+<script src="js/nav.js"></script></body>
+
+</html>

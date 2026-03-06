@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活用事例（プロトタイプ）- 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <link rel="stylesheet" href="css/override.css">
+    <style>
+        .prototype-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            z-index: 99999
+        }
+
+        body {
+            padding-top: 28px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8
+        }
+
+        .proto-header {
+            background: #0068b7;
+            padding: 16px 0
+        }
+
+        .proto-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px
+        }
+
+        .proto-header__logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none
+        }
+
+        .proto-header__nav {
+            display: flex;
+            gap: 20px
+        }
+
+        .proto-header__nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px
+        }
+
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #888
+        }
+
+        .breadcrumb a {
+            color: #0068b7;
+            text-decoration: none
+        }
+
+        .page-title-area {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0068b7;
+            display: inline-block
+        }
+
+        .sub-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px
+        }
+
+        .sub-layout__side {
+            flex: 0 0 220px
+        }
+
+        .sub-layout__main {
+            flex: 1
+        }
+
+        .side-nav-proto {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .side-nav-proto__title {
+            background: #0068b7;
+            color: #fff;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .side-nav-proto a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            transition: background .2s
+        }
+
+        .side-nav-proto a:hover,
+        .side-nav-proto a.is-active {
+            background: #0068b7;
+            color: #fff
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            padding-left: 16px;
+            border-left: 4px solid #0068b7;
+            margin-bottom: 24px;
+            margin-top: 48px
+        }
+
+        .section-heading:first-child {
+            margin-top: 0
+        }
+
+        .case-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            display: flex;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05)
+        }
+
+        .case-card__img {
+            flex: 0 0 280px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 13px;
+            text-align: center;
+            padding: 20px
+        }
+
+        .case-card__content {
+            flex: 1;
+            padding: 24px
+        }
+
+        .case-card__tag {
+            display: inline-block;
+            background: #0068b7;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px
+        }
+
+        .case-card__title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .case-card__desc {
+            font-size: 14px;
+            color: #555
+        }
+
+        .proto-footer {
+            background: #f5f5f5;
+            margin-top: 80px
+        }
+
+        .proto-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center
+        }
+
+        .proto-footer__bottom {
+            background: #333;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #999
+        }
+
+        @media(max-width:768px) {
+            .sub-layout {
+                flex-direction: column
+            }
+
+            .sub-layout__side {
+                flex: none;
+                width: 100%
+            }
+
+            .case-card {
+                flex-direction: column
+            }
+
+            .case-card__img {
+                flex: none;
+                min-height: 160px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prototype-badge">⚠ デザインプロトタイプ</div>
+    <header class="proto-header">
+        <div class="proto-header__inner"><a href="index.html" class="proto-header__logo">☆ 房州ガス株式会社</a>
+            <nav class="proto-header__nav"><a href="index.html">トップ</a><a href="gas-application.html">ガスのご利用</a><a
+                    href="gas-price.html">ガス料金</a><a href="safety.html">安全</a><a href="corporate-service.html">法人向け</a>
+            </nav>
+        </div>
+    </header>
+    <div class="breadcrumb"><a href="index.html">房州ガス(株)</a> &gt; <a href="corporate-service.html">法人のお客様へ</a> &gt;
+        <strong>活用事例</strong></div>
+    <div class="page-title-area">
+        <h1>活用事例（業種別）</h1>
+    </div>
+    <div class="sub-layout">
+        <aside class="sub-layout__side">
+            <div class="side-nav-proto">
+                <div class="side-nav-proto__title">法人のお客様へ</div><a href="corporate-service.html">サービスのご案内</a><a
+                    href="corporate-flow.html">導入までの流れ</a><a href="corporate-price.html">ガス料金</a><a
+                    href="corporate-case.html" class="is-active">活用事例</a><a
+                    href="corporate-construction.html">新築・導管引き込み</a><a href="corporate-faq.html">よくあるご質問</a><a
+                    href="corporate-terms.html">各種約款</a>
+            </div>
+        </aside>
+        <div class="sub-layout__main">
+            <h2 class="section-heading">導入事例のご紹介</h2>
+            <div class="case-card">
+                <div class="case-card__img">📷 ホテル外観写真</div>
+                <div class="case-card__content"><span class="case-card__tag">宿泊業</span>
+                    <div class="case-card__title">旅館・ホテルでの都市ガス導入</div>
+                    <div class="case-card__desc">大量の給湯需要に対応。ボイラー更新により年間光熱費を約15%削減。24時間安定供給で宿泊客の満足度向上に貢献。</div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-card__img">📷 飲食店厨房写真</div>
+                <div class="case-card__content"><span class="case-card__tag">飲食業</span>
+                    <div class="case-card__title">レストランチェーンへのガス供給</div>
+                    <div class="case-card__desc">高火力が求められる厨房機器に最適。プロパンから都市ガスへの切替により、燃料コストを約20%削減。</div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-card__img">📷 工場内部写真</div>
+                <div class="case-card__content"><span class="case-card__tag">製造業</span>
+                    <div class="case-card__title">食品工場での蒸気ボイラー導入</div>
+                    <div class="case-card__desc">安定した蒸気供給で生産性向上。CO₂排出量を20%削減し、環境対策にも貢献。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="proto-footer">
+        <div class="proto-footer__inner">
+            <p style="font-size:24px;font-weight:700;color:#0068b7;">📞 0470-22-2251</p><a href="#"
+                style="display:inline-block;background:#0068b7;color:#fff;padding:12px 32px;border-radius:4px;text-decoration:none;font-size:14px;margin-top:12px;">✉
+                お問い合わせ</a>
+        </div>
+        <div class="proto-footer__bottom">© BoushuGas.co.jp</div>
+    </footer>
+<script src="js/nav.js"></script></body>
+
+</html>
