@@ -977,6 +977,11 @@
                             </svg>
                         </button>
                         <div class="gp-accordion__body">
+
+                            <p class="c-text" style="margin-bottom:8px;">
+                                都市ガス料金については、ガスのご利用状況に応じて、下記の種類があります。<br>なお、検針日の翌日から起算して20日を過ぎて料金をお支払いいただいた場合、3%の遅収料金を申し受けます。<br>（翌日のガス料金と合算請求となります）
+                            </p>
+
                             <div class="rate-tabs">
                                 <button class="rate-tabs__btn is-active" onclick="switchRate(this, 'rate-general')">①
                                     一般料金</button>
@@ -990,7 +995,10 @@
 
                             <!-- ① 一般料金 -->
                             <div id="rate-general" class="rate-panel is-active">
-                                <h4 class="rate-panel__title">① 一般料金　ガス料金表（税込）</h4>
+                                <h4 class="rate-panel__title">① 一般料金（一般ガス小売約款）</h4>
+                                <p class="c-text" style="margin-bottom:16px;">一般のお客さまにガスを供給する場合の契約です。</p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
@@ -1006,37 +1014,44 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>0m³〜20m³</td>
+                                            <td>0-20m³</td>
                                             <td class="price-highlight">774.40円</td>
                                             <td class="price-highlight">290.40円</td>
                                             <td rowspan="3">16.65円</td>
                                             <td rowspan="3">32.11円</td>
                                         </tr>
                                         <tr>
-                                            <td>21m³〜200m³</td>
+                                            <td>21-200m³</td>
                                             <td class="price-highlight">1,309.00円</td>
                                             <td class="price-highlight">263.67円</td>
                                         </tr>
                                         <tr>
-                                            <td>201m³〜</td>
+                                            <td>201m³-</td>
                                             <td class="price-highlight">5,329.29円</td>
                                             <td class="price-highlight">243.57円</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p class="price-note">※都市ガス1m³当たりの熱量は62.79075MJ（15,000kcal）です。</p>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
                                 <p class="price-note">※原料費調整額は毎月更新いたします。</p>
-                                <p class="price-note">※令和8年3月分には政府支援（-18.0円/m³）、4月分には（-6.0円/m³）を含みます。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
                             </div>
 
                             <!-- ② ガス温水暖房契約 -->
                             <div id="rate-hotwater" class="rate-panel">
-                                <h4 class="rate-panel__title">② ガス温水暖房契約　ガス料金表（税込）</h4>
-                                <p class="c-text" style="font-size:14px;margin-bottom:16px;"><strong>▼
-                                        冬期（12月〜4月検針分）</strong></p>
+                                <h4 class="rate-panel__title">② ガス温水暖房契約</h4>
+                                <p class="c-text" style="margin-bottom:4px;">ガスを熱源とした温水暖房をお使いのお客さまを対象としたお得なガス料金プランです。
+                                </p>
+                                <p class="price-note" style="margin-bottom:16px;">※ガス温水暖房契約の適用には条件があります。詳しくはお問い合わせください。
+                                </p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
+                                            <th rowspan="2">時期区分</th>
                                             <th rowspan="2">使用量区分</th>
                                             <th rowspan="2">基本料金</th>
                                             <th rowspan="2">基準単位料金</th>
@@ -1049,38 +1064,62 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>0m³〜20m³</td>
+                                            <td rowspan="3">冬期</td>
+                                            <td>0-20m³</td>
                                             <td class="price-highlight">774.40円</td>
                                             <td class="price-highlight">290.40円</td>
-                                            <td rowspan="3">16.65円</td>
-                                            <td rowspan="3">32.11円</td>
+                                            <td rowspan="6">16.65円</td>
+                                            <td rowspan="6">32.11円</td>
                                         </tr>
                                         <tr>
-                                            <td>21m³〜100m³</td>
+                                            <td>21-100m³</td>
                                             <td class="price-highlight">2,642.00円</td>
                                             <td class="price-highlight">197.00円</td>
                                         </tr>
                                         <tr>
-                                            <td>101m³〜</td>
+                                            <td>101m³-</td>
                                             <td class="price-highlight">5,592.00円</td>
                                             <td class="price-highlight">167.50円</td>
                                         </tr>
+                                        <tr>
+                                            <td rowspan="3">冬期以外</td>
+                                            <td>0-20m³</td>
+                                            <td class="price-highlight">774.40円</td>
+                                            <td class="price-highlight">290.40円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-200m³</td>
+                                            <td class="price-highlight">1,309.00円</td>
+                                            <td class="price-highlight">263.67円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>201m³-</td>
+                                            <td class="price-highlight">5,329.29円</td>
+                                            <td class="price-highlight">243.57円</td>
+                                        </tr>
                                     </tbody>
                                 </table>
-                                <p class="c-text" style="font-size:14px;margin:24px 0 16px;"><strong>▼
-                                        冬期以外（5月〜11月検針分）</strong></p>
-                                <p class="c-text" style="font-size:14px;">一般料金と同じ料金が適用されます。</p>
-                                <p class="price-note">※冬期：12月検針分〜4月検針分</p>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
+                                <p class="price-note">※冬期とは12月〜3月までを言います。</p>
+                                <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
                             </div>
 
                             <!-- ③ ガス暖房契約 -->
                             <div id="rate-heating" class="rate-panel">
-                                <h4 class="rate-panel__title">③ ガス暖房契約　ガス料金表（税込）</h4>
-                                <p class="c-text" style="font-size:14px;margin-bottom:16px;"><strong>▼
-                                        冬期（12月〜3月検針分）</strong></p>
+                                <h4 class="rate-panel__title">③ ガス暖房契約</h4>
+                                <p class="c-text" style="margin-bottom:4px;">
+                                    ガスを熱源とした暖房機器（ファンヒーター・ストーブ）をご使用されているお客さまを対象としたお得なガス料金プランです。</p>
+                                <p class="price-note" style="margin-bottom:16px;">※ガス暖房契約の適用には条件があります。詳しくはお問い合わせください。
+                                </p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
+                                            <th rowspan="2">時期区分</th>
                                             <th rowspan="2">使用量区分</th>
                                             <th rowspan="2">基本料金</th>
                                             <th rowspan="2">基準単位料金</th>
@@ -1093,37 +1132,61 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>0m³〜20m³</td>
+                                            <td rowspan="3">冬期</td>
+                                            <td>0-20m³</td>
                                             <td class="price-highlight">774.40円</td>
                                             <td class="price-highlight">290.40円</td>
-                                            <td rowspan="3">16.65円</td>
-                                            <td rowspan="3">32.11円</td>
+                                            <td rowspan="6">16.65円</td>
+                                            <td rowspan="6">32.11円</td>
                                         </tr>
                                         <tr>
-                                            <td>21m³〜80m³</td>
+                                            <td>21-80m³</td>
                                             <td class="price-highlight">2,450.00円</td>
                                             <td class="price-highlight">206.58円</td>
                                         </tr>
                                         <tr>
-                                            <td>81m³〜</td>
+                                            <td>81m³-</td>
                                             <td class="price-highlight">3,300.00円</td>
                                             <td class="price-highlight">195.95円</td>
                                         </tr>
+                                        <tr>
+                                            <td rowspan="3">冬期以外</td>
+                                            <td>0-20m³</td>
+                                            <td class="price-highlight">774.40円</td>
+                                            <td class="price-highlight">290.40円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>21-200m³</td>
+                                            <td class="price-highlight">1,309.00円</td>
+                                            <td class="price-highlight">263.67円</td>
+                                        </tr>
+                                        <tr>
+                                            <td>201m³-</td>
+                                            <td class="price-highlight">5,329.29円</td>
+                                            <td class="price-highlight">243.57円</td>
+                                        </tr>
                                     </tbody>
                                 </table>
-                                <p class="c-text" style="font-size:14px;margin:24px 0 16px;"><strong>▼
-                                        冬期以外（4月〜11月検針分）</strong></p>
-                                <p class="c-text" style="font-size:14px;">一般料金と同じ料金が適用されます。</p>
-                                <p class="price-note">※冬期：12月検針分〜3月検針分</p>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
+                                <p class="price-note">※冬期とは12月〜3月までを言います。</p>
+                                <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
                             </div>
 
                             <!-- ④ 小型空調専用契約 -->
                             <div id="rate-aircon" class="rate-panel">
-                                <h4 class="rate-panel__title">④ 小型空調専用契約　ガス料金表（税込）</h4>
+                                <h4 class="rate-panel__title">④ 小型空調専用契約</h4>
+                                <p class="c-text" style="margin-bottom:4px;">ガス空調をお使いのお客さまを対象としたお得なガス料金プランです。</p>
+                                <p class="price-note" style="margin-bottom:16px;">※小型空調専用契約の適用には条件があります。詳しくはお問い合わせください。
+                                </p>
+
+                                <p class="c-text" style="font-weight:bold;margin-bottom:8px;">ガス料金表（税込）</p>
                                 <table class="price-table">
                                     <thead>
                                         <tr>
-                                            <th rowspan="2">適用期間</th>
+                                            <th rowspan="2">時期区分</th>
                                             <th rowspan="2">基本料金</th>
                                             <th rowspan="2">基準単位料金</th>
                                             <th colspan="2" style="background:#00796b;">原料費調整額</th>
@@ -1135,20 +1198,25 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>冬期（12月〜3月）</td>
+                                            <td>冬期</td>
                                             <td class="price-highlight">2,530.00円</td>
                                             <td class="price-highlight">148.73円</td>
                                             <td rowspan="2">16.65円</td>
                                             <td rowspan="2">32.11円</td>
                                         </tr>
                                         <tr>
-                                            <td>冬期以外（4月〜11月）</td>
+                                            <td>冬期以外</td>
                                             <td class="price-highlight">2,530.00円</td>
                                             <td class="price-highlight">126.72円</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p class="price-note">※冬期：12月検針分〜3月検針分</p>
+                                <p class="price-note">※当社の都市ガス1m³当たりの熱量は62.79075MJ(15,000kcal)です。</p>
+                                <p class="price-note">※冬期とは12月〜3月までを言います。</p>
+                                <p class="price-note">※原料費調整額は毎月更新いたします。</p>
+                                <p class="price-note">※政府の支援を踏まえて、下記のとおりガス料金の値引きを原料費調整額に反映しております。</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年3月検針分　1m³あたり18.0円（税込）相当の値引き</p>
+                                <p class="price-note" style="padding-left:16px;">令和8年4月検針分　1m³あたり6.0円（税込）相当の値引き</p>
                             </div>
                         </div>
                     </div>
