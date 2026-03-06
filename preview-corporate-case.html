@@ -228,6 +228,27 @@
 
         .case-card__body {
             padding: 24px;
+            display: flex;
+            gap: 24px;
+        }
+
+        .case-card__image {
+            width: 240px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .case-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .case-card__details {
+            flex: 1;
+            min-width: 0;
         }
 
         .case-card__section {
@@ -580,25 +601,32 @@
                             <div class="case-card__title">飲食店</div>
                         </div>
                         <div class="case-card__body">
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
-                                <p class="case-card__text">
-                                    <strong>厨房機器の老朽化</strong>、火力の不安定。<strong>プロパンから都市ガスへの切替</strong>検討。
-                                </p>
+                            <div class="case-card__image">
+                                <img src="images/case_restaurant.png" alt="飲食店の事例">
                             </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
-                                <p class="case-card__text">
-                                    <strong>都市ガス導入</strong>＋最新厨房機器（スチコン等）、換気・安全設備。
-                                </p>
-                            </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--effect">✅ 効果</div>
-                                <ul class="case-card__list">
-                                    <li><strong>調理効率アップ</strong></li>
-                                    <li><strong>ガス料金15%削減</strong></li>
-                                    <li>作業スペース改善</li>
-                                </ul>
+                            <div class="case-card__details">
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
+                                    <p class="case-card__text">
+                                        <strong>厨房機器の老朽化</strong>、火力の不安定や調理時間のロスが発生。<br>都市ガス供給エリア内だったため、<strong>プロパンからの切替</strong>を検討。
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
+                                    <p class="case-card__text">
+                                        ・<strong>都市ガス導入</strong>＋厨房機器の新規設置<br>
+                                        ・高効率ガスコンロ・スチームコンベクション導入<br>
+                                        ・厨房内換気と安全設備もセットでご提案
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--effect">✅ 効果</div>
+                                    <ul class="case-card__list">
+                                        <li><strong>調理効率が大幅アップ</strong>（火力安定）</li>
+                                        <li><strong>ガス料金が月平均15%削減</strong></li>
+                                        <li>スペースも整理され、作業効率向上</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -616,25 +644,32 @@
                             <div class="case-card__title">福祉・介護施設</div>
                         </div>
                         <div class="case-card__body">
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
-                                <p class="case-card__text">
-                                    <strong>給湯設備・乾燥機の老朽化</strong>、洗濯・入浴業務への支障、<strong>CO対策</strong>。
-                                </p>
+                            <div class="case-card__image">
+                                <img src="images/case_welfare.png" alt="福祉・介護施設の事例">
                             </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
-                                <p class="case-card__text">
-                                    <strong>追い焚き付給湯器</strong>、ガス乾燥機の導入、<strong>リース契約</strong>の提案。
-                                </p>
-                            </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--effect">✅ 効果</div>
-                                <ul class="case-card__list">
-                                    <li><strong>トラブル解消</strong>、利用者満足度アップ</li>
-                                    <li><strong>COリスク低減</strong></li>
-                                    <li>停電時バックアップ</li>
-                                </ul>
+                            <div class="case-card__details">
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
+                                    <p class="case-card__text">
+                                        業務用の<strong>給湯設備・衣類乾燥機が老朽化</strong>し、洗濯作業に支障。<br>入浴用給湯の安定化と<strong>CO対策</strong>が必要だった。
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
+                                    <p class="case-card__text">
+                                        ・<strong>ガス給湯器</strong>（追い焚き機能付）とガス乾燥機の導入<br>
+                                        ・CO警報器と屋外排気設計を含む安全対応<br>
+                                        ・メンテナンス付きの<strong>リース契約</strong>をご提案
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--effect">✅ 効果</div>
+                                    <ul class="case-card__list">
+                                        <li><strong>トラブル解消</strong>、利用者満足度アップ</li>
+                                        <li><strong>COリスクの低減</strong>と法定点検対応の低負荷化</li>
+                                        <li>万一の停電時もバックアップ手段を確保</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -654,25 +689,31 @@
                             <div class="case-card__title">工場・倉庫（製造業系）</div>
                         </div>
                         <div class="case-card__body">
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
-                                <p class="case-card__text">
-                                    <strong>電気ヒーターによる暖房コスト高</strong>、冬場の作業効率低下。
-                                </p>
+                            <div class="case-card__image">
+                                <img src="images/case_factory.png" alt="工場・倉庫の事例">
                             </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
-                                <p class="case-card__text">
-                                    <strong>ガス式温風ヒーター</strong>（天井吊下型）、大型ボンベ安定供給。
-                                </p>
-                            </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--effect">✅ 効果</div>
-                                <ul class="case-card__list">
-                                    <li><strong>暖房コスト30%削減</strong></li>
-                                    <li><strong>体感温度改善</strong></li>
-                                    <li>冬季の生産性向上</li>
-                                </ul>
+                            <div class="case-card__details">
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
+                                    <p class="case-card__text">
+                                        電気ヒーター使用による<strong>暖房コストが高く</strong>、冬場の作業効率も悪かった。<br>大型空間に対応する暖房設備の導入を検討。
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
+                                    <p class="case-card__text">
+                                        ・<strong>ガス式温風ヒーター</strong>の設置推奨（天井吊り下げ型）<br>
+                                        ・プロパン供給＋大型ボンベへの安定供給契約
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--effect">✅ 効果</div>
+                                    <ul class="case-card__list">
+                                        <li><strong>暖房コストを約30%削減</strong></li>
+                                        <li>作業者の<strong>体感温度が大きく改善</strong></li>
+                                        <li>冬季の生産性向上につながる</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -690,25 +731,32 @@
                             <div class="case-card__title">宿泊施設・旅館</div>
                         </div>
                         <div class="case-card__body">
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
-                                <p class="case-card__text">
-                                    <strong>ボイラー老朽化</strong>、給湯不安定、<strong>災害時の対応</strong>。
-                                </p>
+                            <div class="case-card__image">
+                                <img src="images/case_hotel.png" alt="宿泊施設・旅館の事例">
                             </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
-                                <p class="case-card__text">
-                                    <strong>高効率ボイラーへの入替</strong>、耐震固定、<strong>LPガス切替プラン</strong>の設計。
-                                </p>
-                            </div>
-                            <div class="case-card__section">
-                                <div class="case-card__label case-card__label--effect">✅ 効果</div>
-                                <ul class="case-card__list">
-                                    <li><strong>安定給湯</strong></li>
-                                    <li><strong>点検負荷の軽減</strong></li>
-                                    <li>有事のバックアップ手段確保</li>
-                                </ul>
+                            <div class="case-card__details">
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--issue">⚠ 課題・状況</div>
+                                    <p class="case-card__text">
+                                        ガスボイラーの老朽化に伴い、入浴・厨房への<strong>給湯が不安定</strong>に。<br><strong>災害時の対応</strong>も見据えた設備更新が必要だった。
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--proposal">💡 ご提案内容</div>
+                                    <p class="case-card__text">
+                                        ・<strong>高効率ガスボイラー</strong>への入替<br>
+                                        ・CO対策＋耐震固定対応の設置工事<br>
+                                        ・非常時に備えた<strong>LPガス切替プラン</strong>も併せて設計
+                                    </p>
+                                </div>
+                                <div class="case-card__section">
+                                    <div class="case-card__label case-card__label--effect">✅ 効果</div>
+                                    <ul class="case-card__list">
+                                        <li><strong>安定した給湯</strong>で入浴トラブルゼロに</li>
+                                        <li>COリスクの低減と<strong>法定点検対応の低負荷化</strong></li>
+                                        <li>万一の停電時もバックアップ手段を確保</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
