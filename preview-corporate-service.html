@@ -178,56 +178,53 @@
             font-size: 15px;
             line-height: 1.9;
             color: #555;
-            margin-bottom: 40px;
-        }
-
-        /* ===== サービスセクション ===== */
-        .service-section {
             margin-bottom: 48px;
         }
 
-        .service-section__num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: #2B7CBC;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 900;
-            border-radius: 50%;
-            margin-right: 12px;
-            vertical-align: middle;
-        }
-
-        .service-section__title {
+        /* ===== セクション見出し（センター） ===== */
+        .section-heading {
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 900;
             color: #244967;
-            border-left: 4px solid #2B7CBC;
-            padding-left: 16px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-section__lead {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .info-box {
-            background: #f7f9fb;
-            border-radius: 10px;
-            padding: 24px 28px;
+            text-align: center;
             margin-bottom: 16px;
         }
 
-        .info-box__title {
-            font-size: 16px;
+        .section-lead {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 24px;
+        }
+
+        .section-lead strong {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid #e0e8ef;
+            margin: 48px 0;
+        }
+
+        /* ===== 2カラム比較ボックス ===== */
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .compare-box {
+            background: #f7f9fb;
+            border: 1px solid #e0e8ef;
+            border-radius: 10px;
+            padding: 24px 24px;
+        }
+
+        .compare-box__title {
+            font-size: 15px;
             font-weight: 700;
             color: #244967;
             margin-bottom: 12px;
@@ -236,64 +233,205 @@
             gap: 8px;
         }
 
-        .info-box__title-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            background: #2B7CBC;
-            color: #fff;
-            border-radius: 6px;
-            font-size: 14px;
+        .compare-box__title::before {
+            content: '◎';
+            color: #2B7CBC;
         }
 
-        .info-box__list {
+        .compare-box__list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .info-box__list li {
-            padding: 6px 0;
+        .compare-box__list li {
             font-size: 14px;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #555;
-            padding-left: 16px;
-            position: relative;
         }
 
-        .info-box__list li::before {
-            content: '・';
-            position: absolute;
-            left: 0;
+        .support-box {
+            background: #f7f9fb;
+            border: 1px solid #e0e8ef;
+            border-radius: 10px;
+            padding: 24px 24px;
+            margin-bottom: 20px;
+        }
+
+        .support-box__title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .support-box__title::before {
+            content: '◎';
             color: #2B7CBC;
         }
 
-        .info-box--case {
-            background: #fdf8f0;
-            border-left: 4px solid #e67e22;
+        .support-box__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .info-box--case .info-box__title {
-            color: #e67e22;
+        .support-box__list li {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
         }
 
-        .info-box--case .info-box__title-icon {
-            background: #e67e22;
+        /* ===== 4列画像グリッド ===== */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
         }
 
-        .info-box--result {
-            background: #f0f7f0;
-            border-left: 4px solid #27ae60;
+        .equipment-card {
+            border: 1px solid #e0e8ef;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
         }
 
-        .info-box--result .info-box__title {
-            color: #27ae60;
+        .equipment-card__img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            background: #e8e0d8;
         }
 
-        .info-box--result .info-box__title-icon {
-            background: #27ae60;
+        .equipment-card__label {
+            padding: 10px 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* ===== ステップフロー ===== */
+        .step-flow-heading {
+            font-size: 18px;
+            font-weight: 700;
+            color: #244967;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .step-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .step-card {
+            border: 1px solid #e0e8ef;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .step-card__img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+            background: #e8e0d8;
+        }
+
+        .step-card__label {
+            padding: 10px 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* ===== 事例カード（2カラム） ===== */
+        .case-heading {
+            font-size: 18px;
+            font-weight: 700;
+            color: #244967;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .case-card {
+            border: 1px solid #e0e8ef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .case-card__body {
+            padding: 20px;
+        }
+
+        .case-card__tag {
+            font-size: 14px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 4px;
+        }
+
+        .case-card__desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .case-card__img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            display: block;
+            background: #c0d4e8;
+        }
+
+        /* ===== エネルギー最適化（テキストリスト） ===== */
+        .energy-block {
+            margin-bottom: 28px;
+        }
+
+        .energy-block__title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .energy-block__title::before {
+            content: '◎';
+            color: #2B7CBC;
+        }
+
+        .energy-block__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .energy-block__list li {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
         }
 
         /* ===== お問い合わせ・フッター ===== */
@@ -517,191 +655,159 @@
                     </p>
 
                     <!-- ===== 1. 都市ガス／LPガスの供給 ===== -->
-                    <div class="service-section">
-                        <h3 class="service-section__title">
-                            <span class="service-section__num">1</span>
-                            都市ガス／LPガスの供給
-                        </h3>
-                        <p class="service-section__lead">お客様の所在地や設備条件に応じて、都市ガスまたはLPガス（プロパンガス）いずれかを最適な形で供給いたします。</p>
+                    <h3 class="section-heading">都市ガス／LPガスの供給</h3>
+                    <p class="section-lead">お客様の所在地や設備条件に応じて、<strong>都市ガスまたはLPガス（プロパンガス）</strong>いずれかを最適な形で供給いたします。</p>
 
-                        <div class="info-box">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M12 16v-4M12 8h.01" />
-                                    </svg>
-                                </span>
-                                都市ガスの特徴
-                            </h4>
-                            <ul class="info-box__list">
+                    <div class="compare-row">
+                        <div class="compare-box">
+                            <h4 class="compare-box__title">都市ガスの特徴</h4>
+                            <ul class="compare-box__list">
                                 <li>地中配管による安定供給（供給区域あり）</li>
                                 <li>LPガスと比較してランニングコストが低い場合が多い</li>
                                 <li>大規模施設や工場におすすめ</li>
                             </ul>
                         </div>
-
-                        <div class="info-box">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M12 16v-4M12 8h.01" />
-                                    </svg>
-                                </span>
-                                LPガスの特徴
-                            </h4>
-                            <ul class="info-box__list">
+                        <div class="compare-box">
+                            <h4 class="compare-box__title">LPガスの特徴</h4>
+                            <ul class="compare-box__list">
                                 <li>配管不要・どの地域でも対応可能</li>
                                 <li>個別供給のため導入しやすい</li>
-                                <li>小規模店舗や郊外部エリアに最適</li>
-                            </ul>
-                        </div>
-
-                        <div class="info-box">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                </span>
-                                導入までのサポート
-                            </h4>
-                            <ul class="info-box__list">
-                                <li>供給方式の無料相談</li>
-                                <li>導入プラン・初期工事費のご相談</li>
-                                <li>使用量に応じた料金プラン設計</li>
+                                <li>小規模店舗や非都市部エリアに最適</li>
                             </ul>
                         </div>
                     </div>
+
+                    <div class="support-box">
+                        <h4 class="support-box__title">導入までのサポート</h4>
+                        <ul class="support-box__list">
+                            <li>供給可否の無料調査</li>
+                            <li>導入プラン・初期工事費のご相談</li>
+                            <li>使用量に応じた料金プラン設計</li>
+                        </ul>
+                    </div>
+
+                    <hr class="section-divider">
 
                     <!-- ===== 2. 業務用ガス機器のご提案 ===== -->
-                    <div class="service-section">
-                        <h3 class="service-section__title">
-                            <span class="service-section__num">2</span>
-                            業務用ガス機器のご提案
-                        </h3>
+                    <h3 class="section-heading">業務用ガス機器のご提案</h3>
 
-                        <div class="info-box">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                                    </svg>
-                                </span>
-                                取り扱い機器例
-                            </h4>
-                            <ul class="info-box__list">
-                                <li>ガスコンロ・オーブン・スチームコンベクション</li>
-                                <li>業務用給湯器・ガスボイラー</li>
-                                <li>ガス式乾燥機（コインランドリー・福祉施設向け）</li>
-                                <li>暖房・床暖房設備（ロビー・待合室向け）</li>
-                            </ul>
+                    <div class="equipment-grid">
+                        <div class="equipment-card">
+                            <img src="images/equipment_gas_stove.jpg" alt="ガスコンロ" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">ガスコンロ</p>
                         </div>
-
-                        <div class="info-box">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <polyline points="1 4 1 10 7 10" />
-                                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-                                    </svg>
-                                </span>
-                                導入までの流れ
-                            </h4>
-                            <ul class="info-box__list">
-                                <li>現地調査・ヒアリング</li>
-                                <li>用途・予算に応じた機器選定</li>
-                                <li>機器手配・設置・初期試運転</li>
-                                <li>取扱説明・アフター対応</li>
-                            </ul>
+                        <div class="equipment-card">
+                            <img src="images/equipment_oven.jpg" alt="オーブン" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">オーブン</p>
                         </div>
-
-                        <div class="info-box info-box--case">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
-                                </span>
-                                導入事例
-                            </h4>
-                            <ul class="info-box__list">
-                                <li>【飲食店】旧型コンロ→高効率ガス機器に交換し、調理効率アップ</li>
-                                <li>【福祉施設】大型給湯器＋乾燥機を更新し、CO2対策と時短を両立</li>
-                            </ul>
+                        <div class="equipment-card">
+                            <img src="images/equipment_steam.jpg" alt="スチームコンベクション" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">スチームコンベクション</p>
+                        </div>
+                        <div class="equipment-card">
+                            <img src="images/equipment_water_heater.jpg" alt="業務用給湯器" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">業務用給湯器</p>
+                        </div>
+                        <div class="equipment-card">
+                            <img src="images/equipment_boiler.jpg" alt="ガスボイラー" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">ガスボイラー</p>
+                        </div>
+                        <div class="equipment-card">
+                            <img src="images/equipment_dryer.jpg" alt="ガス衣類乾燥機" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">ガス衣類乾燥機（コインランドリー・福祉施設向け）</p>
+                        </div>
+                        <div class="equipment-card">
+                            <img src="images/equipment_heating.jpg" alt="暖房" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">暖房</p>
+                        </div>
+                        <div class="equipment-card">
+                            <img src="images/equipment_floor_heating.jpg" alt="床暖房設備" class="equipment-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="equipment-card__label">床暖房設備（ロビー・待合室向け）</p>
                         </div>
                     </div>
 
+                    <h4 class="step-flow-heading">導入までの流れ</h4>
+                    <div class="step-flow">
+                        <div class="step-card">
+                            <img src="images/step_hearing.jpg" alt="現地調査・ヒアリング" class="step-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="step-card__label">現地調査・ヒアリング</p>
+                        </div>
+                        <div class="step-card">
+                            <img src="images/step_selection.jpg" alt="用途・予算に応じた機器選定" class="step-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="step-card__label">用途・予算に応じた機器選定</p>
+                        </div>
+                        <div class="step-card">
+                            <img src="images/step_install.jpg" alt="機器手配・設置・初期試運転" class="step-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="step-card__label">機器手配・設置・初期試運転</p>
+                        </div>
+                        <div class="step-card">
+                            <img src="images/step_after.jpg" alt="取扱説明・アフター対応" class="step-card__img"
+                                onerror="this.style.background='#e8e0d8'">
+                            <p class="step-card__label">取扱説明・アフター対応</p>
+                        </div>
+                    </div>
+
+                    <h4 class="case-heading">提案事例</h4>
+                    <div class="case-grid">
+                        <div class="case-card">
+                            <div class="case-card__body">
+                                <p class="case-card__tag">【飲食店】</p>
+                                <p class="case-card__desc">旧型コンロ→高効率ガス機器に交換し、調理効率アップ</p>
+                            </div>
+                            <img src="images/case_restaurant.jpg" alt="飲食店の事例" class="case-card__img"
+                                onerror="this.style.background='#c0d4e8'">
+                        </div>
+                        <div class="case-card">
+                            <div class="case-card__body">
+                                <p class="case-card__tag">【福祉施設】</p>
+                                <p class="case-card__desc">大型給湯器＋乾燥機を更新し、CO2対策と時短を両立</p>
+                            </div>
+                            <img src="images/case_welfare.jpg" alt="福祉施設の事例" class="case-card__img"
+                                onerror="this.style.background='#c0d4e8'">
+                        </div>
+                    </div>
+
+                    <hr class="section-divider">
+
                     <!-- ===== 3. エネルギー最適化 ===== -->
-                    <div class="service-section">
-                        <h3 class="service-section__title">
-                            <span class="service-section__num">3</span>
-                            エネルギー最適化（省エネ・補助金活用）
-                        </h3>
-                        <p class="service-section__lead">ガスの使い方や設備を見直すことで、光熱費の削減・環境負荷の軽減・安全性の向上が期待できます。</p>
+                    <h3 class="section-heading">エネルギー最適化（省エネ・補助金活用）</h3>
+                    <p class="section-lead">ガスの使い方や設備を見直すことで、光熱費の削減・環境負荷の軽減・安全性の向上が期待できます。</p>
 
-                        <div class="info-box">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <polygon
-                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                                    </svg>
-                                </span>
-                                ご提案内容
-                            </h4>
-                            <ul class="info-box__list">
-                                <li>使用量分析による最適なガス種・料金プランのご提案</li>
-                                <li>機器導入による高効率化・長寿命化（例：エコジョーズ・低NOxボイラー）</li>
-                                <li>給湯・空調の連携による無駄のないエネルギー活用</li>
-                            </ul>
-                        </div>
+                    <div class="energy-block">
+                        <h4 class="energy-block__title">ご提案内容</h4>
+                        <ul class="energy-block__list">
+                            <li>使用量分析による最適なガス種・料金プランのご提案</li>
+                            <li>機器入替による高効率化・長寿命化（例：エコジョーズ・低NOxボイラー）</li>
+                            <li>給湯・空調の連携による無駄のないエネルギー活用</li>
+                        </ul>
+                    </div>
 
-                        <div class="info-box">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                    </svg>
-                                </span>
-                                補助金・助成制度へのサポート
-                            </h4>
-                            <ul class="info-box__list">
-                                <li>導入機器が補助金対象となる場合はご案内</li>
-                                <li>申請手続きのサポートも行います（書類記入支援など）</li>
-                                <li>対象制度：省エネ設備導入支援／中小企業向け補助金など（※年度により異なります）</li>
-                            </ul>
-                        </div>
+                    <div class="energy-block">
+                        <h4 class="energy-block__title">補助金・助成制度への対応</h4>
+                        <ul class="energy-block__list">
+                            <li>導入機器が補助金対象となる場合はご案内可能</li>
+                            <li>申請手続きのサポートも行います（書類記入支援など）</li>
+                            <li>対象制度：省エネ設備導入支援／中小企業向け補助金など（※年度により異なります）</li>
+                        </ul>
+                    </div>
 
-                        <div class="info-box info-box--result">
-                            <h4 class="info-box__title">
-                                <span class="info-box__title-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="14" height="14">
-                                        <line x1="12" y1="20" x2="12" y2="10" />
-                                        <line x1="18" y1="20" x2="18" y2="4" />
-                                        <line x1="6" y1="20" x2="6" y2="16" />
-                                    </svg>
-                                </span>
-                                導入効果の例
-                            </h4>
-                            <ul class="info-box__list">
-                                <li>ガスボイラー更新 → 年間光熱費 ▲15%</li>
-                                <li>LP→都市ガス切替＋機器更新 → CO2排出量 ▲20%</li>
-                            </ul>
-                        </div>
+                    <div class="energy-block">
+                        <h4 class="energy-block__title">導入効果の例</h4>
+                        <ul class="energy-block__list">
+                            <li>ガスボイラー更新 → 年間光熱費 ▲15%</li>
+                            <li>LP→都市ガス切替＋機器更新 → CO2排出量 ▲20%</li>
+                        </ul>
                     </div>
 
                 </div>
