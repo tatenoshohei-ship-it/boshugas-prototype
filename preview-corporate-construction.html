@@ -186,6 +186,39 @@
             color: #244967;
         }
 
+        /* ===== ご相談の対象 ===== */
+        .target-audience {
+            margin-bottom: 48px;
+        }
+
+        .target-audience__list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+        }
+
+        .target-audience__list li {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333;
+            padding: 8px 0 8px 28px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .target-audience__list li:last-child {
+            border-bottom: none;
+        }
+
+        .target-audience__list li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #2B7CBC;
+            font-size: 10px;
+            top: 12px;
+        }
+
         /* ===== 対応可能な内容 ===== */
         .section-heading {
             font-size: 22px;
@@ -632,6 +665,17 @@
                         房州ガスでは、<strong>都市ガス・LPガスの供給調査・設計相談・引込工事</strong>を承っております。<br>
                         工事前の早い段階でご相談いただくことで、<strong>コストの最適化・スムーズな導入</strong>が可能になります。
                     </p>
+
+                    <!-- ご相談の対象となる方 -->
+                    <h3 class="section-heading">ご相談の対象となる方</h3>
+                    <div class="target-audience">
+                        <ul class="target-audience__list">
+                            <li>建築主（個人・法人）</li>
+                            <li>建設会社・設計事務所・工務店</li>
+                            <li>土地開発業者・不動産会社</li>
+                            <li>マンション／集合住宅の施主・管理組合</li>
+                        </ul>
+                    </div>
 
                     <!-- 対応可能な内容 -->
                     <h3 class="section-heading">対応可能な内容</h3>
