@@ -176,9 +176,35 @@
         /* ===== 導入文 ===== */
         .intro-text {
             font-size: 15px;
-            line-height: 1.9;
-            color: #555;
+            line-height: 2.0;
+            color: #666;
             margin-bottom: 48px;
+        }
+
+        .intro-text strong {
+            font-weight: 700;
+            color: #244967;
+        }
+
+        /* ===== テキスト強弱ユーティリティ ===== */
+        .kw {
+            font-weight: 700;
+            color: #244967;
+        }
+
+        .num {
+            font-size: 1.2em;
+            font-weight: 900;
+            color: #2B7CBC;
+        }
+
+        .num--green {
+            color: #27ae60;
+        }
+
+        .note {
+            font-size: 0.85em;
+            color: #999;
         }
 
         /* ===== セクション見出し ===== */
@@ -220,13 +246,14 @@
         .section-lead {
             font-size: 15px;
             line-height: 1.8;
-            color: #555;
+            color: #666;
             margin-bottom: 24px;
         }
 
         .section-lead strong {
             font-weight: 700;
-            color: #333;
+            color: #244967;
+            background: linear-gradient(transparent 60%, rgba(43, 124, 188, 0.12) 60%);
         }
 
         .section-divider {
@@ -306,8 +333,13 @@
             padding: 5px 0 5px 20px;
             font-size: 14px;
             line-height: 1.8;
-            color: #555;
+            color: #666;
             position: relative;
+        }
+
+        .compare-box__list li strong {
+            font-weight: 700;
+            color: #333;
         }
 
         .compare-box--city .compare-box__list li::before {
@@ -370,8 +402,13 @@
             padding: 4px 0 4px 20px;
             font-size: 14px;
             line-height: 1.8;
-            color: #555;
+            color: #666;
             position: relative;
+        }
+
+        .support-box__list li strong {
+            font-weight: 700;
+            color: #333;
         }
 
         .support-box__list li::before {
@@ -533,6 +570,11 @@
             color: #555;
         }
 
+        .case-card__desc strong {
+            font-weight: 700;
+            color: #244967;
+        }
+
         .case-card__img {
             width: 100%;
             aspect-ratio: 16 / 10;
@@ -602,8 +644,13 @@
             padding: 4px 0 4px 20px;
             font-size: 14px;
             line-height: 1.8;
-            color: #555;
+            color: #666;
             position: relative;
+        }
+
+        .energy-block__list li strong {
+            font-weight: 700;
+            color: #333;
         }
 
         .energy-block__list li::before {
@@ -838,8 +885,8 @@
                     <h2 class="c-heading2">サービスのご案内</h2>
 
                     <p class="intro-text">
-                        房州ガスでは、地域の事業者さまに対し、安心・安全で効率的なガス供給とエネルギー活用のご提案を行っています。<br>
-                        飲食店、宿泊施設、医療・福祉施設、工場・倉庫など、業種に応じた最適なガス設備・機器導入をサポートいたします。
+                        房州ガスでは、地域の事業者さまに対し、<strong>安心・安全で効率的なガス供給</strong>と<strong>エネルギー活用</strong>のご提案を行っています。<br>
+                        飲食店、宿泊施設、医療・福祉施設、工場・倉庫など、<strong>業種に応じた最適なガス設備・機器導入</strong>をサポートいたします。
                     </p>
 
                     <!-- ===== 1. 都市ガス／LPガスの供給 ===== -->
@@ -872,9 +919,9 @@
                                 都市ガスの特徴
                             </h4>
                             <ul class="compare-box__list">
-                                <li>地中配管による安定供給（供給区域あり）</li>
-                                <li>LPガスと比較してランニングコストが低い場合が多い</li>
-                                <li>大規模施設や工場におすすめ</li>
+                                <li><strong>地中配管</strong>による安定供給 <span class="note">（供給区域あり）</span></li>
+                                <li>LPガスと比較して<strong>ランニングコストが低い</strong>場合が多い</li>
+                                <li><strong>大規模施設</strong>や<strong>工場</strong>におすすめ</li>
                             </ul>
                         </div>
                         <div class="compare-box compare-box--lp">
@@ -890,9 +937,9 @@
                                 LPガスの特徴
                             </h4>
                             <ul class="compare-box__list">
-                                <li>配管不要・どの地域でも対応可能</li>
-                                <li>個別供給のため導入しやすい</li>
-                                <li>小規模店舗や非都市部エリアに最適</li>
+                                <li><strong>配管不要</strong>・どの地域でも対応可能</li>
+                                <li><strong>個別供給</strong>のため導入しやすい</li>
+                                <li><strong>小規模店舗</strong>や非都市部エリアに最適</li>
                             </ul>
                         </div>
                     </div>
@@ -908,9 +955,9 @@
                         <div class="support-box__body">
                             <h4 class="support-box__title">導入までのサポート</h4>
                             <ul class="support-box__list">
-                                <li>供給可否の無料調査</li>
-                                <li>導入プラン・初期工事費のご相談</li>
-                                <li>使用量に応じた料金プラン設計</li>
+                                <li><strong>供給可否</strong>の無料調査</li>
+                                <li><strong>導入プラン</strong>・初期工事費のご相談</li>
+                                <li><strong>使用量に応じた</strong>料金プラン設計</li>
                             </ul>
                         </div>
                     </div>
@@ -1008,7 +1055,8 @@
                         <div class="case-card">
                             <div class="case-card__body">
                                 <span class="case-card__tag">飲食店</span>
-                                <p class="case-card__desc">旧型コンロ→高効率ガス機器に交換し、調理効率アップ</p>
+                                <p class="case-card__desc">旧型コンロ→<strong>高効率ガス機器</strong>に交換し、<strong>調理効率アップ</strong>
+                                </p>
                             </div>
                             <img src="images/case_restaurant.jpg" alt="飲食店の事例" class="case-card__img"
                                 onerror="this.style.background='#c0d4e8'">
@@ -1016,7 +1064,8 @@
                         <div class="case-card">
                             <div class="case-card__body">
                                 <span class="case-card__tag">福祉施設</span>
-                                <p class="case-card__desc">大型給湯器＋乾燥機を更新し、CO2対策と時短を両立</p>
+                                <p class="case-card__desc">大型給湯器＋乾燥機を更新し、<strong>CO2対策</strong>と<strong>時短</strong>を両立
+                                </p>
                             </div>
                             <img src="images/case_welfare.jpg" alt="福祉施設の事例" class="case-card__img"
                                 onerror="this.style.background='#c0d4e8'">
@@ -1038,7 +1087,9 @@
                         </h3>
                         <span class="section-heading__bar"></span>
                     </div>
-                    <p class="section-lead">ガスの使い方や設備を見直すことで、光熱費の削減・環境負荷の軽減・安全性の向上が期待できます。</p>
+                    <p class="section-lead">
+                        ガスの使い方や設備を見直すことで、<strong>光熱費の削減</strong>・<strong>環境負荷の軽減</strong>・<strong>安全性の向上</strong>が期待できます。
+                    </p>
 
                     <div class="energy-block">
                         <h4 class="energy-block__title">
@@ -1052,9 +1103,9 @@
                             ご提案内容
                         </h4>
                         <ul class="energy-block__list">
-                            <li>使用量分析による最適なガス種・料金プランのご提案</li>
-                            <li>機器入替による高効率化・長寿命化（例：エコジョーズ・低NOxボイラー）</li>
-                            <li>給湯・空調の連携による無駄のないエネルギー活用</li>
+                            <li><strong>使用量分析</strong>による最適なガス種・料金プランのご提案</li>
+                            <li>機器入替による<strong>高効率化・長寿命化</strong> <span class="note">（例：エコジョーズ・低NOxボイラー）</span></li>
+                            <li><strong>給湯・空調の連携</strong>による無駄のないエネルギー活用</li>
                         </ul>
                     </div>
 
@@ -1069,9 +1120,10 @@
                             補助金・助成制度への対応
                         </h4>
                         <ul class="energy-block__list">
-                            <li>導入機器が補助金対象となる場合はご案内可能</li>
-                            <li>申請手続きのサポートも行います（書類記入支援など）</li>
-                            <li>対象制度：省エネ設備導入支援／中小企業向け補助金など（※年度により異なります）</li>
+                            <li>導入機器が<strong>補助金対象</strong>となる場合はご案内可能</li>
+                            <li><strong>申請手続きのサポート</strong>も行います <span class="note">（書類記入支援など）</span></li>
+                            <li>対象制度：<strong>省エネ設備導入支援</strong>／<strong>中小企業向け補助金</strong>など <span
+                                    class="note">（※年度により異なります）</span></li>
                         </ul>
                     </div>
 
@@ -1088,8 +1140,8 @@
                             導入効果の例
                         </h4>
                         <ul class="energy-block__list">
-                            <li>ガスボイラー更新 → 年間光熱費 ▲15%</li>
-                            <li>LP→都市ガス切替＋機器更新 → CO2排出量 ▲20%</li>
+                            <li><strong>ガスボイラー更新</strong> → 年間光熱費 <span class="num num--green">▲15%</span></li>
+                            <li>LP→<strong>都市ガス切替＋機器更新</strong> → CO2排出量 <span class="num num--green">▲20%</span></li>
                         </ul>
                     </div>
 
