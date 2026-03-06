@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【プレビュー】ガスを安全にお使いいただくために – 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <style>
+        .preview-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 32px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            background-color: #F3F6F9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .c-text {
+            font-size: 16px;
+            line-height: 2.0;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .subpage__body {
+            padding: 48px 0 80px;
+        }
+
+        .subpage__sidebar {
+            display: none !important;
+        }
+
+        .subpage__content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px 56px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .subpage__content .c-heading2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #244967;
+            border-bottom: 3px solid #2B7CBC;
+            padding-bottom: 12px;
+        }
+
+        /* ===== ページヘッダー・ヒーロー ===== */
+        .pv-header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 32px;
+            z-index: 9999;
+        }
+
+        .pv-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+        }
+
+        .pv-header__logo {
+            height: 40px;
+        }
+
+        .pv-header__right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pv-header__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-header__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #244967;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-subnav {
+            background: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pv-subnav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            padding: 0 20px;
+        }
+
+        .pv-subnav__item {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            cursor: default;
+        }
+
+        .pv-subnav__item.is-active {
+            color: #2B7CBC;
+            font-weight: 700;
+            border-bottom-color: #2B7CBC;
+        }
+
+        .page-header--hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2B7CBC 60%, #5ba3d9 100%);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .page-header__title {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        .breadcrumb {
+            padding: 12px 0;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb__item a {
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .breadcrumb__item+.breadcrumb__item::before {
+            content: '>';
+            margin-right: 8px;
+            color: #aaa;
+        }
+
+        /* ===== 安全ページ固有スタイル ===== */
+
+        .safety-section {
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .safety-section__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .safety-section__number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .safety-section__title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #244967;
+        }
+
+        .safety-section__body {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .safety-section__image {
+            flex-shrink: 0;
+            width: 240px;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .safety-section__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .safety-section__image--placeholder {
+            color: #aaa;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .safety-section__image--placeholder .icon {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .safety-section__list {
+            flex: 1;
+        }
+
+        .safety-section__list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .safety-section__list ul li {
+            position: relative;
+            padding: 8px 0 8px 20px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .safety-section__list ul li::before {
+            content: '・';
+            position: absolute;
+            left: 0;
+            color: #2B7CBC;
+            font-weight: 700;
+        }
+
+        .safety-section__list ul li:last-child {
+            border-bottom: none;
+        }
+
+        .safety-section__desc {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /* 警告系セクション色分け */
+        .safety-section--warning {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .safety-section--warning .safety-section__number {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .safety-section--info {
+            border-left: 4px solid #f39c12;
+        }
+
+        .safety-section--info .safety-section__number {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+
+        /* ===== お問い合わせセクション ===== */
+        .pv-contact-section {
+            background: #EDF4F7;
+            padding: 48px 20px;
+            margin-top: 40px;
+        }
+
+        .pv-contact-section__inner {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+            flex: 1;
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            color: #244967;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 900;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pv-contact-section__note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: #244967;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0;
+        }
+
+        .pv-contact-section__character img {
+            width: 120px;
+            height: auto;
+        }
+
+        /* ===== フッター ===== */
+        .pv-footer {
+            color: #fff;
+        }
+
+        .pv-footer__cta {
+            background: #2B7CBC;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-footer__main {
+            background: #244967;
+            padding: 32px 20px;
+        }
+
+        .pv-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .pv-footer__character img {
+            width: 80px;
+        }
+
+        .pv-footer__logo {
+            height: 32px;
+        }
+
+        .pv-footer__address {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .pv-footer__actions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .pv-footer__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .pv-footer__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .pv-footer__bottom {
+            background: #1a3a5c;
+            text-align: center;
+            padding: 16px;
+            font-size: 12px;
+        }
+
+        .pv-footer__bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .pv-footer__copy {
+            margin-top: 8px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preview-badge">🖊 改修プレビュー — ガスを安全にお使いいただくために</div>
+
+    <header class="pv-header">
+        <div class="pv-header__inner">
+            <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg" alt="房州ガス株式会社"
+                class="pv-header__logo">
+            <div class="pv-header__right">
+                <a href="tel:0470-22-2251" class="pv-header__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-header__contact-btn">お問い合わせ</a>
+            </div>
+        </div>
+        <div class="pv-subnav">
+            <div class="pv-subnav__inner">
+                <span class="pv-subnav__item is-active">個人のお客様へ</span>
+                <span class="pv-subnav__item">法人のお客様へ</span>
+                <span class="pv-subnav__item">お困りの時は</span>
+                <span class="pv-subnav__item">ガス機器について</span>
+                <span class="pv-subnav__item">安全・工事関連</span>
+                <a href="https://boushugas.co.jp/wp2026/environment" class="pv-subnav__item">環境・地域の取り組み</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main subpage">
+
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
+                    <li class="breadcrumb__item"><a href="#">個人のお客様へ</a></li>
+                    <li class="breadcrumb__item">ガスを安全にお使いいただくために</li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="page-header page-header--hero">
+            <div class="container">
+                <h1 class="page-header__title">ガスを安全にお使いいただくために</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="subpage__body">
+
+                <div class="subpage__content">
+
+                    <h2 class="c-heading2" style="text-align: center;">ガスを安全にお使いいただくために</h2>
+
+                    <p class="c-text" style="text-align: center;">
+                        ガスは便利で快適なエネルギーですが、正しい使い方を守ることで、より安全にお使いいただけます。<br>
+                        ご家庭で日頃から注意すべきポイントをまとめました。
+                    </p>
+
+                    <!-- ===== Section 1: ガス機器の正しい使い方 ===== -->
+                    <div class="safety-section">
+                        <div class="safety-section__header">
+                            <div class="safety-section__number">1</div>
+                            <h3 class="safety-section__title">ガス機器の正しい使い方</h3>
+                        </div>
+                        <div class="safety-section__body">
+                            <div class="safety-section__image">
+                                <img src="images/safety_01_gas_stove.png" alt="ガス機器の正しい使い方">
+                            </div>
+                            <div class="safety-section__list">
+                                <ul>
+                                    <li>使用中は必ず換気（特にキッチン、風呂場）</li>
+                                    <li>長時間の使用時は定期的に空気の入れ替え</li>
+                                    <li>火の色は青色が正常、オレンジは不完全燃焼のサイン</li>
+                                    <li>使用後は必ず元栓を閉める</li>
+                                    <li>高齢者・子どもがいる家庭では機器の火の管理に注意</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section 2: こんなときは使用を中止してください ===== -->
+                    <div class="safety-section safety-section--warning">
+                        <div class="safety-section__header">
+                            <div class="safety-section__number">2</div>
+                            <h3 class="safety-section__title">こんなときは使用を中止してください</h3>
+                        </div>
+                        <div class="safety-section__body">
+                            <div class="safety-section__image">
+                                <img src="images/safety_02_stop_usage.png" alt="こんなときは使用を中止してください">
+                            </div>
+                            <div class="safety-section__list">
+                                <ul>
+                                    <li>ガスのにおいがする</li>
+                                    <li>火がすぐ消える／点きにくい／スパスが出る</li>
+                                    <li>機器の調子が明らかにおかしい（異音・変なにおいなど）</li>
+                                    <li>一酸化炭素（CO）警報機が鳴ったとき</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section 3: マイコンメーターの役割と復帰操作 ===== -->
+                    <div class="safety-section">
+                        <div class="safety-section__header">
+                            <div class="safety-section__number">3</div>
+                            <h3 class="safety-section__title">マイコンメーターの役割と復帰操作</h3>
+                        </div>
+                        <div class="safety-section__body">
+                            <div class="safety-section__image">
+                                <img src="images/safety_03_gas_meter.png" alt="マイコンメーターの役割と復帰操作">
+                            </div>
+                            <div class="safety-section__list">
+                                <p class="safety-section__desc">地震などでガスを自動で止める安全装置がマイコンメーターです。</p>
+                                <ul>
+                                    <li>地震・異常使用時は自動遮断</li>
+                                    <li>遮断時の表示・点滅パターン</li>
+                                    <li>復帰操作方法（画像付きまたはPDFリンク）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section 4: 一酸化炭素中毒を防ぐには ===== -->
+                    <div class="safety-section safety-section--warning">
+                        <div class="safety-section__header">
+                            <div class="safety-section__number">4</div>
+                            <h3 class="safety-section__title">一酸化炭素中毒を防ぐには</h3>
+                        </div>
+                        <div class="safety-section__body">
+                            <div class="safety-section__image">
+                                <img src="images/safety_04_ventilation.png" alt="一酸化炭素中毒を防ぐには">
+                            </div>
+                            <div class="safety-section__list">
+                                <ul>
+                                    <li>密閉空間での長時間使用は必ず定期換気</li>
+                                    <li>開放型機器の使用時は必ず換気扇を使用</li>
+                                    <li>CO警報器の設置を推奨</li>
+                                    <li>古い機器やメンテナンス不足による事故紹介（注意喚起）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section 5: ガス警報器・CO警報器のご案内 ===== -->
+                    <div class="safety-section safety-section--info">
+                        <div class="safety-section__header">
+                            <div class="safety-section__number">5</div>
+                            <h3 class="safety-section__title">ガス警報器・CO警報器のご案内</h3>
+                        </div>
+                        <div class="safety-section__body">
+                            <div class="safety-section__image">
+                                <img src="images/safety_05_alarm.png" alt="ガス警報器・CO警報器のご案内">
+                            </div>
+                            <div class="safety-section__list">
+                                <ul>
+                                    <li>警報器の設置義務（設置が推奨される場所）</li>
+                                    <li>設置費用の参考（約5年）について</li>
+                                    <li>警報器レンタル・販売サービスの紹介（ある場合）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section 6: こんなことにもご注意ください ===== -->
+                    <div class="safety-section">
+                        <div class="safety-section__header">
+                            <div class="safety-section__number">6</div>
+                            <h3 class="safety-section__title">こんなことにもご注意ください</h3>
+                        </div>
+                        <div class="safety-section__body">
+                            <div class="safety-section__image">
+                                <img src="images/safety_06_caution.png" alt="こんなことにもご注意ください">
+                            </div>
+                            <div class="safety-section__list">
+                                <ul>
+                                    <li>ガス機器周辺に可燃物を置かない</li>
+                                    <li>屋外設置型機器にシートや植物がかからないように</li>
+                                    <li>外壁塗装などでメーターや配管に直接塗料が付かないように</li>
+                                    <li>ホースのひび割れ・劣化の確認</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section 7: 安全の点検について ===== -->
+                    <div class="safety-section">
+                        <div class="safety-section__header">
+                            <div class="safety-section__number">7</div>
+                            <h3 class="safety-section__title">安全の点検について</h3>
+                        </div>
+                        <div class="safety-section__body">
+                            <div class="safety-section__image">
+                                <img src="images/safety_07_inspection.png" alt="安全の点検について">
+                            </div>
+                            <div class="safety-section__list">
+                                <ul>
+                                    <li>法定点検（4年に1回など）について</li>
+                                    <li>点検時期の通知方法（電話／訪問／ハガキ）</li>
+                                    <li>立ち会いのお願いと内容説明</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== お問い合わせセクション ===== -->
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p>
+                <a href="tel:0470-22-2251" class="pv-contact-section__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                        </path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    お問い合わせはこちら
+                </a>
+            </div>
+            <div class="pv-contact-section__character">
+                <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター">
+            </div>
+        </div>
+    </section>
+
+    <footer class="pv-footer">
+        <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
+        <div class="pv-footer__main">
+            <div class="pv-footer__inner">
+                <div class="pv-footer__character">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                        alt="房州ガスキャラクター">
+                </div>
+                <div class="pv-footer__info">
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo-white.svg"
+                        alt="房州ガス株式会社" class="pv-footer__logo">
+                    <p class="pv-footer__address">千葉県館山市北条1014番地</p>
+                </div>
+                <div class="pv-footer__actions">
+                    <a href="tel:0470-22-2251" class="pv-footer__phone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        0470-22-2251
+                    </a>
+                    <a href="https://boushugas.co.jp/wp2026/contact" class="pv-footer__contact-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pv-footer__bottom">
+            <a href="https://boushugas.co.jp/wp2026/privacy">個人情報の取り扱いについて</a>
+            <a href="https://boushugas.co.jp/wp2026/company">会社案内</a>
+            <p class="pv-footer__copy">&copy; BoshuGas.inc</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
