@@ -398,7 +398,26 @@
 
         /* 短い垂直コネクタ */
         .fc__vline--short {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             height: 28px;
+        }
+
+        .fc__vline--short::before {
+            content: '';
+            width: 1.5px;
+            flex: 1;
+            background: #888;
+        }
+
+        .fc__vline--short::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 6px solid #888;
         }
 
         /* 水平分岐ライン */
