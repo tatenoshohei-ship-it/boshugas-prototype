@@ -260,44 +260,101 @@
             border-left-color: #e74c3c
         }
 
+        /* Q&A アコーディオン */
         .faq-item {
-            background: #fff;
-            border: 1px solid #e0e8ef;
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 16px
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            overflow: hidden
         }
 
-        .faq-item__q {
-            font-size: 16px;
-            font-weight: 700;
-            color: #244967;
-            margin-bottom: 8px;
+        .faq-item__question {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            cursor: pointer;
+            background: #fff;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            transition: background 0.2s
+        }
+
+        .faq-item__question:hover {
+            background: #f8f9fa
+        }
+
+        .faq-item__q-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #2B7CBC;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 900;
+            border-radius: 50%;
+            flex-shrink: 0
+        }
+
+        .faq-item__q-text {
+            flex: 1;
+            line-height: 1.6
+        }
+
+        .faq-item__arrow {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            color: #aaa;
+            transition: transform 0.3s
+        }
+
+        .faq-item.is-open .faq-item__arrow {
+            transform: rotate(180deg)
+        }
+
+        .faq-item__answer {
+            display: none;
+            padding: 12px 20px 20px 64px;
+            background: #fff;
+            border-top: 1px solid #f0f0f0
+        }
+
+        .faq-item.is-open .faq-item__answer {
+            display: block
+        }
+
+        .faq-item__a-inner {
             display: flex;
             align-items: flex-start;
-            gap: 10px
+            gap: 12px
         }
 
-        .faq-item__q::before {
-            content: 'Q';
+        .faq-item__a-icon {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 28px;
             height: 28px;
-            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            background: #e67e22;
             color: #fff;
+            font-size: 13px;
+            font-weight: 900;
             border-radius: 50%;
             flex-shrink: 0;
-            font-size: 14px;
-            font-weight: 900
+            margin-top: 2px
         }
 
-        .faq-item__a {
+        .faq-item__a-text {
             font-size: 15px;
             line-height: 1.8;
-            color: #444;
-            padding-left: 38px
+            color: #555
         }
 
         .step-flow {
@@ -621,13 +678,17 @@
 
                     <div class="hero-image"><img src="images/safety-demolition.png" alt="建物解体の際は"></div>
 
-                    <div class="notice-box">
+                    <div class="notice-box"
+                        style="background:#dceefb;border-left:5px solid #2B7CBC;font-size:16px;font-weight:700;color:#244967;padding:24px 28px">
                         建物の解体工事を行う際には、必ず事前に房州ガスまでご連絡ください。ガスメーターや配管の撤去・閉栓作業が必要です。
                     </div>
 
-                    <div class="notice-box notice-box--danger">
-                        <strong>⚠ ガス設備が残ったままの解体は大変危険です！</strong><br>
-                        ガス管を切断・破損してしまうと、ガス漏れや爆発事故の原因になります。解体業者による誤操作や損傷事故も発生しています。
+                    <div class="notice-box notice-box--danger"
+                        style="background:#fde8e8;border-left:5px solid #c0392b;padding:24px 28px">
+                        <strong style="font-size:17px;color:#c0392b;display:block;margin-bottom:8px">⚠
+                            ガス設備が残ったままの解体は大変危険です！</strong>
+                        <span
+                            style="font-size:15px;color:#444">ガス管を切断・破損してしまうと、ガス漏れや爆発事故の原因になります。解体業者による誤操作や損傷事故も発生しています。</span>
                     </div>
 
                     <h3 class="section-heading">解体前に必要な手続き</h3>
@@ -665,18 +726,51 @@
 
                     <h3 class="section-heading">よくあるご質問</h3>
                     <div class="faq-item">
-                        <div class="faq-item__q">解体後にまた家を建てる予定です。ガスはどうなる？</div>
-                        <div class="faq-item__a">一時閉合後、新築時に再度ガス引き込み・開栓が可能です。計画段階でご相談ください。</div>
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">解体後にまた家を建てる予定です。ガスはどうなる？</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">一時閉合後、新築時に再度ガス引き込み・開栓が可能です。計画段階でご相談ください。</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-item__q">ガスを使っていないが、メーターが残っている。</div>
-                        <div class="faq-item__a">使用していなくても、メーターや配管は物理的に接続されている場合があります。必ずご確認ください。</div>
+                        <button class="faq-item__question" onclick="toggleFaq(this)">
+                            <span class="faq-item__q-icon">Q</span>
+                            <span class="faq-item__q-text">ガスを使っていないが、メーターが残っている。</span>
+                            <svg class="faq-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__a-inner">
+                                <span class="faq-item__a-icon">A</span>
+                                <div class="faq-item__a-text">使用していなくても、メーターや配管は物理的に接続されている場合があります。必ずご確認ください。</div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="notice-box" style="margin-top:32px">
-                        <strong>安全第一で、スムーズな工事のために</strong><br>
-                        建物の解体工事は、事前のガス処理が非常に重要です。トラブル防止のためにも、早めのご連絡とご協力をお願いいたします。
+                    <div class="notice-box"
+                        style="margin-top:32px;background:#dceefb;border-left:5px solid #2B7CBC;font-size:16px;font-weight:700;color:#244967;padding:24px 28px">
+                        <strong style="font-size:17px;display:block;margin-bottom:8px">安全第一で、スムーズな工事のために</strong>
+                        <span
+                            style="font-weight:400;font-size:15px;color:#444">建物の解体工事は、事前のガス処理が非常に重要です。トラブル防止のためにも、早めのご連絡とご協力をお願いいたします。</span>
                     </div>
+
+                    <script>
+                        function toggleFaq(btn) {
+                            const item = btn.closest('.faq-item');
+                            item.classList.toggle('is-open');
+                        }
+                    </script>
 
                 </div>
             </div>
