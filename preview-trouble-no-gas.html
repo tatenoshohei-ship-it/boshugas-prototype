@@ -347,6 +347,126 @@
             margin-bottom: 12px;
         }
 
+        /* ===== 診断フローチャート ===== */
+        .flow-chart {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .flow-branch {
+            background: #f8fbfd;
+            border: 1px solid #e0e8ef;
+            border-radius: 12px;
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .flow-branch__start {
+            display: inline-block;
+            background: #f39c12;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .flow-branch--right .flow-branch__start {
+            background: #e67e22;
+        }
+
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            color: #aaa;
+        }
+
+        .flow-question {
+            background: #eef5fb;
+            border: 2px solid #2B7CBC;
+            border-radius: 8px;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            color: #244967;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .flow-choices {
+            display: flex;
+            gap: 12px;
+            margin: 8px 0;
+        }
+
+        .flow-choice {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 20px;
+            font-size: 13px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .flow-result {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            transition: opacity 0.2s;
+        }
+
+        .flow-result:hover {
+            opacity: 0.85;
+        }
+
+        .flow-result--green {
+            background: #27ae60;
+        }
+
+        .flow-result--orange {
+            background: #e67e22;
+        }
+
+        .flow-result--red {
+            background: #8b4513;
+        }
+
+        .flow-results-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .flow-text {
+            font-size: 14px;
+            color: #444;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .flow-section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #244967;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
         /* ===== 次のステップ リンクカード ===== */
         .next-links {
             display: grid;
@@ -725,6 +845,67 @@
                             </div>
                         </li>
                     </ul>
+
+                    <!-- ===== 診断フローチャート ===== -->
+                    <h3 class="flow-section-title">▼ 確認フローチャート</h3>
+
+                    <div class="flow-chart">
+
+                        <!-- 左分岐：全てのガス器具が点火しない -->
+                        <div class="flow-branch">
+                            <div class="flow-branch__start">全てのガス器具が点火しない</div>
+
+                            <div class="flow-arrow">▼</div>
+
+                            <div class="flow-question">ガスメーターの場所はわかりますか？</div>
+
+                            <div class="flow-choices">
+                                <span class="flow-choice">わかる</span>
+                                <span class="flow-choice">わからない</span>
+                            </div>
+
+                            <div class="flow-arrow">▼</div>
+
+                            <div class="flow-question">ガスメーターの赤いランプは点滅していますか？</div>
+
+                            <div class="flow-choices">
+                                <span class="flow-choice">点滅あり</span>
+                                <span class="flow-choice">点滅なし</span>
+                            </div>
+
+                            <div class="flow-arrow">▼</div>
+
+                            <div class="flow-results-row">
+                                <a href="preview-trouble-meter-reset.html"
+                                    class="flow-result flow-result--green">ガスメーター<br>復帰手順</a>
+                                <a href="https://boushugas.co.jp/wp2026/contact"
+                                    class="flow-result flow-result--orange">房州ガスまで<br>ご連絡ください</a>
+                            </div>
+                        </div>
+
+                        <!-- 右分岐：一部のガス器具が点火しない -->
+                        <div class="flow-branch flow-branch--right">
+                            <div class="flow-branch__start">一部のガス器具が点火しない</div>
+
+                            <div class="flow-arrow">▼</div>
+
+                            <div class="flow-question">ガス栓が閉まっていませんか？</div>
+
+                            <div class="flow-choices">
+                                <span class="flow-choice">開いている</span>
+                                <span class="flow-choice">閉まっている</span>
+                            </div>
+
+                            <div class="flow-arrow">▼</div>
+
+                            <p class="flow-text">ガス栓を開けて点火を確認してください</p>
+
+                            <div class="flow-arrow">▼</div>
+
+                            <a href="preview-trouble-equipment.html" class="flow-result flow-result--red">ガス機器が故障したら</a>
+                        </div>
+
+                    </div>
 
                     <!-- 次のステップリンク（元ページリンクそのまま） -->
                     <div class="next-links">
