@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【プレビュー】ガス機器 – 業務用 – 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <style>
+        .preview-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 99999;
+        }
+
+        body {
+            padding-top: 32px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            background-color: #F3F6F9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .subpage__body {
+            padding: 48px 0 80px;
+        }
+
+        .subpage__sidebar {
+            display: none !important;
+        }
+
+        .subpage__content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px 56px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .subpage__content .c-heading2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #244967;
+            border-bottom: 3px solid #2B7CBC;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+
+        /* ===== ヘッダー ===== */
+        .pv-header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 32px;
+            z-index: 9999;
+        }
+
+        .pv-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+        }
+
+        .pv-header__logo {
+            height: 40px;
+        }
+
+        .pv-header__right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pv-header__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-header__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #244967;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-subnav {
+            background: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pv-subnav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            padding: 0 20px;
+        }
+
+        .pv-subnav__item {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            cursor: default;
+        }
+
+        .pv-subnav__item.is-active {
+            color: #2B7CBC;
+            font-weight: 700;
+            border-bottom-color: #2B7CBC;
+        }
+
+        .page-header--hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2B7CBC 60%, #5ba3d9 100%);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .page-header__title {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        .breadcrumb {
+            padding: 12px 0;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb__item a {
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .breadcrumb__item+.breadcrumb__item::before {
+            content: '>';
+            margin-right: 8px;
+            color: #aaa;
+        }
+
+        /* ===== サブメニュータブ（家庭用/業務用） ===== */
+        .pv-page-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+            padding: 0;
+            border: none;
+        }
+
+        .pv-page-tabs__item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: 2px solid #ddd;
+            color: #666;
+            background: #fff;
+        }
+
+        .pv-page-tabs__item:hover {
+            border-color: #2B7CBC;
+            color: #2B7CBC;
+            background: #f0f7ff;
+        }
+
+        .pv-page-tabs__item--active {
+            background: #2B7CBC;
+            color: #fff;
+            border-color: #2B7CBC;
+            box-shadow: 0 2px 8px rgba(43, 124, 188, 0.3);
+        }
+
+        .pv-page-tabs__item--active:hover {
+            background: #244967;
+            color: #fff;
+            border-color: #244967;
+        }
+
+        .pv-page-tabs__item svg {
+            flex-shrink: 0;
+        }
+
+        /* ===== 冒頭テキスト ===== */
+        .intro-box {
+            background: #eef5fb;
+            border-left: 4px solid #2B7CBC;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 36px;
+            font-size: 15px;
+            line-height: 2.0;
+            color: #444;
+        }
+
+        /* ===== アコーディオン ===== */
+        .eq-accordion {
+            margin-bottom: 16px;
+            border: 1px solid #e0e8ef;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .eq-accordion:hover {
+            box-shadow: 0 4px 16px rgba(43, 124, 188, 0.08);
+        }
+
+        .eq-accordion__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: #fff;
+            cursor: pointer;
+            user-select: none;
+            border: none;
+            width: 100%;
+            font-family: inherit;
+            text-align: left;
+        }
+
+        .eq-accordion__header:hover {
+            background: #f8fbfe;
+        }
+
+        .eq-accordion__title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #244967;
+        }
+
+        .eq-accordion__icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .eq-accordion__icon svg {
+            color: #fff;
+        }
+
+        .eq-accordion__chevron {
+            width: 24px;
+            height: 24px;
+            color: #2B7CBC;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .eq-accordion.is-open .eq-accordion__chevron {
+            transform: rotate(180deg);
+        }
+
+        .eq-accordion__body {
+            display: none;
+            padding: 0 24px 24px;
+            background: #fff;
+        }
+
+        .eq-accordion.is-open .eq-accordion__body {
+            display: block;
+        }
+
+        .eq-accordion__text {
+            font-size: 15px;
+            line-height: 2.0;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        /* 商品画像グリッド */
+        .product-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .product-images img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e0e8ef;
+        }
+
+        /* メーカーリンク */
+        .maker-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .maker-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 20px;
+            background: #fff;
+            border: 2px solid #2B7CBC;
+            border-radius: 6px;
+            color: #2B7CBC;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .maker-link:hover {
+            background: #2B7CBC;
+            color: #fff;
+        }
+
+        /* ===== お問い合わせ・フッター ===== */
+        .pv-contact-section {
+            background: #EDF4F7;
+            padding: 48px 20px;
+            margin-top: 40px;
+        }
+
+        .pv-contact-section__inner {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+            flex: 1;
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            color: #244967;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 900;
+            color: #2B7CBC;
+            text-decoration: none;
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pv-contact-section__note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: #244967;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0;
+        }
+
+        .pv-contact-section__character img {
+            width: 120px;
+            height: auto;
+        }
+
+        .pv-footer {
+            color: #fff;
+        }
+
+        .pv-footer__cta {
+            background: #2B7CBC;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .pv-footer__main {
+            background: #244967;
+            padding: 32px 20px;
+        }
+
+        .pv-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .pv-footer__character img {
+            width: 80px;
+        }
+
+        .pv-footer__logo {
+            height: 32px;
+        }
+
+        .pv-footer__address {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .pv-footer__actions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .pv-footer__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .pv-footer__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .pv-footer__bottom {
+            background: #1a3a5c;
+            text-align: center;
+            padding: 16px;
+            font-size: 12px;
+        }
+
+        .pv-footer__bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .pv-footer__copy {
+            margin-top: 8px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preview-badge">🖊 改修プレビュー — ガス機器について – 業務用</div>
+
+    <header class="pv-header">
+        <div class="pv-header__inner">
+            <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg" alt="房州ガス株式会社"
+                class="pv-header__logo">
+            <div class="pv-header__right">
+                <a href="tel:0470-22-2251" class="pv-header__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-header__contact-btn">お問い合わせ</a>
+            </div>
+        </div>
+        <div class="pv-subnav">
+            <div class="pv-subnav__inner">
+                <span class="pv-subnav__item">個人のお客様へ</span>
+                <span class="pv-subnav__item">法人のお客様へ</span>
+                <span class="pv-subnav__item">お困りの時は</span>
+                <span class="pv-subnav__item is-active">ガス機器について</span>
+                <span class="pv-subnav__item">安全・工事関連</span>
+                <a href="https://boushugas.co.jp/wp2026/environment" class="pv-subnav__item">環境・地域の取り組み</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main subpage">
+
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
+                    <li class="breadcrumb__item"><a href="#">ガス機器について</a></li>
+                    <li class="breadcrumb__item">業務用</li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="page-header page-header--hero">
+            <div class="container">
+                <h1 class="page-header__title">ガス機器について</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="subpage__body">
+                <div class="subpage__content">
+
+                    <!-- 家庭用 / 業務用 タブ -->
+                    <div class="pv-page-tabs">
+                        <a href="preview-equipment-home.html" class="pv-page-tabs__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                            家庭用
+                        </a>
+                        <a href="#" class="pv-page-tabs__item pv-page-tabs__item--active">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                                <path d="M9 22v-4h6v4" />
+                                <line x1="8" y1="6" x2="8" y2="6" />
+                                <line x1="12" y1="6" x2="12" y2="6" />
+                                <line x1="16" y1="6" x2="16" y2="6" />
+                                <line x1="8" y1="10" x2="8" y2="10" />
+                                <line x1="12" y1="10" x2="12" y2="10" />
+                                <line x1="16" y1="10" x2="16" y2="10" />
+                                <line x1="8" y1="14" x2="8" y2="14" />
+                                <line x1="12" y1="14" x2="12" y2="14" />
+                                <line x1="16" y1="14" x2="16" y2="14" />
+                            </svg>
+                            業務用
+                        </a>
+                    </div>
+
+                    <!-- 冒頭テキスト -->
+                    <div class="intro-box">
+                        ガス器具については、ガスの種類に合わせたものをお使いください。<br>
+                        当社の都市ガスは13Aです。<br>
+                        簡易ガス及びプロパンガスはLPGとなります。<br>
+                        カタログ等ご希望のお客さまは、当社までご連絡ください。
+                    </div>
+
+                    <!-- ===== キッチン ===== -->
+                    <div class="eq-accordion is-open" id="accordion-kitchen">
+                        <button class="eq-accordion__header" onclick="toggleAccordion('accordion-kitchen')">
+                            <div class="eq-accordion__title">
+                                <div class="eq-accordion__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="22" height="22">
+                                        <path
+                                            d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M12 3c0 4.97 4 9 4 9H4s4-4.03 4-9" />
+                                        <circle cx="9" cy="7" r="4" fill="none" />
+                                    </svg>
+                                </div>
+                                キッチン
+                            </div>
+                            <svg class="eq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="eq-accordion__body">
+                            <p class="eq-accordion__text">
+                                ガスのコンロは火力が強く、全口を同時に使ったスピード調理が可能です。また、火加減の自動調節、タイマー機能も充実しており、コンロで炊飯もできます。（一部の機種を除く）<br>
+                                ガラストップは見た目もとってもキレイで、凹凸が少なくお掃除もらくらくです。<br>
+                                立消え安全装置（吹きこぼし等で火が消えた場合、自動的にガスを遮断します）や消し忘れ消火機能等の安全装置も充実しておりお安心してお料理をお楽しみいただけます。詳しい情報はメーカーサイトをご覧ください。
+                            </p>
+                            <div class="product-images">
+                                <img src="images/gas-cooktop-1.png" alt="ガスコンロ（ビルトイン）">
+                                <img src="images/gas-cooktop-2.png" alt="ガスコンロ（据置型）">
+                                <img src="images/gas-cooktop-3.png" alt="ガスコンロ（コンパクト）">
+                            </div>
+                            <div class="maker-links">
+                                <a href="https://rinnai.jp/" target="_blank" class="maker-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                    Rinnai
+                                </a>
+                                <a href="https://www.paloma.co.jp/" target="_blank" class="maker-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                    Paloma
+                                </a>
+                                <a href="https://www.noritz.co.jp/" target="_blank" class="maker-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="14" height="14">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                    NORITZ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== お風呂 ===== -->
+                    <div class="eq-accordion" id="accordion-bath">
+                        <button class="eq-accordion__header" onclick="toggleAccordion('accordion-bath')">
+                            <div class="eq-accordion__title">
+                                <div class="eq-accordion__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="22" height="22">
+                                        <path
+                                            d="M4 12h16a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3a1 1 0 0 1 1-1z" />
+                                        <path d="M6 12V5a2 2 0 0 1 2-2h3v2.25" />
+                                        <circle cx="12" cy="8" r="0" />
+                                    </svg>
+                                </div>
+                                お風呂
+                            </div>
+                            <svg class="eq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="eq-accordion__body">
+                            <p class="eq-accordion__text">
+                                お風呂向けガス機器の情報です。給湯器・浴室暖房乾燥機などを取り扱っています。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ===== リビング ===== -->
+                    <div class="eq-accordion" id="accordion-living">
+                        <button class="eq-accordion__header" onclick="toggleAccordion('accordion-living')">
+                            <div class="eq-accordion__title">
+                                <div class="eq-accordion__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="22" height="22">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </div>
+                                リビング
+                            </div>
+                            <svg class="eq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="eq-accordion__body">
+                            <p class="eq-accordion__text">
+                                リビング向けガス機器の情報です。ガスファンヒーター・床暖房などを取り扱っています。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ===== 衣類 ===== -->
+                    <div class="eq-accordion" id="accordion-clothes">
+                        <button class="eq-accordion__header" onclick="toggleAccordion('accordion-clothes')">
+                            <div class="eq-accordion__title">
+                                <div class="eq-accordion__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="22" height="22">
+                                        <path
+                                            d="M20.38 3.46L16 2 12 5 8 2 3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
+                                    </svg>
+                                </div>
+                                衣類
+                            </div>
+                            <svg class="eq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="eq-accordion__body">
+                            <p class="eq-accordion__text">
+                                衣類向けガス機器の情報です。ガス衣類乾燥機「乾太くん」などを取り扱っています。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ===== その他 ===== -->
+                    <div class="eq-accordion" id="accordion-other">
+                        <button class="eq-accordion__header" onclick="toggleAccordion('accordion-other')">
+                            <div class="eq-accordion__title">
+                                <div class="eq-accordion__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="22" height="22">
+                                        <circle cx="12" cy="12" r="1" />
+                                        <circle cx="19" cy="12" r="1" />
+                                        <circle cx="5" cy="12" r="1" />
+                                    </svg>
+                                </div>
+                                その他
+                            </div>
+                            <svg class="eq-accordion__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <div class="eq-accordion__body">
+                            <p class="eq-accordion__text">
+                                その他のガス機器の情報です。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- お問い合わせ -->
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p>
+                <a href="tel:0470-22-2251" class="pv-contact-section__phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    0470-22-2251
+                </a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    お問い合わせはこちら
+                </a>
+            </div>
+            <div class="pv-contact-section__character">
+                <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター">
+            </div>
+        </div>
+    </section>
+
+    <footer class="pv-footer">
+        <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
+        <div class="pv-footer__main">
+            <div class="pv-footer__inner">
+                <div class="pv-footer__character"><img
+                        src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                        alt="房州ガスキャラクター"></div>
+                <div>
+                    <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg"
+                        alt="房州ガス株式会社" class="pv-footer__logo">
+                    <p class="pv-footer__address">千葉県館山市北条1014番地</p>
+                </div>
+                <div class="pv-footer__actions">
+                    <a href="tel:0470-22-2251" class="pv-footer__phone"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" width="16" height="16">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg> 0470-22-2251</a>
+                    <a href="https://boushugas.co.jp/wp2026/contact" class="pv-footer__contact-btn"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
+                            height="14">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg> お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+        <div class="pv-footer__bottom">
+            <div><a href="https://boushugas.co.jp/wp2026/privacy">個人情報の取り扱いについて</a><a
+                    href="https://boushugas.co.jp/wp2026/company">会社案内</a></div>
+            <p class="pv-footer__copy">© BoshuGas.inc</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('is-open');
+        }
+    </script>
+
+</body>
+
+</html>
