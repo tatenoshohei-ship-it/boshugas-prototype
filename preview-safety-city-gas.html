@@ -263,6 +263,21 @@
             box-shadow: 0 4px 16px rgba(43, 124, 188, 0.08)
         }
 
+        .merit-card__image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f4f8fb;
+            margin-bottom: 16px
+        }
+
+        .merit-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
         .merit-card__header {
             display: flex;
             align-items: center;
@@ -602,6 +617,7 @@
                     <h3 class="section-heading">都市ガスのメリット</h3>
                     <div class="merit-grid">
                         <div class="merit-card">
+                            <div class="merit-card__image"><img src="images/merit-city-gas-1.png" alt="ガス料金"></div>
                             <div class="merit-card__header">
                                 <div class="merit-card__number">1</div>
                                 <div class="merit-card__title">月々のガス料金が抑えられる可能性</div>
@@ -610,6 +626,7 @@
                                 都市ガスは、公共インフラとしての供給体制により、料金単価が比較的安定しています。プロパンガスと比べて、使用量が多いほどコストメリットを実感いただけます。</div>
                         </div>
                         <div class="merit-card">
+                            <div class="merit-card__image"><img src="images/merit-city-gas-2.png" alt="安定供給"></div>
                             <div class="merit-card__header">
                                 <div class="merit-card__number">2</div>
                                 <div class="merit-card__title">安定した供給体制</div>
@@ -618,6 +635,7 @@
                                 都市ガスは、地下の導管網を通じて各家庭に届くため、ボンベの交換が不要です。安定利用が可能で、災害時にも早期復旧が期待できます。</div>
                         </div>
                         <div class="merit-card">
+                            <div class="merit-card__image"><img src="images/merit-city-gas-3.png" alt="安全対策"></div>
                             <div class="merit-card__header">
                                 <div class="merit-card__number">3</div>
                                 <div class="merit-card__title">災害時の安全対策が充実</div>
@@ -626,6 +644,7 @@
                             </div>
                         </div>
                         <div class="merit-card">
+                            <div class="merit-card__image"><img src="images/merit-city-gas-4.png" alt="機器選択"></div>
                             <div class="merit-card__header">
                                 <div class="merit-card__number">4</div>
                                 <div class="merit-card__title">機器の選択肢が広がる</div>
