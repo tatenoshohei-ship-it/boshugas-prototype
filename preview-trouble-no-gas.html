@@ -347,150 +347,162 @@
             margin-bottom: 12px;
         }
 
-        /* ===== 診断フローチャート ===== */
+        /* ===== 診断フローチャート（元画像完全再現） ===== */
         .fc {
-            max-width: 720px;
-            margin: 40px auto;
+            border: 2px solid #6c9bd2;
+            border-radius: 4px;
+            padding: 40px 32px 48px;
+            margin: 32px 0 40px;
+            background: #fff;
+            position: relative;
         }
 
+        /* 起点ボックス */
         .fc__start {
-            background: linear-gradient(180deg, #e8e8e8 0%, #ccc 100%);
-            border: 1px solid #bbb;
-            border-radius: 8px;
-            padding: 16px 32px;
+            background: linear-gradient(180deg, #f0f0f0 0%, #d9d9d9 100%);
+            border: 1px solid #b0b0b0;
+            border-radius: 4px;
+            padding: 14px 40px;
             text-align: center;
-            font-size: 17px;
-            font-weight: 700;
+            font-size: 15px;
+            font-weight: 600;
             color: #333;
-            max-width: 300px;
+            width: fit-content;
             margin: 0 auto;
         }
 
-        .fc__connector {
+        /* 垂直コネクタ（線＋矢印） */
+        .fc__vline {
             display: flex;
-            justify-content: center;
-            height: 32px;
+            flex-direction: column;
+            align-items: center;
+            height: 40px;
             position: relative;
         }
 
-        .fc__connector::after {
+        .fc__vline::before {
             content: '';
-            display: block;
-            width: 2px;
-            height: 100%;
-            background: #999;
+            width: 1.5px;
+            flex: 1;
+            background: #888;
         }
 
-        .fc__connector--arrow {
-            display: flex;
-            justify-content: center;
+        .fc__vline::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 7px solid #888;
+        }
+
+        /* 短い垂直コネクタ */
+        .fc__vline--short {
             height: 28px;
         }
 
-        .fc__connector--arrow::after {
-            content: '▼';
-            color: #999;
-            font-size: 12px;
+        /* 水平分岐ライン */
+        .fc__hsplit {
             display: flex;
-            align-items: flex-end;
             justify-content: center;
-        }
-
-        /* 2分岐コンテナ */
-        .fc__split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
             position: relative;
+            height: 20px;
         }
 
-        .fc__split::before {
+        .fc__hsplit::before {
             content: '';
             position: absolute;
             top: 0;
             left: 25%;
             right: 25%;
-            height: 2px;
-            background: #999;
+            height: 1.5px;
+            background: #888;
+        }
+
+        /* 2レーン */
+        .fc__lanes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
         }
 
         .fc__lane {
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
         }
 
-        .fc__lane::before {
-            content: '';
-            display: block;
-            width: 2px;
-            height: 16px;
-            background: #999;
+        /* レーン先頭の縦線 */
+        .fc__lane-entry {
+            width: 1.5px;
+            height: 20px;
+            background: #888;
         }
 
-        /* 緑ボックス（質問・選択肢） */
+        /* 緑ボックス */
         .fc__box {
-            background: #e8f5e9;
-            border: 1px solid #a5d6a7;
-            border-radius: 6px;
-            padding: 14px 20px;
+            background: #d5e8d4;
+            border: 1px solid #82b366;
+            border-radius: 3px;
+            padding: 12px 16px;
             text-align: center;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 500;
             color: #333;
+            line-height: 1.5;
             width: 100%;
-            max-width: 280px;
+            max-width: 240px;
             box-sizing: border-box;
-            line-height: 1.6;
         }
 
-        /* 選択肢横並び */
-        .fc__choices {
+        /* 選択肢を横に並べる */
+        .fc__pair {
             display: flex;
             gap: 8px;
             justify-content: center;
-        }
-
-        .fc__choices .fc__box {
-            flex: 1;
-            max-width: 130px;
-            padding: 10px 12px;
-            font-size: 14px;
-        }
-
-        /* ピンクボックス（結果） */
-        .fc__result {
-            background: #fce4ec;
-            border: 1px solid #ef9a9a;
-            border-radius: 6px;
-            padding: 14px 20px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 700;
-            color: #c62828;
-            text-decoration: none;
-            max-width: 280px;
             width: 100%;
+            max-width: 240px;
+        }
+
+        .fc__pair .fc__box {
+            flex: 1;
+            max-width: 110px;
+            padding: 10px 8px;
+        }
+
+        /* ピンク結果ボックス */
+        .fc__result {
+            background: #f8cecc;
+            border: 1px solid #b85450;
+            border-radius: 3px;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            text-decoration: none;
+            line-height: 1.5;
+            width: 100%;
+            max-width: 240px;
             box-sizing: border-box;
-            line-height: 1.6;
             transition: background 0.2s;
         }
 
         .fc__result:hover {
-            background: #f8bbd0;
+            background: #f5b7b1;
         }
 
-        /* 結果横並び */
-        .fc__results-row {
+        /* 結果を横に並べる（3列、全幅） */
+        .fc__bottom-results {
             display: flex;
             gap: 8px;
             justify-content: center;
+            margin-top: 0;
         }
 
-        .fc__results-row .fc__result {
+        .fc__bottom-results .fc__result {
             flex: 1;
-            max-width: 160px;
+            max-width: 180px;
         }
 
         .fc__section-title {
@@ -887,49 +899,56 @@
 
                         <!-- 起点 -->
                         <div class="fc__start">ガスが出ない？</div>
-                        <div class="fc__connector"></div>
 
-                        <!-- 2分岐 -->
-                        <div class="fc__split">
+                        <!-- 起点から分岐への矢印 -->
+                        <div class="fc__vline"></div>
 
-                            <!-- 左レーン -->
+                        <!-- 水平分岐ライン -->
+                        <div class="fc__hsplit"></div>
+
+                        <!-- 2レーン -->
+                        <div class="fc__lanes">
+
+                            <!-- ===== 左レーン ===== -->
                             <div class="fc__lane">
+                                <div class="fc__lane-entry"></div>
                                 <div class="fc__box">全てのガス器具が点火しない</div>
-                                <div class="fc__connector--arrow"></div>
+                                <div class="fc__vline--short"></div>
                                 <div class="fc__box">ガスメーターの場所は<br>わかりますか？</div>
-                                <div class="fc__connector--arrow"></div>
-                                <div class="fc__choices">
+                                <div class="fc__vline--short"></div>
+                                <div class="fc__pair">
                                     <div class="fc__box">わかる</div>
                                     <div class="fc__box">わからない</div>
                                 </div>
-                                <div class="fc__connector--arrow"></div>
+                                <div class="fc__vline--short"></div>
                                 <div class="fc__box">ガスメーターの赤いランプは<br>点滅していますか？</div>
-                                <div class="fc__connector--arrow"></div>
-                                <div class="fc__choices">
+                                <div class="fc__vline--short"></div>
+                                <div class="fc__pair">
                                     <div class="fc__box">点滅あり</div>
                                     <div class="fc__box">点滅なし</div>
                                 </div>
-                                <div class="fc__connector--arrow"></div>
-                                <div class="fc__results-row">
+                                <div class="fc__vline--short"></div>
+                                <div class="fc__pair">
                                     <a href="preview-trouble-meter-reset.html" class="fc__result">ガスメーター<br>復帰手順</a>
                                     <a href="https://boushugas.co.jp/wp2026/contact"
                                         class="fc__result">房州ガスまで<br>ご連絡ください</a>
                                 </div>
                             </div>
 
-                            <!-- 右レーン -->
+                            <!-- ===== 右レーン ===== -->
                             <div class="fc__lane">
+                                <div class="fc__lane-entry"></div>
                                 <div class="fc__box">一部のガス器具が点火しない</div>
-                                <div class="fc__connector--arrow"></div>
+                                <div class="fc__vline--short"></div>
                                 <div class="fc__box">ガス栓が閉まっていませんか？</div>
-                                <div class="fc__connector--arrow"></div>
-                                <div class="fc__choices">
+                                <div class="fc__vline--short"></div>
+                                <div class="fc__pair">
                                     <div class="fc__box">開いている</div>
                                     <div class="fc__box">閉まっている</div>
                                 </div>
-                                <div class="fc__connector--arrow"></div>
+                                <div class="fc__vline--short"></div>
                                 <div class="fc__box">ガス栓を開けて<br>点火を確認して<br>ください</div>
-                                <div class="fc__connector--arrow"></div>
+                                <div class="fc__vline--short"></div>
                                 <a href="preview-trouble-equipment.html" class="fc__result">ガス機器が故障したら</a>
                             </div>
 
