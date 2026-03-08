@@ -733,43 +733,11 @@
                     <p class="content-text">ガスメーターはガス漏れやガスの消し忘れ、地震等の異常を検知した場合に、自動でガスを遮断する機能を備えています。
                         ガスが遮断した場合、下記の手順に従って復帰操作を行うことで遮断状態は解除されます。 ガス漏れの場合は復帰操作を行っても遮断状態は解除されませんので、当社までご連絡ください。</p>
 
-                    <!-- マイコンメーター注意 -->
-                    <div class="meter-intro">
-                        <div class="meter-intro__title">マイコンメーターでガスが止まったときは、次のように対応してください</div>
+                    <!-- マイコンメーター復帰手順（画像） -->
+                    <div style="text-align: center; margin-bottom: 32px;">
+                        <img src="images/マイコンメーター.png" alt="マイコンメーター復帰手順"
+                            style="max-width: 100%; height: auto; border-radius: 8px;">
                     </div>
-
-                    <!-- 復帰手順 4ステップ -->
-                    <ol class="reset-steps">
-                        <li class="reset-step">
-                            <div class="reset-step__number">1</div>
-                            <div class="reset-step__body">
-                                <div class="reset-step__title">すべてのガス機器を止める。</div>
-                                <p class="reset-step__text">（ガスメーターの元栓（メーターガス栓）では止めない）</p>
-                            </div>
-                        </li>
-                        <li class="reset-step">
-                            <div class="reset-step__number">2</div>
-                            <div class="reset-step__body">
-                                <div class="reset-step__title">復帰ボタンのキャップを左に回して外す。</div>
-                                <p class="reset-step__text">（キャップが無いタイプもあります。）</p>
-                            </div>
-                        </li>
-                        <li class="reset-step">
-                            <div class="reset-step__number">3</div>
-                            <div class="reset-step__body">
-                                <div class="reset-step__title">復帰ボタンを奥までしっかり押して、<strong>すぐ手を離す。</strong></div>
-                                <p class="reset-step__text">（ボタンは元に戻り、赤ランプは再び点滅。）（キャップを元に戻す。）</p>
-                            </div>
-                        </li>
-                        <li class="reset-step">
-                            <div class="reset-step__number">4</div>
-                            <div class="reset-step__body">
-                                <div class="reset-step__title">ガスを使わず、約3分待つ。</div>
-                                <p class="reset-step__text">（ガスメーターがガス漏れがないかどうかを確認しています。）3分経過後に 再度ガスメーターの表示ランプを確認
-                                    し、点滅が消えていればガスが使えます。</p>
-                            </div>
-                        </li>
-                    </ol>
 
                     <!-- マイコンメーター遮断条件 -->
                     <div class="meter-shutoff">
@@ -796,11 +764,13 @@
                         <h3 class="meter-location__title">ふだんからメーターの位置を確認しましょう</h3>
                         <div class="meter-location__grid">
                             <div class="meter-location__card">
-                                <div class="meter-location__card-icon">🏢</div>
+                                <img src="images/meter-location-apartment.jpg" alt="マンション・アパートの場合"
+                                    style="max-width: 100%; height: auto; border-radius: 6px; margin-bottom: 8px;">
                                 <div class="meter-location__card-label">マンション・アパートの場合</div>
                             </div>
                             <div class="meter-location__card">
-                                <div class="meter-location__card-icon">🏠</div>
+                                <img src="images/meter-location-house.jpg" alt="一戸建ての場合"
+                                    style="max-width: 100%; height: auto; border-radius: 6px; margin-bottom: 8px;">
                                 <div class="meter-location__card-label">一戸建ての場合</div>
                             </div>
                         </div>
