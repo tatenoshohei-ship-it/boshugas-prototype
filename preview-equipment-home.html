@@ -303,6 +303,22 @@
             margin-bottom: 20px;
         }
 
+        /* 商品画像グリッド */
+        .product-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .product-images img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e0e8ef;
+        }
+
         /* メーカーリンク */
         .maker-links {
             display: flex;
@@ -582,6 +598,11 @@
                                 ガラストップは見た目もとってもキレイで、凹凸が少なくお掃除もらくらくです。<br>
                                 立消え安全装置（吹きこぼし等で火が消えた場合、自動的にガスを遮断します）や消し忘れ消火機能等の安全装置も充実しておりお安心してお料理をお楽しみいただけます。詳しい情報はメーカーサイトをご覧ください。
                             </p>
+                            <div class="product-images">
+                                <img src="images/gas-cooktop-1.png" alt="ガスコンロ（ビルトイン）">
+                                <img src="images/gas-cooktop-2.png" alt="ガスコンロ（据置型）">
+                                <img src="images/gas-cooktop-3.png" alt="ガスコンロ（コンパクト）">
+                            </div>
                             <div class="maker-links">
                                 <a href="https://rinnai.jp/" target="_blank" class="maker-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
