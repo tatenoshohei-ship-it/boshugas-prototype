@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【プレビュー】環境・地域の取り組み – 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <style>
+        .preview-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 99999
+        }
+
+        body {
+            padding-top: 32px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            background-color: #F3F6F9
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        .subpage__body {
+            padding: 48px 0 80px
+        }
+
+        .subpage__sidebar {
+            display: none !important
+        }
+
+        .subpage__content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px 56px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+            width: 100% !important;
+            max-width: 100% !important
+        }
+
+        .pv-header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 32px;
+            z-index: 9999
+        }
+
+        .pv-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px
+        }
+
+        .pv-header__logo {
+            height: 40px
+        }
+
+        .pv-header__right {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .pv-header__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2B7CBC;
+            text-decoration: none
+        }
+
+        .pv-header__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #244967;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .pv-subnav {
+            background: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .pv-subnav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            padding: 0 20px
+        }
+
+        .pv-subnav__item {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            cursor: default
+        }
+
+        .pv-subnav__item.is-active {
+            color: #2B7CBC;
+            font-weight: 700;
+            border-bottom-color: #2B7CBC
+        }
+
+        .page-header--hero {
+            background: linear-gradient(135deg, #1a5c3a 0%, #27ae60 60%, #5bd98a 100%);
+            padding: 48px 0;
+            text-align: center
+        }
+
+        .page-header__title {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 900
+        }
+
+        .breadcrumb {
+            padding: 12px 0;
+            font-size: 12px;
+            color: #888
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            padding: 0;
+            margin: 0
+        }
+
+        .breadcrumb__item a {
+            color: #2B7CBC;
+            text-decoration: none
+        }
+
+        .breadcrumb__item+.breadcrumb__item::before {
+            content: '>';
+            margin-right: 8px;
+            color: #aaa
+        }
+
+        .content-text {
+            font-size: 15px;
+            line-height: 2.0;
+            color: #444;
+            margin-bottom: 32px
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 900;
+            color: #1a5c3a;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #27ae60;
+            margin-bottom: 20px;
+            margin-top: 40px
+        }
+
+        .hero-image {
+            text-align: center;
+            margin-bottom: 32px
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px
+        }
+
+        /* カーボンオフセット */
+        .carbon-intro {
+            background: #eef9f2;
+            border-left: 5px solid #27ae60;
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 2.0;
+            color: #444
+        }
+
+        .info-box {
+            background: #fff;
+            border: 1px solid #d5e8dc;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px
+        }
+
+        .info-box__title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a5c3a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .info-box__list {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .info-box__list li {
+            padding: 6px 0;
+            font-size: 15px;
+            color: #444;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.8
+        }
+
+        .info-box__list li::before {
+            content: '●';
+            color: #27ae60;
+            font-size: 8px;
+            margin-top: 8px;
+            flex-shrink: 0
+        }
+
+        /* SDGs */
+        .sdgs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px
+        }
+
+        .sdgs-card {
+            background: #fff;
+            border: 1px solid #d5e8dc;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: box-shadow 0.2s
+        }
+
+        .sdgs-card:hover {
+            box-shadow: 0 4px 16px rgba(39, 174, 96, 0.1)
+        }
+
+        .sdgs-card__icon {
+            font-size: 40px;
+            margin-bottom: 12px
+        }
+
+        .sdgs-card__title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a5c3a;
+            margin-bottom: 8px
+        }
+
+        .sdgs-card__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left
+        }
+
+        .sdgs-card__list li {
+            font-size: 14px;
+            color: #555;
+            padding: 4px 0;
+            line-height: 1.6
+        }
+
+        .sdgs-card__list li::before {
+            content: '・'
+        }
+
+        /* 地域連携 */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px
+        }
+
+        .community-card {
+            background: #fff;
+            border: 1px solid #d5e8dc;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: box-shadow 0.2s
+        }
+
+        .community-card:hover {
+            box-shadow: 0 4px 16px rgba(39, 174, 96, 0.1)
+        }
+
+        .community-card__icon {
+            font-size: 36px;
+            margin-bottom: 12px
+        }
+
+        .community-card__title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a5c3a;
+            margin-bottom: 8px
+        }
+
+        .community-card__text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8
+        }
+
+        /* 締め */
+        .closing-message {
+            background: linear-gradient(135deg, #1a5c3a 0%, #27ae60 100%);
+            border-radius: 12px;
+            padding: 32px;
+            color: #fff;
+            text-align: center;
+            margin-top: 40px
+        }
+
+        .closing-message__title {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 12px
+        }
+
+        .closing-message__text {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.8
+        }
+
+        /* 共通フッター */
+        .pv-contact-section {
+            background: #EDF4F7;
+            padding: 48px 20px;
+            margin-top: 40px
+        }
+
+        .pv-contact-section__inner {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+            flex: 1
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            color: #244967;
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 900;
+            color: #2B7CBC;
+            text-decoration: none
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555
+        }
+
+        .pv-contact-section__note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: #244967;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0
+        }
+
+        .pv-contact-section__character img {
+            width: 120px;
+            height: auto
+        }
+
+        .pv-footer {
+            color: #fff
+        }
+
+        .pv-footer__cta {
+            background: #2B7CBC;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .pv-footer__main {
+            background: #244967;
+            padding: 32px 20px
+        }
+
+        .pv-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px
+        }
+
+        .pv-footer__character img {
+            width: 80px
+        }
+
+        .pv-footer__logo {
+            height: 32px
+        }
+
+        .pv-footer__address {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px
+        }
+
+        .pv-footer__actions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .pv-footer__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none
+        }
+
+        .pv-footer__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px
+        }
+
+        .pv-footer__bottom {
+            background: #1a3a5c;
+            text-align: center;
+            padding: 16px;
+            font-size: 12px
+        }
+
+        .pv-footer__bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 12px
+        }
+
+        .pv-footer__copy {
+            margin-top: 8px;
+            opacity: 0.6
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preview-badge">🖊 改修プレビュー — 環境・地域の取り組み</div>
+    <header class="pv-header">
+        <div class="pv-header__inner">
+            <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg" alt="房州ガス株式会社"
+                class="pv-header__logo">
+            <div class="pv-header__right">
+                <a href="tel:0470-22-2251" class="pv-header__phone"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.87.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg> 0470-22-2251</a>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-header__contact-btn">お問い合わせ</a>
+            </div>
+        </div>
+        <div class="pv-subnav">
+            <div class="pv-subnav__inner">
+                <span class="pv-subnav__item">個人のお客様へ</span><span class="pv-subnav__item">法人のお客様へ</span><span
+                    class="pv-subnav__item">お困りの時は</span><span class="pv-subnav__item">ガス機器について</span><span
+                    class="pv-subnav__item">安全・工事関連</span><a href="#" class="pv-subnav__item is-active">環境・地域の取り組み</a>
+            </div>
+        </div>
+    </header>
+    <main class="main subpage">
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
+                    <li class="breadcrumb__item">環境・地域の取り組み</li>
+                </ol>
+            </div>
+        </nav>
+        <div class="page-header page-header--hero">
+            <div class="container">
+                <h1 class="page-header__title">環境・地域の取り組み</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="subpage__body">
+                <div class="subpage__content">
+
+                    <h2 class="c-heading2"
+                        style="font-size:28px;font-weight:900;color:#1a5c3a;border-bottom:3px solid #27ae60;padding-bottom:12px;text-align:center">
+                        環境・地域の取り組み</h2>
+
+                    <p class="content-text">
+                        房州ガスは、地域に根ざしたエネルギー企業として、持続可能な社会の実現と脱炭素社会への貢献を目指し、さまざまな取り組みを進めています。
+                    </p>
+
+                    <!-- カーボンオフセットLPG -->
+                    <h3 class="section-heading">カーボンオフセットLPGの導入</h3>
+                    <div class="carbon-intro">
+                        「カーボンオフセットLPG」は、LPガス（プロパンガス）の製造から消費までの過程で発生する二酸化炭素（CO₂）を、他の場所でのCO₂削減活動によって相殺（オフセット）する仕組みのLPガスです。
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box__title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" width="20"
+                                height="20">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            房州ガスの取り組み
+                        </div>
+                        <ul class="info-box__list">
+                            <li>202×年より一部法人契約にて導入開始</li>
+                            <li>地域公共施設・企業などへCO₂排出削減に貢献するエネルギー提供を拡大中</li>
+                            <li>CNG導入によるCO₂削減効果や取り扱い量を透明性のある形で公開予定</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box__title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" width="20"
+                                height="20">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg>
+                            CNG導入のメリット（法人向け）
+                        </div>
+                        <ul class="info-box__list">
+                            <li>CO₂排出量の「実質ゼロ」化による環境報告書対応</li>
+                            <li>SDGsやESG評価への対応強化</li>
+                        </ul>
+                    </div>
+
+                    <!-- SDGs -->
+                    <h3 class="section-heading">SDGsへの取り組み</h3>
+                    <p class="content-text">
+                        房州ガスは、持続可能な地域社会の実現を目指し、国連が掲げる「持続可能な開発目標（SDGs）」の理念に基づいた活動を展開しています。
+                    </p>
+
+                    <div class="sdgs-grid">
+                        <div class="sdgs-card">
+                            <div class="sdgs-card__icon">⚡</div>
+                            <div class="sdgs-card__title">エネルギーをみんなに<br>そしてクリーンに</div>
+                            <ul class="sdgs-card__list">
+                                <li>高効率ガス機器の普及支援</li>
+                                <li>カーボンオフセットLPGの導入促進</li>
+                            </ul>
+                        </div>
+                        <div class="sdgs-card">
+                            <div class="sdgs-card__icon">🏘️</div>
+                            <div class="sdgs-card__title">住み続けられる<br>まちづくりを</div>
+                            <ul class="sdgs-card__list">
+                                <li>地域防災訓練への参加</li>
+                                <li>高齢者・福祉施設との見守り連携</li>
+                            </ul>
+                        </div>
+                        <div class="sdgs-card">
+                            <div class="sdgs-card__icon">🔄</div>
+                            <div class="sdgs-card__title">つくる責任<br>つかう責任</div>
+                            <ul class="sdgs-card__list">
+                                <li>気候変動に具体的な対策を</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 地域連携・環境教育 -->
+                    <h3 class="section-heading">地域連携・環境教育</h3>
+
+                    <div class="community-grid">
+                        <div class="community-card">
+                            <div class="community-card__icon">🏫</div>
+                            <div class="community-card__title">エネルギー授業</div>
+                            <div class="community-card__text">地元小学校・中学校での「エネルギー授業」や施設見学の受け入れ</div>
+                        </div>
+                        <div class="community-card">
+                            <div class="community-card__icon">🎪</div>
+                            <div class="community-card__title">地域イベント</div>
+                            <div class="community-card__text">地域イベント（防災フェア・グリーン活動など）への協賛・出展</div>
+                        </div>
+                        <div class="community-card">
+                            <div class="community-card__icon">🌱</div>
+                            <div class="community-card__title">環境キャンペーン</div>
+                            <div class="community-card__text">環境月間（6月）にあわせた啓発キャンペーンの実施</div>
+                        </div>
+                    </div>
+
+                    <!-- 締めメッセージ -->
+                    <div class="closing-message">
+                        <div class="closing-message__title">🌿 地域と共に歩むエネルギーパートナー</div>
+                        <div class="closing-message__text">
+                            房州ガスは、カーボンニュートラル社会の実現に向けて、ガスというインフラの枠を超えた取り組みを続けてまいります。<br>再生可能エネルギー・災害対策・人材育成を含めた持続的な取り組みを進めます。
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p><a href="tel:0470-22-2251"
+                    class="pv-contact-section__phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.87.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg> 0470-22-2251</a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p><a
+                    href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg> お問い合わせはこちら</a>
+            </div>
+            <div class="pv-contact-section__character"><img
+                    src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター"></div>
+        </div>
+    </section>
+    <footer class="pv-footer">
+        <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
+        <div class="pv-footer__main">
+            <div class="pv-footer__inner">
+                <div class="pv-footer__character"><img
+                        src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                        alt="房州ガスキャラクター"></div>
+                <div><img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg"
+                        alt="房州ガス株式会社" class="pv-footer__logo">
+                    <p class="pv-footer__address">千葉県館山市北条1014番地</p>
+                </div>
+                <div class="pv-footer__actions"><a href="tel:0470-22-2251" class="pv-footer__phone"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.87.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg> 0470-22-2251</a><a href="https://boushugas.co.jp/wp2026/contact"
+                        class="pv-footer__contact-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="14" height="14">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg> お問い合わせ</a></div>
+            </div>
+        </div>
+        <div class="pv-footer__bottom">
+            <div><a href="https://boushugas.co.jp/wp2026/privacy">個人情報の取り扱いについて</a><a
+                    href="https://boushugas.co.jp/wp2026/company">会社案内</a></div>
+            <p class="pv-footer__copy">© BoshuGas.inc</p>
+        </div>
+    </footer>
+</body>
+
+</html>
