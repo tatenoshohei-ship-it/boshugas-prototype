@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【プレビュー】経年管の入れ替え – 房州ガス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/css/style.css?ver=1771989191">
+    <style>
+        .preview-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 99999
+        }
+
+        body {
+            padding-top: 32px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            background-color: #F3F6F9
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        .subpage__body {
+            padding: 48px 0 80px
+        }
+
+        .subpage__sidebar {
+            display: none !important
+        }
+
+        .subpage__content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px 56px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+            width: 100% !important;
+            max-width: 100% !important
+        }
+
+        .pv-header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 32px;
+            z-index: 9999
+        }
+
+        .pv-header__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px
+        }
+
+        .pv-header__logo {
+            height: 40px
+        }
+
+        .pv-header__right {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .pv-header__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2B7CBC;
+            text-decoration: none
+        }
+
+        .pv-header__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #244967;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .pv-subnav {
+            background: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .pv-subnav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            padding: 0 20px
+        }
+
+        .pv-subnav__item {
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            cursor: default
+        }
+
+        .pv-subnav__item.is-active {
+            color: #2B7CBC;
+            font-weight: 700;
+            border-bottom-color: #2B7CBC
+        }
+
+        .page-header--hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2B7CBC 60%, #5ba3d9 100%);
+            padding: 48px 0;
+            text-align: center
+        }
+
+        .page-header__title {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 900
+        }
+
+        .breadcrumb {
+            padding: 12px 0;
+            font-size: 12px;
+            color: #888
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            padding: 0;
+            margin: 0
+        }
+
+        .breadcrumb__item a {
+            color: #2B7CBC;
+            text-decoration: none
+        }
+
+        .breadcrumb__item+.breadcrumb__item::before {
+            content: '>';
+            margin-right: 8px;
+            color: #aaa
+        }
+
+        /* タブ */
+        .pv-page-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+            padding: 0;
+            border: none
+        }
+
+        .pv-page-tabs__item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: 2px solid #ddd;
+            color: #666;
+            background: #fff
+        }
+
+        .pv-page-tabs__item:hover {
+            border-color: #2B7CBC;
+            color: #2B7CBC;
+            background: #f0f7ff
+        }
+
+        .pv-page-tabs__item--active {
+            background: #2B7CBC;
+            color: #fff;
+            border-color: #2B7CBC;
+            box-shadow: 0 2px 8px rgba(43, 124, 188, 0.3)
+        }
+
+        .pv-page-tabs__item--active:hover {
+            background: #244967;
+            color: #fff;
+            border-color: #244967
+        }
+
+        .pv-page-tabs__item svg {
+            flex-shrink: 0
+        }
+
+        /* コンテンツ */
+        .content-text {
+            font-size: 15px;
+            line-height: 2.0;
+            color: #444;
+            margin-bottom: 32px
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: 900;
+            color: #244967;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2B7CBC;
+            margin-bottom: 20px;
+            margin-top: 40px
+        }
+
+        .hero-image {
+            text-align: center;
+            margin-bottom: 32px
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e0e8ef;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px
+        }
+
+        .faq-item__q {
+            font-size: 16px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px
+        }
+
+        .faq-item__q::before {
+            content: 'Q';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            color: #fff;
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: 900
+        }
+
+        .faq-item__a {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            padding-left: 38px
+        }
+
+        /* ステップ */
+        .step-flow {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px;
+            counter-reset: step
+        }
+
+        .step-flow__item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 24px;
+            background: #fff;
+            border: 1px solid #e0e8ef;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            counter-increment: step;
+            align-items: flex-start
+        }
+
+        .step-flow__item:hover {
+            box-shadow: 0 4px 16px rgba(43, 124, 188, 0.08)
+        }
+
+        .step-flow__number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            color: #fff;
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-size: 16px;
+            font-weight: 900
+        }
+
+        .step-flow__body {
+            flex: 1
+        }
+
+        .step-flow__title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 4px
+        }
+
+        .step-flow__text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444
+        }
+
+        /* 注意ボックス */
+        .notice-box {
+            background: #eef5fb;
+            border-left: 4px solid #2B7CBC;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 2.0;
+            color: #444
+        }
+
+        .notice-box--warning {
+            background: #fff8f0;
+            border-left-color: #e67e22
+        }
+
+        .notice-box--danger {
+            background: #fef0f0;
+            border-left-color: #e74c3c
+        }
+
+        /* カテゴリカード */
+        .category-card {
+            background: #fff;
+            border: 1px solid #e0e8ef;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s
+        }
+
+        .category-card:hover {
+            box-shadow: 0 4px 16px rgba(43, 124, 188, 0.08)
+        }
+
+        .category-card__title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .category-card__title-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            flex-shrink: 0
+        }
+
+        .category-card__text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 12px
+        }
+
+        .category-card__sub {
+            font-size: 14px;
+            color: #666;
+            padding-left: 16px;
+            border-left: 3px solid #dce6ef
+        }
+
+        .category-card__sub strong {
+            color: #244967
+        }
+
+        /* チェックリスト */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px
+        }
+
+        .check-list li {
+            padding: 8px 0;
+            font-size: 15px;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px dashed #e0e8ef
+        }
+
+        .check-list li:last-child {
+            border-bottom: none
+        }
+
+        .check-list li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: #2B7CBC;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            flex-shrink: 0
+        }
+
+        /* メリットカード */
+        .merit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 32px
+        }
+
+        .merit-card {
+            background: #fff;
+            border: 1px solid #e0e8ef;
+            border-radius: 12px;
+            padding: 24px;
+            transition: box-shadow 0.2s
+        }
+
+        .merit-card:hover {
+            box-shadow: 0 4px 16px rgba(43, 124, 188, 0.08)
+        }
+
+        .merit-card__number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 900;
+            margin-bottom: 12px
+        }
+
+        .merit-card__title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #244967;
+            margin-bottom: 8px
+        }
+
+        .merit-card__text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #444
+        }
+
+        /* フッター */
+        .pv-contact-section {
+            background: #EDF4F7;
+            padding: 48px 20px;
+            margin-top: 40px
+        }
+
+        .pv-contact-section__inner {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px
+        }
+
+        .pv-contact-section__left {
+            text-align: center;
+            flex: 1
+        }
+
+        .pv-contact-section__title {
+            font-size: 16px;
+            color: #244967;
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .pv-contact-section__phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 36px;
+            font-weight: 900;
+            color: #2B7CBC;
+            text-decoration: none
+        }
+
+        .pv-contact-section__time {
+            font-size: 14px;
+            color: #555
+        }
+
+        .pv-contact-section__note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px
+        }
+
+        .pv-contact-section__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: #244967;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700
+        }
+
+        .pv-contact-section__character {
+            flex-shrink: 0
+        }
+
+        .pv-contact-section__character img {
+            width: 120px;
+            height: auto
+        }
+
+        .pv-footer {
+            color: #fff
+        }
+
+        .pv-footer__cta {
+            background: #2B7CBC;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        .pv-footer__main {
+            background: #244967;
+            padding: 32px 20px
+        }
+
+        .pv-footer__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 32px
+        }
+
+        .pv-footer__character img {
+            width: 80px
+        }
+
+        .pv-footer__logo {
+            height: 32px
+        }
+
+        .pv-footer__address {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px
+        }
+
+        .pv-footer__actions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .pv-footer__phone {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none
+        }
+
+        .pv-footer__contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px
+        }
+
+        .pv-footer__bottom {
+            background: #1a3a5c;
+            text-align: center;
+            padding: 16px;
+            font-size: 12px
+        }
+
+        .pv-footer__bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 12px
+        }
+
+        .pv-footer__copy {
+            margin-top: 8px;
+            opacity: 0.6
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preview-badge">🖊 改修プレビュー — 安全・工事関連 – 経年管の入れ替え</div>
+    <header class="pv-header">
+        <div class="pv-header__inner">
+            <img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg" alt="房州ガス株式会社"
+                class="pv-header__logo">
+            <div class="pv-header__right">
+                <a href="tel:0470-22-2251" class="pv-header__phone"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.87.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg> 0470-22-2251</a>
+                <a href="https://boushugas.co.jp/wp2026/contact" class="pv-header__contact-btn">お問い合わせ</a>
+            </div>
+        </div>
+        <div class="pv-subnav">
+            <div class="pv-subnav__inner">
+                <span class="pv-subnav__item">個人のお客様へ</span><span class="pv-subnav__item">法人のお客様へ</span><span
+                    class="pv-subnav__item">お困りの時は</span><span class="pv-subnav__item">ガス機器について</span><span
+                    class="pv-subnav__item is-active">安全・工事関連</span><a href="https://boushugas.co.jp/wp2026/environment"
+                    class="pv-subnav__item">環境・地域の取り組み</a>
+            </div>
+        </div>
+    </header>
+    <main class="main subpage">
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
+                    <li class="breadcrumb__item"><a href="#">安全・工事関連</a></li>
+                    <li class="breadcrumb__item">経年管の入れ替え</li>
+                </ol>
+            </div>
+        </nav>
+        <div class="page-header page-header--hero">
+            <div class="container">
+                <h1 class="page-header__title">安全・工事関連</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="subpage__body">
+                <div class="subpage__content">
+
+                    <!-- タブ -->
+                    <div class="pv-page-tabs">
+                        <a href="preview-safety.html" class="pv-page-tabs__item"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg> ガスの安全</a>
+                        <a href="#" class="pv-page-tabs__item pv-page-tabs__item--active"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg> 経年管の入れ替え</a>
+                        <a href="preview-safety-construction.html" class="pv-page-tabs__item"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <rect x="2" y="6" width="20" height="12" rx="2" />
+                                <path d="M12 12h.01" />
+                            </svg> ガス工事・調査</a>
+                        <a href="preview-safety-demolition.html" class="pv-page-tabs__item"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg> 建物解体の際は</a>
+                        <a href="preview-safety-city-gas.html" class="pv-page-tabs__item"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg> 都市ガスへの切り替え</a>
+                    </div>
+
+                    <h2 class="c-heading2"
+                        style="font-size:28px;font-weight:900;color:#244967;border-bottom:3px solid #2B7CBC;padding-bottom:12px;text-align:center">
+                        経年管の入れ替え</h2>
+
+                    <div class="hero-image"><img src="images/safety-aging-pipe.png" alt="経年管の入れ替え"></div>
+
+                    <div class="notice-box">
+                        房州ガスでは、お客様に安全・安心なガス供給を維持するため、耐用年数を超えた古いガス管（＝経年管）の取り替え工事を順次行っております。
+                    </div>
+
+                    <!-- FAQ形式 -->
+                    <div class="faq-item">
+                        <div class="faq-item__q">経年管とは？</div>
+                        <div class="faq-item__a">
+                            「経年管」とは、設置から長期間（30年以上）経過したガス管のことです。長年の使用によって、腐食や劣化が進みやすく、漏洩リスクが高くなるため、国の基準に基づき、定期的な交換が必要とされています。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-item__q">なぜ交換が必要なの？</div>
+                        <div class="faq-item__a">古いガス管は、見た目では問題がないように見えても、地中や壁の内部で劣化している場合があります。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-item__q">費用はかかりますか？</div>
+                        <div class="faq-item__a">
+                            基本的に、お客様の費用負担はありません。交換が必要と判断された経年管については、当社が責任を持って無料で交換工事を実施いたします。<br>※一部、敷地内の工事に関しては状況により個別にご案内する場合がございます。
+                        </div>
+                    </div>
+
+                    <!-- 工事の流れ -->
+                    <h3 class="section-heading">工事の流れ</h3>
+                    <ol class="step-flow">
+                        <li class="step-flow__item">
+                            <div class="step-flow__number">1</div>
+                            <div class="step-flow__body">
+                                <div class="step-flow__title">事前のご案内</div>
+                                <div class="step-flow__text">対象のお客様へ、書面または訪問で工事のご案内をいたします。</div>
+                            </div>
+                        </li>
+                        <li class="step-flow__item">
+                            <div class="step-flow__number">2</div>
+                            <div class="step-flow__body">
+                                <div class="step-flow__title">現地調査</div>
+                                <div class="step-flow__text">実際のガス管の状況や敷地条件を確認いたします。</div>
+                            </div>
+                        </li>
+                        <li class="step-flow__item">
+                            <div class="step-flow__number">3</div>
+                            <div class="step-flow__body">
+                                <div class="step-flow__title">工事日程のご相談</div>
+                                <div class="step-flow__text">ご都合に合わせて、施工日を決定いたします。</div>
+                            </div>
+                        </li>
+                        <li class="step-flow__item">
+                            <div class="step-flow__number">4</div>
+                            <div class="step-flow__body">
+                                <div class="step-flow__title">工事の実施</div>
+                                <div class="step-flow__text">所要時間は通常半日〜1日程度。安全対策のうえで、通行・生活への支障を最小限に配慮しています。</div>
+                            </div>
+                        </li>
+                        <li class="step-flow__item">
+                            <div class="step-flow__number">5</div>
+                            <div class="step-flow__body">
+                                <div class="step-flow__title">完了後の点検・開栓作業</div>
+                                <div class="step-flow__text">ガス機器の火確認、安全点検を行い、ご使用再開となります。</div>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <h3 class="section-heading">ご協力のお願い</h3>
+                    <p class="content-text">経年管の入れ替えは、お客様と地域の安全を守る大切な工事です。ご理解とご協力を賜りますようお願い申し上げます。</p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="pv-contact-section">
+        <div class="pv-contact-section__inner">
+            <div class="pv-contact-section__left">
+                <p class="pv-contact-section__title">── お問い合わせ ──</p><a href="tel:0470-22-2251"
+                    class="pv-contact-section__phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="28" height="28">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.87.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg> 0470-22-2251</a>
+                <p class="pv-contact-section__time">平日・土曜 8:00 〜 17:00</p>
+                <p class="pv-contact-section__note">※ 天災有事の緊急のご用件は24時間365日対応</p><a
+                    href="https://boushugas.co.jp/wp2026/contact" class="pv-contact-section__btn"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg> お問い合わせはこちら</a>
+            </div>
+            <div class="pv-contact-section__character"><img
+                    src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                    alt="房州ガスキャラクター"></div>
+        </div>
+    </section>
+    <footer class="pv-footer">
+        <div class="pv-footer__cta">房山・南房総地域のガスならびにガス器具のことなら房州ガスへ</div>
+        <div class="pv-footer__main">
+            <div class="pv-footer__inner">
+                <div class="pv-footer__character"><img
+                        src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/character.svg"
+                        alt="房州ガスキャラクター"></div>
+                <div><img src="https://boushugas.co.jp/wp2026/wp-content/themes/boshugas/assets/images/logo.svg"
+                        alt="房州ガス株式会社" class="pv-footer__logo">
+                    <p class="pv-footer__address">千葉県館山市北条1014番地</p>
+                </div>
+                <div class="pv-footer__actions"><a href="tel:0470-22-2251" class="pv-footer__phone"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                            height="16">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.87.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.94.34 2 .57 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg> 0470-22-2251</a><a href="https://boushugas.co.jp/wp2026/contact"
+                        class="pv-footer__contact-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="14" height="14">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg> お問い合わせ</a></div>
+            </div>
+        </div>
+        <div class="pv-footer__bottom">
+            <div><a href="https://boushugas.co.jp/wp2026/privacy">個人情報の取り扱いについて</a><a
+                    href="https://boushugas.co.jp/wp2026/company">会社案内</a></div>
+            <p class="pv-footer__copy">© BoshuGas.inc</p>
+        </div>
+    </footer>
+</body>
+
+</html>
