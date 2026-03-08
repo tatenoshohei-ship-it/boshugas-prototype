@@ -263,6 +263,13 @@
             box-shadow: 0 4px 16px rgba(43, 124, 188, 0.08)
         }
 
+        .merit-card__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px
+        }
+
         .merit-card__number {
             display: flex;
             align-items: center;
@@ -274,14 +281,13 @@
             border-radius: 50%;
             font-size: 14px;
             font-weight: 900;
-            margin-bottom: 12px
+            flex-shrink: 0
         }
 
         .merit-card__title {
             font-size: 15px;
             font-weight: 700;
-            color: #244967;
-            margin-bottom: 8px
+            color: #244967
         }
 
         .merit-card__text {
@@ -305,7 +311,23 @@
             border: 1px solid #e0e8ef;
             border-radius: 12px;
             margin-bottom: 12px;
-            align-items: flex-start
+            align-items: center
+        }
+
+        .step-flow__image {
+            width: 120px;
+            height: 90px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #f4f8fb;
+            border: 1px solid #e0e8ef
+        }
+
+        .step-flow__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
         }
 
         .step-flow__item:hover {
@@ -580,26 +602,34 @@
                     <h3 class="section-heading">都市ガスのメリット</h3>
                     <div class="merit-grid">
                         <div class="merit-card">
-                            <div class="merit-card__number">1</div>
-                            <div class="merit-card__title">月々のガス料金が抑えられる可能性</div>
+                            <div class="merit-card__header">
+                                <div class="merit-card__number">1</div>
+                                <div class="merit-card__title">月々のガス料金が抑えられる可能性</div>
+                            </div>
                             <div class="merit-card__text">
                                 都市ガスは、公共インフラとしての供給体制により、料金単価が比較的安定しています。プロパンガスと比べて、使用量が多いほどコストメリットを実感いただけます。</div>
                         </div>
                         <div class="merit-card">
-                            <div class="merit-card__number">2</div>
-                            <div class="merit-card__title">安定した供給体制</div>
+                            <div class="merit-card__header">
+                                <div class="merit-card__number">2</div>
+                                <div class="merit-card__title">安定した供給体制</div>
+                            </div>
                             <div class="merit-card__text">
                                 都市ガスは、地下の導管網を通じて各家庭に届くため、ボンベの交換が不要です。安定利用が可能で、災害時にも早期復旧が期待できます。</div>
                         </div>
                         <div class="merit-card">
-                            <div class="merit-card__number">3</div>
-                            <div class="merit-card__title">災害時の安全対策が充実</div>
+                            <div class="merit-card__header">
+                                <div class="merit-card__number">3</div>
+                                <div class="merit-card__title">災害時の安全対策が充実</div>
+                            </div>
                             <div class="merit-card__text">地震時には自動でガスを遮断するマイコンメーターを使用。都市ガス供給エリアは、監視システムや緊急マニュアルが整備されています。
                             </div>
                         </div>
                         <div class="merit-card">
-                            <div class="merit-card__number">4</div>
-                            <div class="merit-card__title">機器の選択肢が広がる</div>
+                            <div class="merit-card__header">
+                                <div class="merit-card__number">4</div>
+                                <div class="merit-card__title">機器の選択肢が広がる</div>
+                            </div>
                             <div class="merit-card__text">都市ガス対応の機器はラインアップが豊富です。床暖房、浴室暖房乾燥機など、高機能で省エネ対応の機器の選択肢が豊富です。
                             </div>
                         </div>
@@ -609,38 +639,39 @@
                     <h3 class="section-heading">申し込みからご使用開始まで</h3>
                     <ol class="step-flow">
                         <li class="step-flow__item">
-                            <div class="step-flow__number">1</div>
+                            <div class="step-flow__image"><img src="images/step-city-gas-1.png" alt="お問い合わせ"></div>
                             <div class="step-flow__body">
-                                <div class="step-flow__title">お問い合わせ・ご相談</div>
+                                <div class="step-flow__title">Step 1. お問い合わせ・ご相談</div>
                                 <div class="step-flow__text">お住まいの地域が都市ガス供給エリアに該当するか、ガス種の切り替え状況を確認いたします。</div>
                             </div>
                         </li>
                         <li class="step-flow__item">
-                            <div class="step-flow__number">2</div>
+                            <div class="step-flow__image"><img src="images/step-city-gas-2.png" alt="現地調査"></div>
                             <div class="step-flow__body">
-                                <div class="step-flow__title">現地調査・お見積り（無料）</div>
+                                <div class="step-flow__title">Step 2. 現地調査・お見積り（無料）</div>
                                 <div class="step-flow__text">
-                                    お客様のご入居状況をご確認のうえ、ご利用状況を把握いたします。ご契約の内容に合わせて、切り替え工事をお見積りいたします。</div>
+                                    お客様のご入居状況をご確認のうえ、ご利用を把握してもらいます。ご契約の内容に合わせて、切り替え工事をお見積りいたします。</div>
                             </div>
                         </li>
                         <li class="step-flow__item">
-                            <div class="step-flow__number">3</div>
+                            <div class="step-flow__image"><img src="images/step-city-gas-3.png" alt="ご契約"></div>
                             <div class="step-flow__body">
-                                <div class="step-flow__title">ご契約・日程調整</div>
-                                <div class="step-flow__text">お見積り内容をご確認いただいたうえで、供給方式の確認、切替工事の日程・作業日数を確認します。</div>
+                                <div class="step-flow__title">Step 3. ご契約・日程調整</div>
+                                <div class="step-flow__text">
+                                    お見積り内容をご確認いただいたうえで、以下の内容を確認します。<br>・供給方式の確認<br>・切替工事の日程／作業日数<br>・切替工事の付及び契約日数</div>
                             </div>
                         </li>
                         <li class="step-flow__item">
-                            <div class="step-flow__number">4</div>
+                            <div class="step-flow__image"><img src="images/step-city-gas-4.png" alt="ガス工事"></div>
                             <div class="step-flow__body">
-                                <div class="step-flow__title">ガス工事の実施</div>
+                                <div class="step-flow__title">Step 4. ガス工事の実施</div>
                                 <div class="step-flow__text">配管工事（引き込みが必要な場合）、機器の接続工事、メーター設置、ガスの開栓作業を行います。</div>
                             </div>
                         </li>
                         <li class="step-flow__item">
-                            <div class="step-flow__number">5</div>
+                            <div class="step-flow__image"><img src="images/step-city-gas-5.png" alt="ご利用開始"></div>
                             <div class="step-flow__body">
-                                <div class="step-flow__title">都市ガスのご利用開始</div>
+                                <div class="step-flow__title">Step 5. 都市ガスのご利用開始</div>
                                 <div class="step-flow__text">安全確認と試運転を実施後、すぐにご利用いただけます。操作方法や注意点も丁寧にご説明いたします。</div>
                             </div>
                         </li>
