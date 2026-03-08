@@ -179,262 +179,244 @@
             color: #aaa;
         }
 
-        /* ===== 緊急連絡バナー ===== */
-        .emergency-banner {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            border-radius: 12px;
-            padding: 28px 32px;
+        /* ===== サブメニュータブ（gas-application準拠） ===== */
+        .pv-page-tabs {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+            padding: 0;
+            border: none;
         }
 
-        .emergency-banner__icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
+        .pv-page-tabs__item {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 6px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: 2px solid #ddd;
+            color: #666;
+            background: #fff;
+        }
+
+        .pv-page-tabs__item:hover {
+            border-color: #2B7CBC;
+            color: #2B7CBC;
+            background: #f0f7ff;
+        }
+
+        .pv-page-tabs__item--active {
+            background: #2B7CBC;
+            color: #fff;
+            border-color: #2B7CBC;
+            box-shadow: 0 2px 8px rgba(43, 124, 188, 0.3);
+        }
+
+        .pv-page-tabs__item--active:hover {
+            background: #244967;
+            color: #fff;
+            border-color: #244967;
+        }
+
+        .pv-page-tabs__item svg {
             flex-shrink: 0;
         }
 
-        .emergency-banner__text {
-            color: #fff;
+        /* ===== 緊急連絡ボックス ===== */
+        .emergency-box {
+            background: #fff;
+            border: 2px solid #2B7CBC;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 32px;
         }
 
-        .emergency-banner__title {
+        .emergency-box__header {
+            background: linear-gradient(135deg, #244967, #2B7CBC);
+            color: #fff;
             font-size: 16px;
             font-weight: 700;
-            margin-bottom: 4px;
+            text-align: center;
+            padding: 12px 20px;
         }
 
-        .emergency-banner__phone {
-            display: flex;
+        .emergency-box__body {
+            padding: 24px 28px;
+            text-align: center;
+        }
+
+        .emergency-box__phone {
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             font-size: 32px;
             font-weight: 900;
-            color: #fff;
+            color: #2B7CBC;
             text-decoration: none;
         }
 
-        .emergency-banner__note {
-            font-size: 13px;
-            opacity: 0.85;
-            margin-top: 2px;
+        .emergency-box__note {
+            font-size: 15px;
+            color: #444;
+            margin-top: 4px;
         }
 
-        /* ===== 導入文 ===== */
-        .intro-text {
+        /* ===== コンテンツ本文 ===== */
+        .content-text {
             font-size: 15px;
             line-height: 2.0;
             color: #444;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        /* ===== チェックポイント ===== */
-        .check-section__title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #244967;
-            text-align: center;
             margin-bottom: 32px;
         }
 
-        .check-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 48px;
+        .content-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px;
         }
 
-        .check-card {
+        .content-list__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 24px;
             background: #fff;
             border: 1px solid #e0e8ef;
             border-radius: 12px;
-            padding: 28px 24px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
+            margin-bottom: 12px;
             transition: box-shadow 0.2s, transform 0.2s;
         }
 
-        .check-card:hover {
-            box-shadow: 0 4px 16px rgba(43, 124, 188, 0.12);
-            transform: translateY(-2px);
+        .content-list__item:hover {
+            box-shadow: 0 4px 16px rgba(43, 124, 188, 0.10);
+            transform: translateY(-1px);
         }
 
-        .check-card__number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
-            color: #fff;
-            font-size: 18px;
-            font-weight: 900;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .check-card__body {
-            flex: 1;
-        }
-
-        .check-card__question {
-            font-size: 16px;
-            font-weight: 700;
-            color: #244967;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .check-card__answer {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #444;
-        }
-
-        .check-card__answer strong {
-            color: #e74c3c;
-            font-weight: 700;
-        }
-
-        .check-card__answer a {
-            color: #2B7CBC;
-            text-decoration: underline;
-        }
-
-        .check-card--highlight {
+        .content-list__item--highlight {
             border-color: #e74c3c;
             border-width: 2px;
             background: #fef5f5;
         }
 
-        .check-card--highlight .check-card__number {
+        .content-list__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #2B7CBC, #5ba3d9);
+            color: #fff;
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .content-list__item--highlight .content-list__icon {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
         }
 
-        /* ===== 結果フロー ===== */
-        .result-flow {
-            margin-bottom: 48px;
+        .content-list__body {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
         }
 
-        .result-flow__title {
-            font-size: 20px;
+        .content-list__body strong {
+            color: #333;
             font-weight: 700;
-            color: #244967;
-            text-align: center;
-            margin-bottom: 24px;
         }
 
-        .result-cards {
+        .content-list__body a {
+            color: #2B7CBC;
+            text-decoration: underline;
+        }
+
+        .content-note {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+            padding-left: 52px;
+            margin-top: -8px;
+            margin-bottom: 12px;
+        }
+
+        /* ===== 次のステップ リンクカード ===== */
+        .next-links {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 16px;
+            margin-top: 40px;
         }
 
-        .result-card {
+        .next-link-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 28px 20px;
             background: #fff;
             border: 1px solid #e0e8ef;
             border-radius: 12px;
-            padding: 28px 24px;
-            text-align: center;
-            transition: box-shadow 0.2s;
+            text-decoration: none;
+            color: #244967;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
 
-        .result-card:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        .next-link-card:hover {
+            box-shadow: 0 4px 16px rgba(43, 124, 188, 0.12);
+            transform: translateY(-2px);
         }
 
-        .result-card__icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 16px;
+        .next-link-card__icon {
+            width: 48px;
+            height: 48px;
             background: #eef5fb;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 12px;
         }
 
-        .result-card__icon svg {
+        .next-link-card__icon svg {
             color: #2B7CBC;
         }
 
-        .result-card__title {
-            font-size: 16px;
+        .next-link-card__title {
+            font-size: 15px;
             font-weight: 700;
             color: #244967;
-            margin-bottom: 8px;
         }
 
-        .result-card__desc {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #444;
-            margin-bottom: 16px;
-        }
-
-        .result-card__link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #2B7CBC;
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            transition: background 0.2s;
-        }
-
-        .result-card__link:hover {
-            background: #244967;
-        }
-
-        .result-card--warning {
+        .next-link-card--red {
             border-color: #e74c3c;
-            border-width: 2px;
         }
 
-        .result-card--warning .result-card__icon {
+        .next-link-card--red .next-link-card__icon {
             background: #fef0f0;
         }
 
-        .result-card--warning .result-card__icon svg {
+        .next-link-card--red .next-link-card__icon svg {
             color: #e74c3c;
         }
 
-        .result-card--warning .result-card__link {
-            background: #e74c3c;
+        .next-link-card--green {
+            border-color: #27ae60;
         }
 
-        .result-card--warning .result-card__link:hover {
-            background: #c0392b;
-        }
-
-        .result-card--green .result-card__icon {
+        .next-link-card--green .next-link-card__icon {
             background: #eafaf1;
         }
 
-        .result-card--green .result-card__icon svg {
+        .next-link-card--green .next-link-card__icon svg {
             color: #27ae60;
-        }
-
-        .result-card--green .result-card__link {
-            background: #27ae60;
-        }
-
-        .result-card--green .result-card__link:hover {
-            background: #219a52;
         }
 
         /* ===== お問い合わせ・フッター ===== */
@@ -598,7 +580,7 @@
 
 <body>
 
-    <div class="preview-badge">🖊 改修プレビュー — ガスが出ない・止まったとき</div>
+    <div class="preview-badge">🖊 改修プレビュー — お困りの時は – ガスが出ない</div>
 
     <header class="pv-header">
         <div class="pv-header__inner">
@@ -635,155 +617,147 @@
                 <ol class="breadcrumb__list">
                     <li class="breadcrumb__item"><a href="#">房州ガス(株)</a></li>
                     <li class="breadcrumb__item"><a href="#">お困りの時は</a></li>
-                    <li class="breadcrumb__item">ガスが出ない・止まったとき</li>
+                    <li class="breadcrumb__item">ガスが出ない</li>
                 </ol>
             </div>
         </nav>
 
         <div class="page-header page-header--hero">
             <div class="container">
-                <h1 class="page-header__title">ガスが出ない・止まったとき</h1>
+                <h1 class="page-header__title">お困りの時は</h1>
             </div>
         </div>
 
         <div class="container">
             <div class="subpage__body">
+
                 <div class="subpage__content">
+
+                    <!-- ===== サブメニュータブ ===== -->
+                    <div class="pv-page-tabs">
+                        <a href="#" class="pv-page-tabs__item pv-page-tabs__item--active">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <path d="M18.36 6.64a9 9 0 1 1-12.73 0" />
+                                <line x1="12" y1="2" x2="12" y2="12" />
+                            </svg>
+                            ガスが出ないとき
+                        </a>
+                        <a href="#" class="pv-page-tabs__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            ガスくさいとき
+                        </a>
+                        <a href="#" class="pv-page-tabs__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                            地震のときは
+                        </a>
+                        <a href="#" class="pv-page-tabs__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            ガスメーター復帰操作
+                        </a>
+                        <a href="#" class="pv-page-tabs__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            </svg>
+                            ガス機器が故障したら
+                        </a>
+                    </div>
 
                     <h2 class="c-heading2">ガスが出ない・止まったとき</h2>
 
-                    <!-- 緊急連絡バナー -->
-                    <div class="emergency-banner">
-                        <div class="emergency-banner__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" width="28" height="28">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="emergency-banner__text">
-                            <p class="emergency-banner__title">お電話でのご連絡</p>
-                            <a href="tel:0470-22-2251" class="emergency-banner__phone">
+                    <!-- 緊急連絡ボックス -->
+                    <div class="emergency-box">
+                        <div class="emergency-box__header">お電話でのご連絡</div>
+                        <div class="emergency-box__body">
+                            <a href="tel:0470-22-2251" class="emergency-box__phone">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28"
+                                    height="28">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
                                 0470-22-2251
                             </a>
-                            <p class="emergency-banner__note">（24時間 365日対応）</p>
+                            <p class="emergency-box__note">（24時間 365日対応）</p>
                         </div>
                     </div>
 
-                    <p class="intro-text">
-                        ご連絡の前に、下記のポイントをご確認いただけますと対応がスムーズになります。
+                    <p class="content-text">
+                        ご連絡の前に下記のポイントをご確認いただけますと対応がスムーズになります。
                     </p>
 
-                    <!-- チェックポイント -->
-                    <h3 class="check-section__title">📋 まず確認してください</h3>
-
-                    <div class="check-grid">
-
-                        <!-- チェック1 -->
-                        <div class="check-card">
-                            <div class="check-card__number">1</div>
-                            <div class="check-card__body">
-                                <p class="check-card__question">ガスが出ないのは、1つの機器だけですか？全てですか？</p>
-                                <p class="check-card__answer">
-                                    <strong>1つだけの場合</strong>：その機器自体の故障や電池切れの可能性があります。<br>
-                                    <strong>全てのガス機器で出ない場合</strong>：メーターの安全装置が作動している可能性があります。
-                                </p>
+                    <!-- チェックリスト（元ページテキストそのまま） -->
+                    <ul class="content-list">
+                        <li class="content-list__item">
+                            <div class="content-list__icon">✓</div>
+                            <div class="content-list__body">
+                                ガスが出ないのは、<strong>1つのガス機器だけか？全てのガス機器か？</strong>
                             </div>
-                        </div>
-
-                        <!-- チェック2 -->
-                        <div class="check-card check-card--highlight">
-                            <div class="check-card__number">2</div>
-                            <div class="check-card__body">
-                                <p class="check-card__question">ガスメーターのランプが赤く点滅していませんか？</p>
-                                <p class="check-card__answer">
-                                    点滅している場合は、マイコンメーターの<strong>安全装置が作動</strong>しています。<br>
-                                    簡単な操作で復帰できます。→ <a href="preview-trouble-meter-reset.html">復帰手順はこちら</a>
-                                </p>
+                        </li>
+                        <li class="content-list__item content-list__item--highlight">
+                            <div class="content-list__icon">✓</div>
+                            <div class="content-list__body">
+                                <strong>ガスメーターのランプが赤く点滅していないか？</strong><br>
+                                ※点滅している場合は、簡単な操作で復帰できます。（<a href="preview-trouble-meter-reset.html">ガスメーター復帰操作はこちら</a>）
                             </div>
-                        </div>
-
-                        <!-- チェック3 -->
-                        <div class="check-card">
-                            <div class="check-card__number">3</div>
-                            <div class="check-card__body">
-                                <p class="check-card__question">ガス栓は開いていますか？</p>
-                                <p class="check-card__answer">
-                                    ガス栓が閉まっていると、正常な機器でもガスが出ません。<br>
-                                    元栓・ガス栓が<strong>開いているか</strong>をご確認ください。
-                                </p>
+                        </li>
+                        <li class="content-list__item">
+                            <div class="content-list__icon">✓</div>
+                            <div class="content-list__body">
+                                <strong>ガス栓は開いているか？</strong>
                             </div>
-                        </div>
-
-                        <!-- チェック4 -->
-                        <div class="check-card">
-                            <div class="check-card__number">4</div>
-                            <div class="check-card__body">
-                                <p class="check-card__question">電池式のガスコンロや小型湯沸器の場合、電池は切れていませんか？</p>
-                                <p class="check-card__answer">
-                                    電池式ガスコンロや小型湯沸器は、電池が切れると点火しません。<br>
-                                    <strong>新しい電池に交換</strong>してお試しください。
-                                </p>
+                        </li>
+                        <li class="content-list__item">
+                            <div class="content-list__icon">✓</div>
+                            <div class="content-list__body">
+                                電池式ガスコンロや小型湯沸器等の場合、<strong>電池が切れていないか？</strong>
                             </div>
-                        </div>
+                        </li>
+                    </ul>
 
-                    </div>
-
-                    <!-- 結果 / 次のステップ -->
-                    <div class="result-flow">
-                        <h3 class="result-flow__title">確認結果に応じた対応</h3>
-
-                        <div class="result-cards">
-
-                            <!-- メーター復帰 -->
-                            <div class="result-card">
-                                <div class="result-card__icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="28" height="28">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <polyline points="12 6 12 12 16 14" />
-                                    </svg>
-                                </div>
-                                <h4 class="result-card__title">メーターが点滅</h4>
-                                <p class="result-card__desc">マイコンメーターの復帰操作を行ってください。</p>
-                                <a href="preview-trouble-meter-reset.html" class="result-card__link">
-                                    復帰手順を見る →
-                                </a>
+                    <!-- 次のステップリンク（元ページリンクそのまま） -->
+                    <div class="next-links">
+                        <a href="preview-trouble-meter-reset.html" class="next-link-card">
+                            <div class="next-link-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24"
+                                    height="24">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
                             </div>
-
-                            <!-- ガス栓・電池OK → 連絡 -->
-                            <div class="result-card result-card--warning">
-                                <div class="result-card__icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="28" height="28">
-                                        <path
-                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                    </svg>
-                                </div>
-                                <h4 class="result-card__title">原因が分からない</h4>
-                                <p class="result-card__desc">上記を確認しても改善しない場合は、房州ガスまでご連絡ください。</p>
-                                <a href="https://boushugas.co.jp/wp2026/contact" class="result-card__link">
-                                    お問い合わせ →
-                                </a>
+                            <span class="next-link-card__title">ガスメーター復帰手順</span>
+                        </a>
+                        <a href="https://boushugas.co.jp/wp2026/contact" class="next-link-card next-link-card--red">
+                            <div class="next-link-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24"
+                                    height="24">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
                             </div>
-
-                            <!-- ガス栓→開けて確認 -->
-                            <div class="result-card result-card--green">
-                                <div class="result-card__icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        width="28" height="28">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                        <polyline points="22 4 12 14.01 9 11.01" />
-                                    </svg>
-                                </div>
-                                <h4 class="result-card__title">ガス機器の故障かも</h4>
-                                <p class="result-card__desc">特定の機器だけ不調の場合は、故障の可能性があります。</p>
-                                <a href="preview-trouble-equipment.html" class="result-card__link">
-                                    故障時の対応を見る →
-                                </a>
+                            <span class="next-link-card__title">房州ガスまでご連絡ください</span>
+                        </a>
+                        <a href="preview-trouble-equipment.html" class="next-link-card next-link-card--green">
+                            <div class="next-link-card__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24"
+                                    height="24">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
                             </div>
-
-                        </div>
+                            <span class="next-link-card__title">ガス機器が故障したら</span>
+                        </a>
                     </div>
 
                 </div>
