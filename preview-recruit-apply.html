@@ -227,21 +227,8 @@
             margin-bottom: 8px
         }
 
-        .form-label__req {
-            display: inline-block;
-            background: #e74c3c;
-            color: #fff;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 3px;
-            margin-left: 8px;
-            vertical-align: middle
-        }
-
         .form-input,
-        .form-textarea,
-        .form-select {
+        .form-textarea {
             width: 100%;
             padding: 12px 16px;
             border: 1px solid #d0d5dd;
@@ -255,31 +242,45 @@
         }
 
         .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
+        .form-textarea:focus {
             border-color: #2B7CBC;
             outline: none;
             box-shadow: 0 0 0 3px rgba(43, 124, 188, .12)
         }
 
         .form-textarea {
-            min-height: 160px;
+            min-height: 120px;
             resize: vertical
         }
 
-        .form-row {
+        .file-upload {
             display: flex;
-            gap: 16px
+            align-items: center;
+            gap: 12px
         }
 
-        .form-row .form-group {
-            flex: 1
+        .file-upload__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f0f5f9;
+            border: 1px solid #d0d5dd;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+            transition: all .2s
         }
 
-        .form-note {
-            font-size: 13px;
-            color: #888;
-            margin-top: 4px
+        .file-upload__btn:hover {
+            background: #e0eaf0;
+            border-color: #2B7CBC
+        }
+
+        .file-upload__name {
+            font-size: 14px;
+            color: #888
         }
 
         .privacy-box {
@@ -287,33 +288,34 @@
             border: 1px solid #e0e8ef;
             border-radius: 8px;
             padding: 20px 24px;
-            margin: 32px 0;
-            text-align: center
+            margin: 32px 0
         }
 
         .privacy-box__title {
             font-size: 15px;
             font-weight: 700;
             color: #244967;
-            margin-bottom: 8px
+            margin-bottom: 12px;
+            text-align: center
         }
 
-        .privacy-box__link {
-            color: #2B7CBC;
-            text-decoration: underline
-        }
-
-        .privacy-check {
+        .privacy-radio {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            margin-top: 12px;
+            gap: 24px;
             font-size: 15px;
             color: #333
         }
 
-        .privacy-check input {
+        .privacy-radio label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer
+        }
+
+        .privacy-radio input {
             width: 18px;
             height: 18px;
             accent-color: #2B7CBC
@@ -575,36 +577,15 @@
                         応募フォーム</h2>
 
                     <div class="apply-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">お名前（姓）<span class="form-label__req">必須</span></label>
-                                <input type="text" class="form-input" placeholder="例：房州">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">お名前（名）<span class="form-label__req">必須</span></label>
-                                <input type="text" class="form-input" placeholder="例：太郎">
-                            </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">フリガナ（セイ）<span class="form-label__req">必須</span></label>
-                                <input type="text" class="form-input" placeholder="例：ボウシュウ">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">フリガナ（メイ）<span class="form-label__req">必須</span></label>
-                                <input type="text" class="form-input" placeholder="例：タロウ">
-                            </div>
+                        <div class="form-group">
+                            <label class="form-label">氏名</label>
+                            <input type="text" class="form-input" placeholder="例：房州 太郎">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">メールアドレス<span class="form-label__req">必須</span></label>
-                            <input type="email" class="form-input" placeholder="例：taro@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">電話番号<span class="form-label__req">必須</span></label>
-                            <input type="tel" class="form-input" placeholder="例：0470-22-XXXX">
+                            <label class="form-label">ふりがな</label>
+                            <input type="text" class="form-input" placeholder="例：ぼうしゅう たろう">
                         </div>
 
                         <div class="form-group">
@@ -613,54 +594,89 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">ご住所</label>
-                            <input type="text" class="form-input" placeholder="例：千葉県館山市北条1014番地">
+                            <label class="form-label">電話番号</label>
+                            <input type="tel" class="form-input" placeholder="例：0470-22-2251">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">最終学歴</label>
-                            <input type="text" class="form-input" placeholder="例：○○大学 ○○学部 卒業">
+                            <label class="form-label">メールアドレス</label>
+                            <input type="email" class="form-input" placeholder="例：example@boshugas.co.jp">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">郵便番号</label>
+                            <input type="text" class="form-input" placeholder="例：294-0036">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">現住所</label>
+                            <input type="text" class="form-input" placeholder="例：千葉県館山市館山1365">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">希望職種</label>
-                            <select class="form-select">
-                                <option value="">選択してください</option>
-                                <option>営業部門</option>
-                                <option>検査・保安部門</option>
-                                <option>工事部門</option>
-                                <option>管理部門</option>
-                                <option>その他</option>
-                            </select>
+                            <input type="text" class="form-input" placeholder="例：営業職">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">履歴・職務経歴</label>
+                            <textarea class="form-textarea" placeholder="これまでのご経歴をご記入ください"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">資格・免許</label>
+                            <textarea class="form-textarea" placeholder="お持ちの資格・免許をご記入ください"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">志望動機・自己PR</label>
-                            <textarea class="form-textarea" placeholder="ご自由にご記入ください"></textarea>
+                            <textarea class="form-textarea" placeholder="志望動機や自己PRをご記入ください"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">履歴書（アップロード）</label>
+                            <div class="file-upload">
+                                <label class="file-upload__btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="16" height="16">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                        <polyline points="17 8 12 3 7 8" />
+                                        <line x1="12" y1="3" x2="12" y2="15" />
+                                    </svg>
+                                    ファイルを選択
+                                    <input type="file" style="display:none">
+                                </label>
+                                <span class="file-upload__name">選択されていません</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">職務経歴書（アップロード）</label>
+                            <div class="file-upload">
+                                <label class="file-upload__btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        width="16" height="16">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                        <polyline points="17 8 12 3 7 8" />
+                                        <line x1="12" y1="3" x2="12" y2="15" />
+                                    </svg>
+                                    ファイルを選択
+                                    <input type="file" style="display:none">
+                                </label>
+                                <span class="file-upload__name">選択されていません</span>
+                            </div>
                         </div>
 
                         <div class="privacy-box">
                             <p class="privacy-box__title">個人情報取扱いへの同意</p>
-                            <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:12px">
-                                ご入力いただいた個人情報は、採用選考の目的にのみ使用いたします。<br>
-                                詳細は<a href="https://boushugas.co.jp/wp2026/privacy"
-                                    class="privacy-box__link">個人情報の取り扱いについて</a>をご確認ください。
-                            </p>
-                            <label class="privacy-check">
-                                <input type="checkbox"> 上記に同意します
-                            </label>
+                            <div class="privacy-radio">
+                                <label><input type="radio" name="privacy" value="agree"> 同意する</label>
+                                <label><input type="radio" name="privacy" value="disagree" checked> 同意しない</label>
+                            </div>
                         </div>
 
                         <div class="form-submit">
-                            <button type="button" class="form-submit__btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"
-                                    height="20">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
-                                </svg>
-                                送信する
-                            </button>
+                            <button type="button" class="form-submit__btn">確認画面へ</button>
                         </div>
                     </div>
 
